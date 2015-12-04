@@ -21,7 +21,7 @@ zstyle ':completion:*' ignore-parents parent pwd ..
 ################################################################
 #  エイリアス
 ################################################################
-#alias ls='ls --color=auto'
+alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -la'
