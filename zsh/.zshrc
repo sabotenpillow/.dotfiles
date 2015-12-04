@@ -6,6 +6,9 @@ compinit
 
 autoload -U colors; colors
 
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
 
 ################################################################
 #  オプション
