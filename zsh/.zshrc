@@ -25,10 +25,17 @@ zstyle ':completion:*' ignore-parents parent pwd ..
 #  エイリアス
 ################################################################
 alias ls='ls --color=auto'
-alias la='ls -a'
+# alias la='ls -a'
 alias ll='ls -l'
-alias lla='ls -la'
+alias la='ls -la'
 alias e='emacs'
+alias gst='git status'
+alias glg='git log'
+alias gad='git add'
+alias gcm='git commit -m'
+alias gps='git push'
+alias gin='git init'
+alias grad='git remote add'
 
 
 ################################################################
