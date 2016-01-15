@@ -17,7 +17,7 @@ SAVEHIST=100000
 
 
 zstyle ':completion:*:default' menu select=2
-zstyle 'completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' ignore-parents parent pwd ..
 
 
@@ -25,10 +25,11 @@ zstyle ':completion:*' ignore-parents parent pwd ..
 #  エイリアス
 ################################################################
 alias ls='ls --color=auto'
-# alias la='ls -a'
+alias lsa='ls -a'
 alias ll='ls -l'
 alias la='ls -la'
 alias e='emacs'
+alias v='vim'
 alias gst='git status'
 alias glg='git log'
 alias gad='git add'
@@ -36,13 +37,14 @@ alias gcm='git commit -m'
 alias gps='git push'
 alias gin='git init'
 alias grad='git remote add'
+alias railss='rails s -b 0.0.0.0'
 
 
 ################################################################
 #  プロンプト
 ################################################################
 PROMPT="
-[${fg[green]}%n${reset_color}@${fg[magenta]}%m${reset_color}] %{${fg[yellow]}%}%~%{${reset_color}%}
+[${fg[blue]}%n${reset_color}@${fg[red]}%m${reset_color}] %{${fg[yellow]}%}%~%{${reset_color}%}
 %# "
 
 # git関連
