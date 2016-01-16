@@ -37,6 +37,9 @@ alias grad='git remote add'
 alias gad='git add'
 alias gco='git commit -m'
 alias gps='git push'
+alias gbr='git branch'
+alias gch='git checkout'
+alias gchb='git checkout -b'
 alias railss='rails s -b 0.0.0.0'
 
 
