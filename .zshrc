@@ -43,7 +43,7 @@ alias gbr='git branch'
 alias gch='git checkout'
 alias gchb='git checkout -b'
 alias railss='rails s -b 0.0.0.0'
-
+alias vag='vagrant'
 
 ################################################################
 #  プロンプト
