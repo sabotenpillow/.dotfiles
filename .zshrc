@@ -27,7 +27,7 @@ zstyle ':completion:*' ignore-parents parent pwd ..
 alias ls='ls --color=auto'
 alias la='ls -A'
 alias ll='ls -l'
-alias lal='ls -lA'
+alias lla='ls -lA'
 alias e='emacs'
 alias v='vim'
 alias gst='git status'
