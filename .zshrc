@@ -46,6 +46,7 @@ alias railss='rails s -b 0.0.0.0'
 alias vag='vagrant'
 alias sudoi='sudo -i'
 alias tx='tmux'
+alias txat='tmux attach -t'
 alias tkill='tmux kill-session'
 alias tkillserver='tmux kill-server'
 
