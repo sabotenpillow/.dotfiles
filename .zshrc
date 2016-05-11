@@ -20,6 +20,8 @@ zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' ignore-parents parent pwd ..
 
+setopt no_beep
+
 
 ################################################################
 #  エイリアス
