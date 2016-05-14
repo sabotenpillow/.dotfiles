@@ -57,8 +57,18 @@ alias viewcolor='for c in {000..255}; do echo -n "[38;5;${c}m $c" ; [ $(($c%16)
 ################################################################
 #  プロンプト
 ################################################################
+# PROMPT="
+# [${fg[blue]}%n${reset_color}@${fg[red]}%m${reset_color}] %{${fg[yellow]}%}%~%{${reset_color}%}
+# %# "
+
+# ^[ は特殊記号
+# vim では C-v の後に ESC で入力可能
+USER_COLOR='%{[38;5;002m%}'  # user name color
+HOST_COLOR='%{[38;5;057m%}'  # hsot name color
+DIRC_COLOR='%{[38;5;031m%}'  # current directory color
+RESET='%{[0m%}'
 PROMPT="
-[${fg[blue]}%n${reset_color}@${fg[red]}%m${reset_color}] %{${fg[yellow]}%}%~%{${reset_color}%}
+[${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] ${DIRC_COLOR}%~${RESET}
 %# "
 
 # git関連
