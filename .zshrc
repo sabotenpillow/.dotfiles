@@ -34,7 +34,7 @@ alias e='emacs'
 alias v='vim'
 alias gst='git status'
 alias gdf='git diff'
-alias glg='git log'
+alias glg="git log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%C(yellow)%d%Creset'"
 alias gin='git init'
 alias grad='git remote add'
 alias gad='git add'
