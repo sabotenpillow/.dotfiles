@@ -52,7 +52,8 @@ alias ta='tmux attach'
 alias tat='tmux attach -t'
 alias tkill='tmux kill-session'
 alias tkillserver='tmux kill-server'
-alias viewcolor='for c in {000..255}; do echo -n "[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done;echo'
+alias viewcolor='for c in {000..255}; do echo -n "[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done'
+alias colors='for x in {0..2}; do for c in {000..255}; do [ $(($c%3)) -eq $x ] && echo -n "[38;5;${c}m $c" ; [ $(($c%46)) -eq 45 ] && echo;done;done'
 
 ################################################################
 #  プロンプト
