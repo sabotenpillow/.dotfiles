@@ -82,6 +82,7 @@ alias tat='tmux attach -t'
 alias tkill='tmux kill-session'
 alias tkillserver='tmux kill-server'
 alias viewcolor='for c in {000..255}; do echo -n "[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done'
+alias backcolor='for c in {000..255}; do echo -n "[30;48;5;${c}m $c" ; [ $(($c%36)) -eq 35 ] && echo;done'
 # alias colors='for x in {0..2}; do for c in {000..255}; do [ $(($c%3)) -eq $x ] && echo -n "[38;5;${c}m $c" ; [ $(($c%46)) -eq 45 ] && echo;done;done'
 
 # alias gradate='ruby -e \'(0..4).each {|r|    g=5;(0..5).each{|b|printf("[48;5;#{      r*36 +      g*6 + b + 16}m%11d [m",       r*36 +      g*6 + b + 16)};puts};(0..5).each{|g|    r=5;(0..5).each{|b|printf("[48;5;#{      r*36 + 30 - g*6 + b + 16}m%11d [m",       r*36 + 30 - g*6 + b + 16)};    b=5;(1..5).each{|r|printf("[48;5;#{180 - r*36 + 30 - g*6 + b + 16}m%11d [m", 180 - r*36 + 30 - g*6 + b + 16)};puts}\''
