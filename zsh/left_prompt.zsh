@@ -55,13 +55,12 @@ set_color () {
   s_line_f="<<-(%#"
   s_line_l=")->> "
 
-  # PROMPT="[${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] ${DIRC_COLOR}%~ ${BORDER_COLOR}"
   PROMPT="
 [${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] ${DIRC_COLOR}%~ ${BORDER_COLOR}"
   fill_char
   # PROMPT=${PROMPT}$'${INLINE_COLOR}${s_line_f}'$'%(?||${STATUS_COLOR}:${STATUS_COLOR}'$ret')'$'${INLINE_COLOR}${s_line_l}${RESET}'
   PROMPT="${PROMPT}
-${INLINE_COLOR}${s_line_f}%(?||${STATUS_COLOR}:${STATUS_COLOR}'$ret')${INLINE_COLOR}${s_line_l}${RESET}"
+${INLINE_COLOR}${s_line_f}%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${INLINE_COLOR}${s_line_l}${RESET}"
 
 }
 
