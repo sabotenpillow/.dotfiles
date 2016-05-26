@@ -52,7 +52,7 @@ first_line () {
 
 set_color () {
 
-  s_line_f="-(%#"
+  s_line_f="<<-(%#"
   s_line_l=")->> "
 
   # PROMPT="[${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] ${DIRC_COLOR}%~ ${BORDER_COLOR}"
