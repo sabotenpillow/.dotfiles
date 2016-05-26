@@ -106,8 +106,7 @@ alias gradate='./gradate.sh'
 
 
 # local simple_prompt=$zsh_dir/zsh_simple_prompt
-# local prompt=$HOME/.dotfiles/zsh/left_prompt.zsh
-local prompt=./left_prompt.zsh
+local prompt=$HOME/.dotfiles/zsh/left_prompt.zsh
 
 if [ "$TERM" = linux ] ; then
   [ -e $simple_prompt ] && source $simple_prompt
