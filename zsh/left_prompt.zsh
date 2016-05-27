@@ -32,6 +32,7 @@ DIRC_COLOR='%{[38;5;031m%}'    # current directory color
 BORDER_COLOR='%{[38;5;093m%}'  # border color
 INLINE_COLOR='%{[38;5;006m%}'  # in-line color
 STATUS_COLOR='%{[38;5;001m%}'  # end status color
+LAST_COLOR='%{[38;5;007m%}'    # last color
 RESET='%{[0m%}'
 
 
@@ -39,12 +40,16 @@ first_line () {
   # HOST=$HOSTNAME
   # HOST=`hostname`
   cwd=`print -P "%~"`
-	if [ $cwd = "~cwd" ]; then
-		cwd=`print -P "%~"`
-	fi
+  if [ $cwd = "~cwd" ]; then
+    cwd=`print -P "%~"`
+  fi
   # COLUMNS=`tput cols`
   # USER_AND_HOST="[${USER}@${HOST}] ${cwd} "
-  USER_AND_HOST="[${USER}@${HOST}] ${cwd} "
+  USER_AND_HOST="[${USER}@${HOST}] (:$ret) ${cwd} "
+  # USER_AND_HOST="[${USER}@${HOST}] (%(?||:$ret)) ${cwd} "
+  if [ $ret = 0 ]; then
+    USER_AND_HOST="[${USER}@${HOST}] () ${cwd} "
+  fi
 
 # IPアドレス
   REMAIN=$(( ${COLUMNS} - ${#USER_AND_HOST} ))
@@ -55,16 +60,21 @@ set_color () {
   s_line_f="<<-(%#"
   s_line_l=")->> "
 
+#   PROMPT="
+# [${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] ${DIRC_COLOR}%~ ${BORDER_COLOR}"
+#   fill_char
+#   PROMPT="${PROMPT}
+# ${INLINE_COLOR}${s_line_f}%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${INLINE_COLOR}${s_line_l}${RESET}"
+
   PROMPT="
-[${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] ${DIRC_COLOR}%~ ${BORDER_COLOR}"
+[${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] (%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${RESET}) ${DIRC_COLOR}%~ ${BORDER_COLOR}"
   fill_char
-  # PROMPT=${PROMPT}$'${INLINE_COLOR}${s_line_f}'$'%(?||${STATUS_COLOR}:${STATUS_COLOR}'$ret')'$'${INLINE_COLOR}${s_line_l}${RESET}'
   PROMPT="${PROMPT}
-${INLINE_COLOR}${s_line_f}%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${INLINE_COLOR}${s_line_l}${RESET}"
+${LAST_COLOR}%#${RESET} "
 
 }
 
-# コマンド実行前じ実行される特殊関数
+# コマンド実行前に実行される特殊関数
 precmd() {
 	ret=$?
   first_line;
