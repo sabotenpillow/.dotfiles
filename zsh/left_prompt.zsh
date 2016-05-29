@@ -69,7 +69,7 @@ ${INLINE_COLOR}${s_line_f}%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${INLINE_COLO
 # [${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] (%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${RESET}) ${DIRC_COLOR}%~ ${BORDER_COLOR}"
 #   fill_char
 #   PROMPT="${PROMPT}
-${LAST_COLOR}%#${RESET} "
+# ${LAST_COLOR}%#${RESET} "
 
 }
 
