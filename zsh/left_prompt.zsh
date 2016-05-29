@@ -44,12 +44,11 @@ first_line () {
     cwd=`print -P "%~"`
   fi
   # COLUMNS=`tput cols`
-  # USER_AND_HOST="[${USER}@${HOST}] ${cwd} "
-  USER_AND_HOST="[${USER}@${HOST}] (:$ret) ${cwd} "
-  # USER_AND_HOST="[${USER}@${HOST}] (%(?||:$ret)) ${cwd} "
-  if [ $ret = 0 ]; then
-    USER_AND_HOST="[${USER}@${HOST}] () ${cwd} "
-  fi
+  USER_AND_HOST="[${USER}@${HOST}] ${cwd} "
+  # USER_AND_HOST="[${USER}@${HOST}] (:$ret) ${cwd} "
+  # if [ $ret = 0 ]; then
+  #   USER_AND_HOST="[${USER}@${HOST}] () ${cwd} "
+  # fi
 
 # IPアドレス
   REMAIN=$(( ${COLUMNS} - ${#USER_AND_HOST} ))
@@ -57,19 +56,19 @@ first_line () {
 
 set_color () {
 
-  s_line_f="<<-(%#"
+  s_line_f="-(%#"
   s_line_l=")->> "
 
-#   PROMPT="
-# [${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] ${DIRC_COLOR}%~ ${BORDER_COLOR}"
-#   fill_char
-#   PROMPT="${PROMPT}
-# ${INLINE_COLOR}${s_line_f}%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${INLINE_COLOR}${s_line_l}${RESET}"
-
   PROMPT="
-[${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] (%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${RESET}) ${DIRC_COLOR}%~ ${BORDER_COLOR}"
+[${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] ${DIRC_COLOR}%~ ${BORDER_COLOR}"
   fill_char
   PROMPT="${PROMPT}
+${INLINE_COLOR}${s_line_f}%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${INLINE_COLOR}${s_line_l}${RESET}"
+
+#   PROMPT="
+# [${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] (%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${RESET}) ${DIRC_COLOR}%~ ${BORDER_COLOR}"
+#   fill_char
+#   PROMPT="${PROMPT}
 ${LAST_COLOR}%#${RESET} "
 
 }
