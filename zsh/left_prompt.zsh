@@ -18,6 +18,7 @@ fill_char () {
   fchr="-"
   # fchr="="
   # fchr="<"
+  first_line
   while [ $REMAIN -gt 0 ]
   do
     PROMPT="${PROMPT}${fchr}"
@@ -51,8 +52,8 @@ first_line () {
   #   USER_AND_HOST="[${USER}@${HOST}] () ${cwd} "
   # fi
 
-# IPアドレス
   REMAIN=$(( ${COLUMNS} - ${#USER_AND_HOST} ))
+  # REMAIN=${COLUMNS}
 }
 
 set_color () {
@@ -67,23 +68,24 @@ set_color () {
   PROMPT="
 [${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] ${DIRC_COLOR}%~ ${BORDER_COLOR}"
   fill_char
+  PROMPT="${PROMPT}
+${LAST_COLOR}:(%#%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${RESET}): "
 #   PROMPT="${PROMPT}
 # ${VECTOR_COLOR}${vector_f}${INLINE_COLOR}${status_code_f}%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${INLINE_COLOR}${status_code_l}${VECTOR_COLOR}${vector_l}${RESET}"
-  PROMPT="${PROMPT}
-${LAST_COLOR}:%#(%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${RESET}): "
 
 #   PROMPT="
-# [${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] (%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${RESET}) ${DIRC_COLOR}%~ ${BORDER_COLOR}"
+# ${BORDER_COLOR}"
 #   fill_char
 #   PROMPT="${PROMPT}
-# ${LAST_COLOR}%#${RESET} "
+# [${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] ${DIRC_COLOR}%~ ${BORDER_COLOR}"
+#   PROMPT="${PROMPT}
+# ${LAST_COLOR}:(%#%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${RESET}): "
 
 }
 
 # コマンド実行前に実行される特殊関数
 precmd() {
 	ret=$?
-  first_line;
   set_color;
 }
 
