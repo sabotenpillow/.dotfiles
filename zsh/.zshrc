@@ -138,18 +138,22 @@ function get-branch-name() {
     # gitディレクトリじゃない場合のエラーを捨てる
     echo `${git} rev-parse --abbrev-ref HEAD 2> /dev/null`
 }
+
+# mark of branch prompt -> |⭠, :|
 function get-branch-status() {
+    local deco_out=':'
+    local deco_in=':'
     local git==git branchstatus branchname
     branchname=`get-branch-name`
     output=`${git} status 2> /dev/null`
     if [[ -n `echo $output | grep '^nothing to commit'` ]]; then
-        branchstatus='%{'${fg[green]}'%}⮂%{'${fg[black]}${bg[green]}'%} ⭠ '${branchname}
+        branchstatus='%{'${fg[green]}'%}'${deco_out}'%{'${fg[black]}${bg[green]}'%} '${deco_in}' '${branchname}
     elif [[ -n `echo $output | grep '^Untracked files:'` ]]; then
-        branchstatus='%{'${fg[yellow]}'%}⮂%{'${fg[black]}${bg[yellow]}'%} ⭠ '${branchname}
+        branchstatus='%{'${fg[yellow]}'%}'${deco_out}'%{'${fg[black]}${bg[yellow]}'%} '${deco_in}' '${branchname}
     elif [[ -n `echo $output | grep '^Changes not staged for commit:'` ]]; then
-        branchstatus='%{'${fg[red]}'%}⮂%{'${fg[black]}${bg[red]}'%} ⭠ '${branchname}
+        branchstatus='%{'${fg[red]}'%}'${deco_out}'%{'${fg[black]}${bg[red]}'%} '${deco_in}' '${branchname}
     else
-        branchstatus='%{'${fg[cyan]}'%}⮂%{'${fg[black]}${bg[cyan]}'%} ⭠ '${branchname}
+        branchstatus='%{'${fg[cyan]}'%}'${deco_out}'%{'${fg[black]}${bg[cyan]}'%} '${deco_in}' '${branchname}
     fi
     echo ${branchstatus}' '
 }
