@@ -18,6 +18,7 @@ fill_char () {
   fchr="-"
   # fchr="="
   # fchr="<"
+  first_line
   while [ $REMAIN -gt 0 ]
   do
     PROMPT="${PROMPT}${fchr}"
@@ -51,7 +52,6 @@ first_line () {
   #   USER_AND_HOST="[${USER}@${HOST}] () ${cwd} "
   # fi
 
-# IPアドレス
   REMAIN=$(( ${COLUMNS} - ${#USER_AND_HOST} ))
   # REMAIN=${COLUMNS}
 }
@@ -86,7 +86,6 @@ ${LAST_COLOR}:(%#%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${RESET}): "
 # コマンド実行前に実行される特殊関数
 precmd() {
 	ret=$?
-  first_line;
   set_color;
 }
 
