@@ -15,9 +15,9 @@ fill_char () {
   # fchr="■"
   # fchr="✚"
   # fchr="❚"
-  # fchr="-"
+  fchr="-"
   # fchr="="
-  fchr="<"
+  # fchr="<"
   while [ $REMAIN -gt 0 ]
   do
     PROMPT="${PROMPT}${fchr}"
@@ -29,11 +29,11 @@ fill_char () {
 USER_COLOR='%{[38;5;002m%}'    # user name color
 HOST_COLOR='%{[38;5;057m%}'    # hsot name color
 DIRC_COLOR='%{[38;5;031m%}'    # current directory color
-BORDER_COLOR='%{[38;5;093m%}'  # border color
+BORDER_COLOR='%{[38;5;240m%}'  # border color
 VECTOR_COLOR='%{[38;5;093m%}'  # arrow color
 INLINE_COLOR='%{[38;5;051m%}'  # in-line color
 STATUS_COLOR='%{[38;5;001m%}'  # end status color
-LAST_COLOR='%{[38;5;007m%}'    # last color
+LAST_COLOR='%{[38;5;093m%}'    # last color
 RESET='%{[0m%}'
 
 
@@ -67,8 +67,10 @@ set_color () {
   PROMPT="
 [${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] ${DIRC_COLOR}%~ ${BORDER_COLOR}"
   fill_char
+#   PROMPT="${PROMPT}
+# ${VECTOR_COLOR}${vector_f}${INLINE_COLOR}${status_code_f}%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${INLINE_COLOR}${status_code_l}${VECTOR_COLOR}${vector_l}${RESET}"
   PROMPT="${PROMPT}
-${VECTOR_COLOR}${vector_f}${INLINE_COLOR}${status_code_f}%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${INLINE_COLOR}${status_code_l}${VECTOR_COLOR}${vector_l}${RESET}"
+${LAST_COLOR}:%#(%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${RESET}): "
 
 #   PROMPT="
 # [${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] (%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${RESET}) ${DIRC_COLOR}%~ ${BORDER_COLOR}"
