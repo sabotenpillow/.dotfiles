@@ -21,20 +21,44 @@ function get-branch-name() {
 
 # mark of branch prompt -> |⭠, :|
 function get-branch-status() {
-    local deco_out=':'
-    local deco_in=':'
     local git==git branchstatus branchname
+    local git_mark
+    local deco_out_left deco_in_left deco_in_right deco_out_right
+    local out_color in_color in_right_color
+    local reset
     branchname=`get-branch-name`
+    if [[ $branchname == 'master' ]] ; then
+      git_mark='\uE0A0' # '\u25B2'
+      deco_out_left='\u2503'
+    else
+      git_mark='\uE0A0'
+      deco_out_left='\uE0A1 \u2503'
+    fi
+#     deco_out_left='\u2503' # '\uE0B2 '
+#     deco_out_right='\u2503' # '\uE0B2 '
+    deco_in_left='\u2503'${git_mark}' ' # '\u2016\uE0A0 '
+    deco_in_right='\u2503'
     output=`${git} status 2> /dev/null`
     if [[ -n `echo $output | grep '^nothing to commit'` ]]; then
-        branchstatus='%{'${fg[green]}'%}'${deco_out}'%{'${fg[black]}${bg[green]}'%} '${deco_in}' '${branchname}
+        out_color="${fg[green]}"
+        in_color="${bg[green]}"
     elif [[ -n `echo $output | grep '^Untracked files:'` ]]; then
-        branchstatus='%{'${fg[yellow]}'%}'${deco_out}'%{'${fg[black]}${bg[yellow]}'%} '${deco_in}' '${branchname}
+        out_color="${fg[yellow]}"
+        in_color="${bg[yellow]}"
     elif [[ -n `echo $output | grep '^Changes not staged for commit:'` ]]; then
-        branchstatus='%{'${fg[red]}'%}'${deco_out}'%{'${fg[black]}${bg[red]}'%} '${deco_in}' '${branchname}
+        out_color="${fg[red]}"
+        in_color="${bg[red]}"
     else
-        branchstatus='%{'${fg[cyan]}'%}'${deco_out}'%{'${fg[black]}${bg[cyan]}'%} '${deco_in}' '${branchname}
+        out_color="${fg[cyan]}"
+        in_color="${bg[cyan]}"
     fi
+#     in_right_color=${out_color}
+    out_color='%{'${out_color}'%}' # '%{'${bg[black]}${out_color}'%}'
+    in_color='%{'${fg[black]}${in_color}'%}'
+    reset='%{'${reset_color}'%}'
+    branchname=${branchname}' '
+    branchstatus=${out_color}${deco_out_left}${in_color}${deco_in_left}${branchname}${out_color}${deco_in_right}
+#     branchstatus=${out_color}${deco_out_left}${in_color}${deco_in_left}${branchname}${in_right_color}${deco_in_right} # ${out_color}${deco_out_right}
     echo ${branchstatus}' '
 }
 

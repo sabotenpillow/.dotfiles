@@ -79,6 +79,19 @@ alias tkillserver='tmux kill-server'
 alias viewcolor='for c in {000..255}; do echo -n "[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done'
 alias backcolor='for c in {000..255}; do echo -n "[30;48;5;${c}m $c" ; [ $(($c%36)) -eq 35 ] && echo;done'
 # alias u='$(git )'
+alias play='echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"'
+alias asterism='echo "\u2648 \u2649 \u264A \u264B \u264C \u264D \u264E \u264F \u2650 \u2651 \u2652 \u2653"'
+alias trigram='echo "\u2630 \u2631 \u2632 \u2633 \u2634 \u2635 \u2636 \u2637"'
+alias chess='echo "\u2654 \u2655 \u2656 \u2657 \u2658 \u2659 \u265A \u265B \u265C \u265D \u265E \u265F"'
+alias traffic='echo "\u26D4 \u26D5 \u26DA \u26DB \u26DD"'
+alias mapsym='echo "\u26E3 \u26EC \u26ED \u26ED \u26EE \u26EF \u26F0 \u26F1 \u26F2 \u26F4 \u26F5 \u26F6 \u26FA \u26FB"'
+alias asteroid='echo "\u26B3 \u26B4 \u26B5 \u26B6 \u26B7 \u26B8 \u26B9 \u26BA \u26BB \u26BC"'
+alias pentagram='echo "\u26E4 \u26E5 \u26E6 \u26E7"'
+alias warning='echo "\u2620 \u2621 \u2622 \u2623"'
+alias medic='echo "\u2624 \u2625"'
+alias astro='echo "\u2609 \u263C \u263D \u263E \u263F \u2640 \u2641 \u2642 \u2643 \u2644 \u2645 \u2646 \u2647"'
+
+
 
 
 ##  zplug
@@ -86,13 +99,13 @@ alias backcolor='for c in {000..255}; do echo -n "[30;48;5;${c}m $c" ; [ $(($c%
 export ZPLUG_HOME=$HOME/.dotfiles/zsh/plugins/.zplug
 local zplug_init=$ZPLUG_HOME/init.zsh
 local zplug_property=$HOME/.dotfiles/zsh
-if [[ $zplug_init ]]; then
+if [[ -e $zplug_init ]] ; then
   source $zplug_property/zplug_load.zsh
 else
-  echo "not found zplug directory"
+  echo;echo "$fg[red]not found zplug directory$reset_color"
 fi
 
-##  プロンプト
+##  LEFT PROMPT
 
 # local simple_prompt=$zsh_dir/zsh_simple_prompt
 local prompt=$HOME/.dotfiles/zsh/left_prompt.zsh
@@ -102,6 +115,8 @@ if [ "$TERM" = linux ] ; then
 else
   [ -e $prompt ] && source $prompt
 fi
+
+## RIGHT PROMPT
 
 local rprompt=$HOME/.dotfiles/zsh/right_prompt.zsh
 [ -e $rprompt ] && source $rprompt
