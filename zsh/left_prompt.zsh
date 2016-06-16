@@ -52,7 +52,7 @@ first_line () {
   #   USER_AND_HOST="[${USER}@${HOST}] () ${cwd} "
   # fi
 
-  REMAIN=$(( ${COLUMNS} - ${#USER_AND_HOST} ))
+  REMAIN=$(( ${COLUMNS} - ${#USER_AND_HOST} -2 ))
   # REMAIN=${COLUMNS}
 }
 
