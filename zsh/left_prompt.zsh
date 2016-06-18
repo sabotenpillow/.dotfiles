@@ -27,14 +27,15 @@ fill_char () {
 }
 
 
-USER_COLOR='%{[38;5;002m%}'    # user name color
-HOST_COLOR='%{[38;5;057m%}'    # hsot name color
+USER_COLOR='%{[38;5;093m%}'    # user name color
+HOST_COLOR='%{[38;5;208m%}'    # hsot name color
 DIRC_COLOR='%{[38;5;031m%}'    # current directory color
 BORDER_COLOR='%{[38;5;240m%}'  # border color
 VECTOR_COLOR='%{[38;5;093m%}'  # arrow color
 INLINE_COLOR='%{[38;5;051m%}'  # in-line color
 STATUS_COLOR='%{[38;5;001m%}'  # end status color
 LAST_COLOR='%{[38;5;093m%}'    # last color
+COMMAND_COLOR='%{[38;5;208m%}' # command color
 RESET='%{[0m%}'
 
 
