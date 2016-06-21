@@ -27,17 +27,15 @@ fill_char () {
 }
 
 
-USER_COLOR='%{[38;5;057m%}'    # user name color
-HOST_COLOR='%{[38;5;040m%}'    # hsot name color
-IP_COLOR='%{[38;5;208m%}'      # IP address color
+USER_COLOR='%{[38;5;093m%}'    # user name color
+HOST_COLOR='%{[38;5;208m%}'    # hsot name color
 DIRC_COLOR='%{[38;5;031m%}'    # current directory color
 BORDER_COLOR='%{[38;5;240m%}'  # border color
 VECTOR_COLOR='%{[38;5;093m%}'  # arrow color
 INLINE_COLOR='%{[38;5;051m%}'  # in-line color
 STATUS_COLOR='%{[38;5;001m%}'  # end status color
-DECO_F_COLOR='%{[38;5;093m%}'    # last color
-DECO_L_COLOR='%{[38;5;255m%}'    # last color
-COMMAND_COLOR='%{[38;5;255m%}' # command color
+LAST_COLOR='%{[38;5;093m%}'    # last color
+COMMAND_COLOR='%{[38;5;208m%}' # command color
 RESET='%{[0m%}'
 
 
@@ -49,8 +47,7 @@ first_line () {
     cwd=`print -P "%~"`
   fi
   # COLUMNS=`tput cols`
-  # USER_AND_HOST="[${USER}@${HOST}] ${cwd} "
-  USER_AND_HOST="[${USER}@${HOST}${ip_addr}] ${cwd} "
+  USER_AND_HOST="[${USER}@${HOST}] ${cwd} "
   # USER_AND_HOST="[${USER}@${HOST}] (:$ret) ${cwd} "
   # if [ $ret = 0 ]; then
   #   USER_AND_HOST="[${USER}@${HOST}] () ${cwd} "
@@ -66,15 +63,14 @@ set_color () {
   s_line_l=")->> "
   vector_f="-"
   vector_l="->> "
-  status_code_f=":(%#"
-  status_code_l="):"
-  ip_addr='' # ":$IP_ADDRESS"
+  status_code_f="(%#"
+  status_code_l=")"
 
   PROMPT="
-[${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${IP_COLOR}${ip_addr}${RESET}] ${DIRC_COLOR}%~ ${BORDER_COLOR}"
+[${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] ${DIRC_COLOR}%~ ${BORDER_COLOR}"
   fill_char
   PROMPT="${PROMPT}
-${DECO_F_COLOR}:(%#%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${DECO_L_COLOR}):${RESET} "
+${LAST_COLOR}:(%#%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${RESET}): "
 #   PROMPT="${PROMPT}
 # ${VECTOR_COLOR}${vector_f}${INLINE_COLOR}${status_code_f}%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${INLINE_COLOR}${status_code_l}${VECTOR_COLOR}${vector_l}${RESET}"
 
@@ -84,7 +80,7 @@ ${DECO_F_COLOR}:(%#%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${DECO_L_COLOR}):${R
 #   PROMPT="${PROMPT}
 # [${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${RESET}] ${DIRC_COLOR}%~ ${BORDER_COLOR}"
 #   PROMPT="${PROMPT}
-# ${DECO_F_COLOR}:(%#%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${RESET}): "
+# ${LAST_COLOR}:(%#%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${RESET}): "
 
 }
 

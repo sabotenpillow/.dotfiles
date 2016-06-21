@@ -29,17 +29,16 @@ setopt hist_reduce_blanks
 setopt notify
 # setopt correct
 
-#
+
 ##  エイリアス
-#
+
 local alias_path=$HOME/.dotfiles/zsh/alias.zsh
 if [[ -e $alias_path ]] ; then
   source $alias_path
 fi
 
-#
 ##  zplug
-#
+
 export ZPLUG_HOME=$HOME/.dotfiles/zsh/plugins/.zplug
 local zplug_init=$ZPLUG_HOME/init.zsh
 local zplug_property=$HOME/.dotfiles/zsh
@@ -49,9 +48,8 @@ else
   echo; echo "$fg[red]not found zplug directory$reset_color"
 fi
 
-#
 ##  LEFT PROMPT
-#
+
 # local simple_prompt=$zsh_dir/zsh_simple_prompt
 local prompt=$HOME/.dotfiles/zsh/left_prompt.zsh
 
@@ -61,15 +59,14 @@ else
   [ -e $prompt ] && source $prompt
 fi
 
-#
 ## RIGHT PROMPT
-#
+
 local rprompt=$HOME/.dotfiles/zsh/right_prompt.zsh
 [ -e $rprompt ] && source $rprompt
 
-#
+
 ## coloring on man command
-#
+
 export MANPAGER='less -R'
 man() {
   env \
