@@ -1,13 +1,16 @@
+#
 ##  global alias
+#
 alias -g TELLME='&& echo; (echo $fg[green]SUCCEEDED || echo $fg[red]FAILED)'
 alias -g G='| grep'
 alias -g L='| less'
 alias -g W='| wc'
-alias -g H='| head'
+alias -g H='| head -q'
 alias -g T='| tail'
 
+#
 ##  alias
-# alias 
+#
 alias al='alias'
 alias ztime='time(zsh -i -c exit)'
 alias ls='ls --color=auto'
@@ -63,6 +66,7 @@ alias rs='rails s -b 0.0.0.0'
 alias vag='vagrant'
 alias sudoi='sudo -i'
 alias tx='tmux -2'
+alias tn='tmux new -s'
 alias tl='tmux ls'
 alias ta='tmux attach'
 alias tt='tmux attach -t'
