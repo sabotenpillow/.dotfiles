@@ -1,4 +1,5 @@
 export TERM=xterm-256color
+# export EDITOR=vim
 
 if [ -d $HOME/.rbenv ] ; then
   export PATH="$HOME/.rbenv/bin:$PATH"
