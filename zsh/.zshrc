@@ -38,6 +38,14 @@ if [[ -e $alias_path ]] ; then
 fi
 
 #
+##  自作メソッド
+#
+local my_method_path=$HOME/.dotfiles/zsh/my_zmethod.zsh
+if [[ -e $my_method_path ]] ; then
+  source $my_method_path
+fi
+
+#
 ##  zplug
 #
 export ZPLUG_HOME=$HOME/.dotfiles/zsh/plugins/.zplug

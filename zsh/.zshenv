@@ -1,10 +1,15 @@
 export TERM=xterm-256color
+# export EDITOR=vim
 
-export NVM_DIR="/home/usr/member/2013/tonetch/.nvm"
+if [ -d $HOME/.rbenv ] ; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 ## get IP address
-# if [ `which cut` ] && [ `export -p | grep SSH_CONNECTION` ] ; then
 if [ `which cut` ] && [ $SSH_CONNECTION ] ; then
   export IP_ADDRESS=`echo $SSH_CONNECTION | cut -f3 -d ' '`
 # elif [ `which nslookup` ] && [ `which hostname` ] ; then

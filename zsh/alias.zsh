@@ -87,3 +87,9 @@ alias pentagram='echo "\u26E4 \u26E5 \u26E6 \u26E7"'
 alias warning='echo "\u2620 \u2621 \u2622 \u2623"'
 alias medic='echo "\u2624 \u2625"'
 alias astro='echo "\u2609 \u263C \u263D \u263E \u263F \u2640 \u2641 \u2642 \u2643 \u2644 \u2645 \u2646 \u2647"'
+
+
+#
+# 自作メソッドのエイリアス
+#
+alias gr='git-root'
