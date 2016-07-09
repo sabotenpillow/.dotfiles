@@ -92,4 +92,4 @@ alias astro='echo "\u2609 \u263C \u263D \u263E \u263F \u2640 \u2641 \u2642 \u264
 #
 # 自作メソッドのエイリアス
 #
-alias gr='git-root'
+alias grt='git-root'
