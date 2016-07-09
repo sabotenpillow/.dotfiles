@@ -1,1 +1,1 @@
-隠しファイルの管理
+以下のファイル管理 - .zshrc - .zshenv - .tmux.conf
