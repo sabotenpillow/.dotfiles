@@ -12,6 +12,6 @@ export NVM_DIR="$HOME/.nvm"
 ## get IP address
 if [ `which cut` ] && [ $SSH_CONNECTION ] ; then
   export IP_ADDRESS=`echo $SSH_CONNECTION | cut -f3 -d ' '`
-elif [ `which nslookup` ] && [ `which hostname` ] ; then
-  export IP_ADDRESS=`nslookup \`hostname\` | grep Address | tail -n +2 | cut -f2 -d ' '`
+# elif [ `which nslookup` ] && [ `which hostname` ] ; then
+#   export IP_ADDRESS=`nslookup \`hostname\` | grep Address | tail -n +2 | cut -f2 -d ' '`
 fi
