@@ -8,6 +8,12 @@ alias -g W='| wc'
 alias -g H='| head -q'
 alias -g T='| tail'
 
+function git_current_branch_name()
+{
+  git branch | grep '^\*' | sed 's/^\* *//'
+}
+alias -g B='"$(git_current_branch_name)"'
+
 #
 ##  alias
 #
