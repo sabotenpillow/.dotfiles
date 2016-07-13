@@ -3,6 +3,7 @@
 #
 alias -g TELLME='&& echo; (echo $fg[green]SUCCEEDED || echo $fg[red]FAILED)'
 alias -g G='| grep'
+alias -g Gv='| grep -v'
 alias -g L='| less'
 alias -g W='| wc'
 alias -g H='| head -q'
