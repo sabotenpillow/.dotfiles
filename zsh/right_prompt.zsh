@@ -36,7 +36,7 @@ function get-branch-status() {
     fi
 #     deco_out_left='\u2503' # '\uE0B2 '
 #     deco_out_right='\u2503' # '\uE0B2 '
-    deco_in_left='\u2503'${git_mark}' ' # '\u2016\uE0A0 '
+    deco_in_left=${git_mark}' ' # '\u2016\uE0A0 '
     deco_in_right='\u2503'
     output=`${git} status 2> /dev/null`
     if [[ -n `echo $output | grep '^nothing to commit'` ]]; then
@@ -57,9 +57,10 @@ function get-branch-status() {
     in_color='%{'${fg[black]}${in_color}'%}'
     reset='%{'${reset_color}'%}'
     branchname=${branchname}' '
-    branchstatus=${out_color}${deco_out_left}${in_color}${deco_in_left}${branchname}${out_color}${deco_in_right}
+#     branchstatus=${out_color}${deco_out_left}${in_color}${deco_in_left}${branchname} #${out_color}${deco_in_right}
+    branchstatus=${in_color}${deco_in_left}${branchname} #${out_color}${deco_in_right}
 #     branchstatus=${out_color}${deco_out_left}${in_color}${deco_in_left}${branchname}${in_right_color}${deco_in_right} # ${out_color}${deco_out_right}
-    echo ${branchstatus}' '
+    echo ${branchstatus}
 }
 
 #-------------------------------------------------
