@@ -6,6 +6,15 @@ if [ -d $HOME/.rbenv ] ; then
   eval "$(rbenv init -)"
 fi
 
+if [ -d $HOME/.goenv ] ; then
+  export PATH="$HOME/.goenv/bin:$PATH"
+  eval "$(goenv init -)"
+fi
+
+if [ `which go` ] ; then
+  export GOPATH="$HOME/gocode"
+fi
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
