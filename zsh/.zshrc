@@ -3,6 +3,10 @@ autoload -Uz compinit
 compinit
 autoload -U colors; colors
 autoload -Uz add-zsh-hook
+autoload -Uz select-word-style
+select-word-style default 
+zstyle ':zle:*' word-chars ' /=;@:{}[]()<>,|' # ' /=;@:{}[]()<>,|.'
+zstyle ':zle:*' word-style unspecified
 
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
