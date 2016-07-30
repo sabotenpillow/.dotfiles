@@ -1,0 +1,62 @@
+## --------------------------------------------------
+## set layouts
+## --------------------------------------------------
+# set show-line-numbers = yes
+# set line-number-interval = 5
+set main-view = id:width=8 date author commit-title:graph=yes,refs=yes
+set vertical-split = auto
+set split-view-height = 80%   # rates of view details
+set diff-context = 4          # diff
+set ignore-space = all        # ignore space
+set tab-size = 4
+# set show-rev-graph = yes
+set line-graphics = ascii
+
+## --------------------------------------------------
+## set key bind like vim
+## --------------------------------------------------
+source ~/.dotfiles/tig/.tigrc.vim
+
+## --------------------------------------------------
+## set key bind
+## --------------------------------------------------
+## generic
+bind generic m none
+bind generic d none
+bind generic t none
+bind generic b none
+bind generic f none
+bind generic x none
+bind generic r none
+bind generic s none
+bind generic S none
+bind generic y none
+bind generic g none
+bind generic p none
+bind generic K none
+bind generic v  none
+bind generic vm view-main
+bind generic vd view-diff
+bind generic vl view-log
+bind generic vt view-tree
+bind generic vb view-blob
+bind generic vx view-blame
+bind generic vr view-refs
+bind generic vs view-status
+bind generic vu view-stage
+bind generic vy view-stash
+bind generic vg view-grep
+bind generic vp view-pager
+bind generic vh view-help
+# bind generic ^X none
+# bind generic <Ctrl-X> !echo 'test'
+# bind generic <C-x> ?echo %(commit)
+bind generic reset ?git reset %(commit)
+bind generic rshard ?git reset --hard %(commit)
+bind generic rsorg ?git reset ORIG_HEAD
+bind generic rshorg ?git reset --hard ORIG_HEAD
+# bind generic rf ?git reflog --pretty=raw \| tig --pretty=raw
+bind generic rf ?git reflog --pretty=raw \| tig
+
+## main
+
