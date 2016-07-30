@@ -1,0 +1,14 @@
+## ----- set layouts ----------
+set show-line-numbers = yes
+set line-number-interval = 5
+set set main-view = id:width=7 date author commit-title:graph=yes,refs=yes
+set vertical-split = auto
+set split-view-height = 80%   # rates of view details
+set diff-context = 4          # diff
+set ignore-space = all        # ignore space
+set tab-size = 4
+# set show-rev-graph = yes
+# set linne-graphics = ascii
+
+## ----- set key bind ----------
+source .tigrc.vim

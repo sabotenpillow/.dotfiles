@@ -3,10 +3,17 @@
 #
 alias -g TELLME='&& echo; (echo $fg[green]SUCCEEDED || echo $fg[red]FAILED)'
 alias -g G='| grep'
+alias -g Gv='| grep -v'
 alias -g L='| less'
 alias -g W='| wc'
 alias -g H='| head -q'
 alias -g T='| tail'
+
+function git_current_branch_name()
+{
+  git branch | grep '^\*' | sed 's/^\* *//'
+}
+alias -g B='"$(git_current_branch_name)"'
 
 #
 ##  alias
@@ -17,6 +24,7 @@ alias ls='ls --color=auto'
 alias la='ls -A'
 alias ll='ls -l'
 alias lla='ls -lA'
+alias lt='pwd;find . | sort | sed "1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/|  /g"'
 alias grep='grep --color=auto'
 alias e='emacs'
 alias v='vim'
@@ -92,4 +100,4 @@ alias astro='echo "\u2609 \u263C \u263D \u263E \u263F \u2640 \u2641 \u2642 \u264
 #
 # 自作メソッドのエイリアス
 #
-alias gr='git-root'
+alias grt='git-root'
