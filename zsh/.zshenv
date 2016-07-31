@@ -24,3 +24,4 @@ if [ `which cut` ] && [ $SSH_CONNECTION ] ; then
 # elif [ `which nslookup` ] && [ `which hostname` ] ; then
 #   export IP_ADDRESS=`nslookup \`hostname\` | grep Address | tail -n +2 | cut -f2 -d ' '`
 fi
+[ -d $HOME/local-packages-repository ] && export PATH="$HOME/local-packages-repository/bin:$PATH"
