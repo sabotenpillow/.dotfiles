@@ -12,10 +12,27 @@ HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 
+#
+##  自作ウィジェット
+#
+local my_widget_path=$HOME/.dotfiles/zsh/my_widgets.zsh
+if [[ -e $my_widget_path ]] ; then
+  source $my_widget_path
+fi
 
-##  オプション
+#
+##  自作メソッド
+#
+local my_method_path=$HOME/.dotfiles/zsh/my_zmethod.zsh
+if [[ -e $my_method_path ]] ; then
+  source $my_method_path
+fi
+
+## bindkey
 
 bindkey -e
+
+##  オプション
 
 zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -41,14 +58,6 @@ setopt hist_reduce_blanks
 local alias_path=$HOME/.dotfiles/zsh/alias.zsh
 if [[ -e $alias_path ]] ; then
   source $alias_path
-fi
-
-#
-##  自作メソッド
-#
-local my_method_path=$HOME/.dotfiles/zsh/my_zmethod.zsh
-if [[ -e $my_method_path ]] ; then
-  source $my_method_path
 fi
 
 #
