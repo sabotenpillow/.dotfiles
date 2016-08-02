@@ -40,6 +40,7 @@ zstyle ':completion:*' ignore-parents parent pwd ..
 
 setopt no_beep
 # setopt auto_cd
+setopt auto_pushd
 setopt CHASE_LINKS    # リンクへ移動するとき実体へ移動
 setopt auto_param_keys
 setopt auto_menu      # 複数の補完候補は一覧表示
