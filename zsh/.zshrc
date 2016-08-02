@@ -32,6 +32,11 @@ fi
 
 bindkey -e
 
+## edit with editor on command line
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+
 # cdr
 # cdr, add-zsh-hook を有効にする
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
