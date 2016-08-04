@@ -9,7 +9,7 @@ zle -N _show-buffer-stack
 setopt noflowcontrol
 bindkey '^Q' _show-buffer-stack
 
-function _kill-backward-blank-word() {
+function _kill-backward-blank-word {
   # 現在位置から左のスペースまでをkillする
   zle set-mark-command
   zle vi-backward-blank-word
