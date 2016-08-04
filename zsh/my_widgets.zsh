@@ -9,6 +9,13 @@ zle -N show_buffer_stack
 setopt noflowcontrol
 bindkey '^Q' show_buffer_stack
 
+function kill_first_word {
+  zle beginning-of-line
+  zle kill-word
+}
+zle -N kill_first_word
+bindkey '^S' kill_first_word
+
 # function my_enter {
 #   if [[ -n "$BUFFER" ]]; then
 #     builtin zle .accept-line
