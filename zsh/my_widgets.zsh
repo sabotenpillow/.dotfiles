@@ -1,20 +1,29 @@
 # http://d.hatena.ne.jp/kei_q/20110308/1299594629
 # http://qiita.com/items/1f2c7793944b1f6cc346
-function show_buffer_stack {
+function _show-buffer-stack {
   POSTDISPLAY="
 stack: $LBUFFER"
   zle push-line-or-edit
 }
-zle -N show_buffer_stack
+zle -N _show-buffer-stack
 setopt noflowcontrol
-bindkey '^Q' show_buffer_stack
+bindkey '^Q' _show-buffer-stack
 
-function kill_first_word {
+function _kill-backward-blank-word() {
+  # 現在位置から左のスペースまでをkillする
+  zle set-mark-command
+  zle vi-backward-blank-word
+  zle kill-region
+}
+zle -N _kill-backward-blank-word
+bindkey '^S' _kill-backward-blank-word
+
+function _kill-first-word {
   zle beginning-of-line
   zle kill-word
 }
-zle -N kill_first_word
-bindkey '^S' kill_first_word
+zle -N _kill-first-word
+bindkey '^V' _kill-first-word
 
 # function my_enter {
 #   if [[ -n "$BUFFER" ]]; then
