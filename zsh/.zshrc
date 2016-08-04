@@ -63,7 +63,7 @@ fi
 #
 ##  zplug
 #
-export ZPLUG_HOME=$HOME/.dotfiles/zsh/plugins/.zplug
+export ZPLUG_HOME=$HOME/.zplug
 local zplug_init=$ZPLUG_HOME/init.zsh
 local zplug_property=$HOME/.dotfiles/zsh
 if [[ -e $zplug_init ]] ; then
