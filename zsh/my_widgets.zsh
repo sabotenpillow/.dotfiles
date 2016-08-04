@@ -1,3 +1,14 @@
+# http://d.hatena.ne.jp/kei_q/20110308/1299594629
+# http://qiita.com/items/1f2c7793944b1f6cc346
+function show_buffer_stack {
+  POSTDISPLAY="
+stack: $LBUFFER"
+  zle push-line-or-edit
+}
+zle -N show_buffer_stack
+setopt noflowcontrol
+bindkey '^Q' show_buffer_stack
+
 # function my_enter {
 #   if [[ -n "$BUFFER" ]]; then
 #     builtin zle .accept-line
