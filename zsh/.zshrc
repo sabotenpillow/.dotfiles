@@ -127,3 +127,6 @@ man() {
     LESS_TERMCAP_us=$(printf "\e[1;32m") \
     man "$@"
 }
+
+## fzf path
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
