@@ -32,7 +32,28 @@ fi
 
 bindkey -e
 
-##  オプション
+## edit with editor on command line
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+
+# cdr
+# cdr, add-zsh-hook を有効にする
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+ 
+# cdr の設定
+# zstyle ':completion:*:*:cdr:*:*' menu selection
+# zstyle ':completion:*:*:cdr:*:*' menu select
+# zstyle ':completion:*' menu selection
+# zstyle ':completion:*' menu select
+zstyle ':completion:*' recent-dirs-insert both
+zstyle ':chpwd:*' recent-dirs-max 500
+zstyle ':chpwd:*' recent-dirs-default true
+zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/shell/chpwd-recent-dirs"
+zstyle ':chpwd:*' recent-dirs-pushd true
+
+## オプション
 
 zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -40,6 +61,7 @@ zstyle ':completion:*' ignore-parents parent pwd ..
 
 setopt no_beep
 # setopt auto_cd
+setopt auto_pushd
 setopt CHASE_LINKS    # リンクへ移動するとき実体へ移動
 setopt auto_param_keys
 setopt auto_menu      # 複数の補完候補は一覧表示
@@ -105,5 +127,3 @@ man() {
     LESS_TERMCAP_us=$(printf "\e[1;32m") \
     man "$@"
 }
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
