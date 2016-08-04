@@ -16,7 +16,7 @@ SAVEHIST=100000
 
 # bindkey -e
 bindkey -v
-source show-vimode
+source $HOME/.dotfiles/zsh/show-vimode
 
 bindkey "^@" set-mark-command
 bindkey "^A" beginning-of-line
