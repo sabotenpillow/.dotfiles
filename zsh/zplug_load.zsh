@@ -17,3 +17,8 @@ zplug load --verbose
 if zplug check b4b4r07/enhancd; then
   export ENHANCD_FILTER=fzf-tmux
 fi
+if zplug check hchbaw/opp.zsh; then
+  source $ZPLUG_HOME/repos/hchbaw/opp.zsh/opp/textobj-between.zsh
+  source $ZPLUG_HOME/repos/hchbaw/opp.zsh/opp/surround.zsh
+fi
+
