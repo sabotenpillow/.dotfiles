@@ -12,6 +12,14 @@ HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 
+#
+##  自作メソッド
+#
+local my_method_path=$HOME/.dotfiles/zsh/my_zmethod.zsh
+if [[ -e $my_method_path ]] ; then
+  source $my_method_path
+fi
+
 ## bindkey
 
 # bindkey -e
@@ -168,14 +176,6 @@ has_widgets 'history-substring-search-down' &&
 local my_widget_path=$HOME/.dotfiles/zsh/my_widgets.zsh
 if [[ -e $my_widget_path ]] ; then
   source $my_widget_path
-fi
-
-#
-##  自作メソッド
-#
-local my_method_path=$HOME/.dotfiles/zsh/my_zmethod.zsh
-if [[ -e $my_method_path ]] ; then
-  source $my_method_path
 fi
 
 ## edit with editor on command line
