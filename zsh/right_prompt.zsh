@@ -28,7 +28,7 @@ function get-branch-status() {
     local reset
     branchname=`get-branch-name`
     if [[ $branchname == 'master' ]] ; then
-      git_mark='\uE0A0' # '\u25B2'
+      git_mark='\u25CF' # '\u25B2'
       deco_out_left='\u2503'
     else
       git_mark='\uE0A0'
