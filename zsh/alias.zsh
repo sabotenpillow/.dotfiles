@@ -8,6 +8,7 @@ alias -g L='| less'
 alias -g W='| wc'
 alias -g H='| head -q'
 alias -g T='| tail'
+alias -g X='| xargs'
 
 ## alias for my zmethod
 alias -g B='"$(git_current_branch_name)"'
