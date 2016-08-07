@@ -126,6 +126,10 @@ bindkey "^[P" history-search-backward
 bindkey "^[Q" push-line
 bindkey "^[S" spell-word
 bindkey "^[T" transpose-words
+bindkey "^[b" backward-word
+bindkey "^[d" kill-word
+bindkey "^[f" forward-word
+# bindkey "^[l" down-case-word
 
 # Easy to escape
 bindkey -M viins 'jj'  vi-cmd-mode
