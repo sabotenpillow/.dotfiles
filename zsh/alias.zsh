@@ -18,7 +18,7 @@ alias -g B='"$(git_current_branch_name)"'
 #
 alias al='alias'
 alias hist='history'
-alias ztime='time(zsh -i -c exit)'
+alias ztime='time (zsh -i -c exit)'
 alias ls='ls --color=auto'
 alias la='ls -A'
 alias ll='ls -l'
