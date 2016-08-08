@@ -227,6 +227,7 @@ setopt auto_param_slash
 setopt mark_dirs
 setopt magic_equal_subst    # = の後をパス名として補完
 setopt noautoremoveslash
+setopt list_types
 
 #
 ##  エイリアス
