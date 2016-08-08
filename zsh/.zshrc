@@ -284,8 +284,12 @@ man() {
 }
 
 ## slarized
-# eval $(dircolors $HOME/.solarized/dircolors.ansi-universal)
 eval $(dircolors $HOME/.solarized/dircolors.256dark)
+
+## set color when completion
+if [ -n "$LS_COLORS" ]; then
+    zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+fi
 
 ## fzf path
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
