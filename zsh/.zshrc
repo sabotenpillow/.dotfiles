@@ -225,6 +225,7 @@ setopt notify
 # setopt correct
 setopt auto_param_slash
 setopt mark_dirs
+setopt magic_equal_subst    # = の後をパス名として補完
 
 #
 ##  エイリアス
