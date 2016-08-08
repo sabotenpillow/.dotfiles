@@ -37,3 +37,7 @@ if [ `which cut` ] && [ $SSH_CONNECTION ] ; then
 # elif [ `which nslookup` ] && [ `which hostname` ] ; then
 #   export IP_ADDRESS=`nslookup \`hostname\` | grep Address | tail -n +2 | cut -f2 -d ' '`
 fi
+
+export LESS='-iMR'
+# src-highlight-path="`which src-hilite-lesspipe.sh`"
+# export LESSOPEN="| ${src-highlight-path} %s"
