@@ -283,5 +283,9 @@ man() {
     man "$@"
 }
 
+## slarized
+# eval $(dircolors $HOME/.solarized/dircolors.ansi-universal)
+eval $(dircolors $HOME/.solarized/dircolors.256dark)
+
 ## fzf path
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
