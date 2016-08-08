@@ -8,3 +8,4 @@ ln -fs .dotfiles/zsh/.zlogout
 ln -fs .dotfiles/tmux/.tmux.conf
 ln -fs .dotfiles/tig/.tigrc
 ln -fs .dotfiles/.gemrc
+ln -fs .dotfiles/.lesskey
