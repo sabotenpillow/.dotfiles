@@ -9,3 +9,4 @@ ln -fs .dotfiles/tmux/.tmux.conf
 ln -fs .dotfiles/tig/.tigrc
 ln -fs .dotfiles/.gemrc
 ln -fs .dotfiles/.lesskey
+ln -fs .dotfiles/.mostrc

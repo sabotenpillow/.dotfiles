@@ -1,0 +1,8 @@
+## see: http://qita.com/takiuchi/items/3d5cec8326a27be0605b
+
+setkey "up" "k"
+setkey "down" "j"
+setkey "column_left" "h"
+setkey "column_right" "l"
+setkey "page_left" "^h"
+setkey "page_right" "^l"
