@@ -16,7 +16,7 @@ if [ `which vagrant` ]; then
   vms_process=`ps x | grep virtualbox | grep VBoxHeadless`  # ps x G virtualbox G VBoxHeadless | cut -d ' ' -f17
   # if [ $? -eq 0 ]; then
   if ! [ -z vms_process ]; then
-    echo "${fg[red]}===== running VMs =====${reset_color}";
+    echo "${fg[magenta]}===== running VMs =====${reset_color}";
     echo "$vms_process" | cut -d ' ' -f17; echo
   fi
   # if ! [ -z running_vms ]; then
