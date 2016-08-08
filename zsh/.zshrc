@@ -221,8 +221,10 @@ setopt list_packed    # 補完候補を詰めて表示
 setopt extended_history
 setopt share_history
 setopt hist_reduce_blanks
-# setopt notify
+setopt notify
 # setopt correct
+setopt auto_param_slash
+setopt mark_dirs
 
 #
 ##  エイリアス
