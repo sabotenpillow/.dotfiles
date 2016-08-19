@@ -1,6 +1,9 @@
 export TERM=xterm-256color
 # export EDITOR=vim
 
+## local path
+[ -d $HOME/.local ] && export PATH="$HOME/.local/bin:$PATH"
+
 ## lpm path
 [ -d $HOME/local-packages-repository ] && export PATH="$HOME/local-packages-repository/bin:$PATH"
 
