@@ -38,6 +38,8 @@ STATUS_COLOR='%{[38;5;001m%}'  # end status color
 DECO_F_COLOR='%{[38;5;093m%}'    # last color
 DECO_L_COLOR='%{[38;5;255m%}'    # last color
 COMMAND_COLOR='%{[38;5;255m%}' # command color
+HISTORY_COLOR='%{[38;5;111m%}' # command color
+HISTORY_BCOLOR='%{[30;48;5;235m%}' # command color
 RESET='%{[0m%}'
 
 
@@ -74,7 +76,7 @@ set_color () {
 [${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${IP_COLOR}${ip_addr}${RESET}] ${DIRC_COLOR}%~ ${BORDER_COLOR}"
   fill_char
   PROMPT="${PROMPT}
-${DECO_F_COLOR}:(%#%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${DECO_L_COLOR}):${RESET} "
+${HISTORY_BCOLOR}${HISTORY_COLOR}%!${RESET}${DECO_F_COLOR}:(%#%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${DECO_L_COLOR}):${RESET} "
 #   PROMPT="${PROMPT}
 # ${VECTOR_COLOR}${vector_f}${INLINE_COLOR}${status_code_f}%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${INLINE_COLOR}${status_code_l}${VECTOR_COLOR}${vector_l}${RESET}"
 

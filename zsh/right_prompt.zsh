@@ -36,7 +36,7 @@ function get-branch-status() {
     fi
 #     deco_out_left='\u2503' # '\uE0B2 '
 #     deco_out_right='\u2503' # '\uE0B2 '
-    deco_in_left=${git_mark}' ' # '\u2016\uE0A0 '
+    deco_in_left=' '${git_mark}' ' # '\u2016\uE0A0 '
     deco_in_right='\u2503'
     output=`${git} status 2> /dev/null`
     if [[ -n `echo $output | grep '^nothing to commit'` ]]; then
