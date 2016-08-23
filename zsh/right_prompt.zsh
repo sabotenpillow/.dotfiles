@@ -59,9 +59,10 @@ function get-branch-status() {
     in_color='%{'${fg[black]}${in_color}'%}'
     reset='%{'${reset_color}'%}'
     branchname=${branchname}' '
+    local stash=`git_stash_count`
 #     branchstatus=${out_color}${deco_out_left}${in_color}${deco_in_left}${branchname} #${out_color}${deco_in_right}
     # branchstatus=${in_color}${deco_in_left}${branchname} #${out_color}${deco_in_right}
-    branchstatus=${out_color}${deco_out_left}${in_color}${deco_in_left}${branchname} #${out_color}${deco_in_right}
+    branchstatus=${stash}${out_color}${deco_out_left}${in_color}${deco_in_left}${branchname} #${out_color}${deco_in_right}
 #     branchstatus=${out_color}${deco_out_left}${in_color}${deco_in_left}${branchname}${in_right_color}${deco_in_right} # ${out_color}${deco_out_right}
     echo ${branchstatus}
 }
@@ -117,3 +118,15 @@ YELLOW="%{${bg[yellow]}%}"
 #   echo "${color} \uE0A0 ${name}${action}${RESET}"
 # }
 
+## git stash count
+function git_stash_count {
+  local COUNT=$(git stash list 2>/dev/null | wc -l | tr -d ' ')
+  if [ "$COUNT" -ge 0 ]; then
+    local color='093'
+    local fg_color="%{[38;5;${color}m%}"
+    local bg_color="%{[30;48;5;${color}m%}"
+    local char_color='%{[38;5;255m%}'
+    local separator='\ue0b2'
+    echo "${fg_color}${separator}${bg_color}${char_color}$COUNT"
+  fi
+}
