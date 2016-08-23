@@ -127,6 +127,6 @@ function git_stash_count {
     local bg_color="%{[30;48;5;${color}m%}"
     local char_color='%{[38;5;255m%}'
     local separater='\ue0c7'
-    echo "${fg_color}${separater}${bg_color}${char_color} $COUNT"
+    echo "${fg_color}${separater}${bg_color}${char_color}$COUNT"
   fi
 }
