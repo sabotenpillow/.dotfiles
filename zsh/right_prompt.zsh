@@ -27,7 +27,7 @@ function get-branch-status() {
     local out_color in_color in_right_color
     local reset
     branchname=`get-branch-name`
-    deco_out_left='\ue0b2'
+    deco_out_left='\ue0ba'
     if [[ $branchname == 'master' ]] ; then
       git_mark='\u25CF ' # '\u25B2'
       # deco_out_left='\u2503'
@@ -126,7 +126,7 @@ function git_stash_count {
     local fg_color="%{[38;5;${color}m%}"
     local bg_color="%{[30;48;5;${color}m%}"
     local char_color='%{[38;5;255m%}'
-    local separator='\ue0b2'
-    echo "${fg_color}${separator}${bg_color}${char_color}$COUNT"
+    local separater='\ue0c7'
+    echo "${fg_color}${separater}${bg_color}${char_color} $COUNT"
   fi
 }
