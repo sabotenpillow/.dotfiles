@@ -27,16 +27,18 @@ function get-branch-status() {
     local out_color in_color in_right_color
     local reset
     branchname=`get-branch-name`
+    deco_out_left='\ue0b2'
     if [[ $branchname == 'master' ]] ; then
       git_mark='\u25CF ' # '\u25B2'
-      deco_out_left='\u2503'
+      # deco_out_left='\u2503'
     else
-      git_mark='\uE0A0'
-      deco_out_left='\uE0A1 \u2503'
+      git_mark='\uE0A0 '
+      # deco_out_left='\uE0A1 \u2503'
     fi
 #     deco_out_left='\u2503' # '\uE0B2 '
 #     deco_out_right='\u2503' # '\uE0B2 '
     deco_in_left=' '${git_mark} # '\u2016\uE0A0 '
+    deco_in_left=${git_mark} # '\u2016\uE0A0 '
     deco_in_right='\u2503'
     output=`${git} status 2> /dev/null`
     if [[ -n `echo $output | grep '^nothing to commit'` ]]; then
@@ -58,7 +60,8 @@ function get-branch-status() {
     reset='%{'${reset_color}'%}'
     branchname=${branchname}' '
 #     branchstatus=${out_color}${deco_out_left}${in_color}${deco_in_left}${branchname} #${out_color}${deco_in_right}
-    branchstatus=${in_color}${deco_in_left}${branchname} #${out_color}${deco_in_right}
+    # branchstatus=${in_color}${deco_in_left}${branchname} #${out_color}${deco_in_right}
+    branchstatus=${out_color}${deco_out_left}${in_color}${deco_in_left}${branchname} #${out_color}${deco_in_right}
 #     branchstatus=${out_color}${deco_out_left}${in_color}${deco_in_left}${branchname}${in_right_color}${deco_in_right} # ${out_color}${deco_out_right}
     echo ${branchstatus}
 }
