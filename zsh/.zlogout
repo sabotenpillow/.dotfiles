@@ -6,7 +6,7 @@ if [ `which vagrant` ]; then
   # if [ $? -eq 0 ]; then
   if ! [ -z vms_process ]; then
     echo "${fg[red]}===== VM is running =====${reset_color}";
-    echo "$vms_process" | cut -d ' ' -f18; echo
+    echo "$vms_process" | sed -re 's/ +/ /g' | cut -d ' ' -f7; echo
   fi
   # if ! [ -z running_vms ]; then
   #   echo "${fg[red]}===== VM is running =====${reset_color}";
