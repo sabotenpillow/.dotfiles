@@ -98,6 +98,7 @@ alias medic='echo "\u2624 \u2625"'
 alias astro='echo "\u2609 \u263C \u263D \u263E \u263F \u2640 \u2641 \u2642 \u2643 \u2644 \u2645 \u2646 \u2647"'
 alias haka='sudo haka'
 alias hakac='sudo hakactl'
+alias hakalog="sudo tail -f /var/log/syslog | grep 'haka\\['"
 
 #
 # 自作メソッドのエイリアス
