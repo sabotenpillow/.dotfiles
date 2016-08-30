@@ -29,6 +29,7 @@ alias lt='pwd;find . | sort | sed "1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/|
 alias grep='grep --color=auto'
 alias e='emacs'
 alias v='vim'
+alias gg='git grep'
 alias gs='git status'
 alias gr='git reflog'
 alias gd='git diff'
