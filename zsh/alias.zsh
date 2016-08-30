@@ -104,3 +104,5 @@ alias hakalog="sudo tail -f /var/log/syslog | grep 'haka\\['"
 # 自作メソッドのエイリアス
 #
 alias grt='git-root'
+# echo "\uf10c \uf011 \uf0da \uf140 \uf1ce \uf168 \uf169 \uf110 \uf021"
+# echo "        "
