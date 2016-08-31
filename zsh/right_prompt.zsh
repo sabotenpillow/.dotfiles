@@ -29,7 +29,7 @@ function get-branch-status() {
     branchname=`get-branch-name`
     deco_out_left='\ue0ba'
     if [[ $branchname == 'master' ]] ; then
-      git_mark='\u25CF ' # '\u25B2'
+      git_mark='\uF011 ' # '\u25B2'
       # deco_out_left='\u2503'
     else
       git_mark='\uE0A0 '
