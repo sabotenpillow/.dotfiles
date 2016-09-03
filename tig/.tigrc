@@ -1,7 +1,7 @@
 ## --------------------------------------------------
 ## see: https://github.com/jonas/tig/blob/master/tigrc
 ## --------------------------------------------------
-source ~/.dotfiles/tig/.tigrc.jonas
+# source ~/.dotfiles/tig/.tigrc.jonas
 
 ## --------------------------------------------------
 ## set layouts
