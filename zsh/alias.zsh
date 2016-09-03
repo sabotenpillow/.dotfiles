@@ -101,6 +101,8 @@ alias astro='echo "\u2609 \u263C \u263D \u263E \u263F \u2640 \u2641 \u2642 \u264
 alias haka='sudo haka'
 alias hakac='sudo hakactl'
 alias hakalog="sudo tail -f /var/log/syslog | grep 'haka\\['"
+alias ipt='sudo iptables'
+alias tcpd='sudo tcpdump'
 
 #
 # 自作メソッドのエイリアス
