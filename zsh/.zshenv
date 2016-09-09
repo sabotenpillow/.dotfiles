@@ -1,6 +1,9 @@
 export TERM=xterm-256color
 # export EDITOR=vim
 
+## my scripts path
+[ -d $HOME/.my_scripts ] && export PATH="$HOME/.my_scripts/bin:$PATH"
+
 ## local path
 [ -d $HOME/.local ] && export PATH="$HOME/.local/bin:$PATH"
 
