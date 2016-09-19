@@ -1,1 +1,1 @@
-以下のファイル管理 - .zshrc - .zshenv - .tmux.conf
+# zsh### reference * http://lucentbeing.com/writing/archives/a-guide-to-256-color-codes/# tmux
