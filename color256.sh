@@ -3,6 +3,7 @@
 # 256色のカラーパレットを表示する
 #  bash と zsh にて実行可能
 #
+# See: http://yonchu.hatenablog.com/entry/2012/10/20/044603
 
 target_shell=$1
 
