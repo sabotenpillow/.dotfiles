@@ -1,12 +1,3 @@
-## .bashrc
-
-## Source global definitions
-# if [ -f /etc/bashrc ]; then
-# 	. /etc/bashrc
-# fi
-
-## User specific aliases and functions
-
 alias al='alias'
 alias hist='history'
 alias histi='history -iD'
@@ -95,13 +86,3 @@ alias hakalog="sudo tail -f /var/log/syslog | grep 'haka\\['"
 alias ipt='sudo iptables'
 alias tcpd='sudo tcpdump'
 alias vbm='VBoxManage'
-
-## prompt
-
-PS1="\n[[38;05;124m\u\e[00m[38;05;255m@\e[00m[38;05;027m\h\e[00m] [38;05;171m\w\e[00m\n\$ "
-
-## slarized
-eval $(dircolors $HOME/.solarized/dircolors.256dark)
-
-## fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
