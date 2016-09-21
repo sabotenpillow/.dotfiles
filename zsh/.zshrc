@@ -225,11 +225,13 @@ setopt hist_no_store
 setopt hist_reduce_blanks
 setopt notify
 # setopt correct
-setopt auto_param_slash
 setopt mark_dirs
 setopt magic_equal_subst    # = の後をパス名として補完
+setopt auto_param_slash
 setopt noautoremoveslash
 setopt list_types
+setopt hist_verify
+setopt complete_in_word
 
 #
 ##  エイリアス
