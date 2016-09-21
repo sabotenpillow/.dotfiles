@@ -103,6 +103,7 @@ alias hakac='sudo hakactl'
 alias hakalog="sudo tail -f /var/log/syslog | grep 'haka\\['"
 alias ipt='sudo iptables'
 alias tcpd='sudo tcpdump'
+alias vbm='VBoxManage'
 
 #
 # 自作メソッドのエイリアス
