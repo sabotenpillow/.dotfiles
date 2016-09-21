@@ -62,6 +62,7 @@ bind generic rsorg ?git reset ORIG_HEAD
 bind generic rshorg ?git reset --hard ORIG_HEAD
 # bind generic rf ?git reflog --pretty=raw \| tig --pretty=raw
 bind generic rf ?git reflog --pretty=raw \| tig
+bind generic revert ?git revert %(commit)
 
 ## main
 
