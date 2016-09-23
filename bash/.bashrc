@@ -229,3 +229,7 @@ GIT_BRANCH="$(branch-status-check)"
 # RPROMPT="\[\e[$[COLUMNS]D\]\[\e[1;31m\]\[\e[$[COLUMNS-$(length $(init-prompt-git-branch))]C\]${GIT_BRANCH}\[\e[$[COLUMNS]D\]\[\e[0m\]"
 RPROMPT="$GIT_BRANCH"
 PS1="\n[${USER}\u${RESET}${AT}@${RESET}${HOST}\h${RESET}] ${DIRC}\w$RESET\n\$ ${RPROMPT}"
+
+## simple prompt
+# DOLLAR="[01;38;5;171m"
+# PS1="${DOLLAR}\$ ${RESET}"
