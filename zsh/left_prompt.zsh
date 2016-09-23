@@ -27,7 +27,7 @@ fill_char () {
 }
 
 
-USER_COLOR='%{[38;5;057m%}'    # user name color
+USER_COLOR='%{[38;5;171m%}'    # user name color
 HOST_COLOR='%{[38;5;040m%}'    # hsot name color
 IP_COLOR='%{[38;5;208m%}'      # IP address color
 DIRC_COLOR='%{[38;5;031m%}'    # current directory color

@@ -231,5 +231,5 @@ RPROMPT="$GIT_BRANCH"
 PS1="\n[${USER}\u${RESET}${AT}@${RESET}${HOST}\h${RESET}] ${DIRC}\w$RESET\n\$ ${RPROMPT}"
 
 ## simple prompt
-# DOLLAR="[01;38;5;171m"
-# PS1="${DOLLAR}\$ ${RESET}"
+DOLLAR="[01;38;5;171m"
+PS1="${DOLLAR}\$ ${RESET}"
