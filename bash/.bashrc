@@ -125,13 +125,13 @@ function branch-status-check() {
     branchname=`get-branch-name`
     # ブランチ名が無いので除外
     [[ -z $branchname ]] && return
-    suffix='%{'${reset_color}'%}'
+    suffix="${RESET}"
     echo `get-branch-status`${suffix}
 }
 function get-branch-name() {
-    local git==git
+    local git='git'
     # gitディレクトリじゃない場合のエラーを捨てる
-    echo `${git} rev-parse --abbrev-ref HEAD 2> /dev/null`
+    echo $(${git} rev-parse --abbrev-ref HEAD 2> /dev/null)
 }
 
 # mark of branch prompt -> |⭠, :|
@@ -140,6 +140,7 @@ function get-branch-status() {
     local untracked="190"
     local unstaged="160"
     local other="045"
+    local default="[38;05;000m"
     local nothing_F="[38;05;${nothing}m"
     local nothing_B="[30;48;05;${nothing}m"
     local untracked_F="[38;05;${untracked}m"
@@ -148,7 +149,7 @@ function get-branch-status() {
     local unstaged_B="[30;48;05;${unstaged}m"
     local other_F="[38;05;${other}m"
     local other_B="[30;48;05;${other}m"
-    local git==git branchstatus branchname
+    local git='git' branchstatus branchname
     local git_mark
     local deco_out_left deco_in_left deco_in_right deco_out_right
     local out_color in_color in_right_color
@@ -182,9 +183,9 @@ function get-branch-status() {
         in_color="${other_B}"
     fi
 #     in_right_color=${out_color}
-    out_color='%{'${out_color}'%}' # '%{'${bg[black]}${out_color}'%}'
-    in_color='%{'${fg[black]}${in_color}'%}'
-    reset='%{'${reset_color}'%}'
+    out_color=${out_color} # '%{'${bg[black]}${out_color}'%}'
+    in_color=${default}${in_color}
+    reset=${RESET}
     branchname=${branchname}' '
     local stash=`git_stash_count`
 #     branchstatus=${out_color}${deco_out_left}${in_color}${deco_in_left}${branchname} #${out_color}${deco_in_right}
@@ -217,15 +218,18 @@ function git_stash_count {
   local COUNT=$(git stash list 2>/dev/null | wc -l | tr -d ' ')
   if [ "$COUNT" -ge 0 ]; then
     local color='093'
-    local fg_color="%{[38;5;${color}m%}"
-    local bg_color="%{[30;48;5;${color}m%}"
-    local char_color='%{[38;5;255m%}'
+    local fg_color="[38;5;${color}m"
+    local bg_color="[30;48;5;${color}m"
+    local char_color='[38;5;255m%'
     local separater='\ue0c7'
     echo "${fg_color}${separater}${bg_color}${char_color}$COUNT"
   fi
 }
 
-GIT_BRANCH="$(branch-status-check)"
+TEST="testtesttest"
+# GIT_BRANCH="$(branch-status-check)"
+export GIT_BRANCH="`branch-status-check`"
 # RPROMPT="\[\e[$[COLUMNS]D\]\[\e[1;31m\]\[\e[$[COLUMNS-$(length $(init-prompt-git-branch))]C\]${GIT_BRANCH}\[\e[$[COLUMNS]D\]\[\e[0m\]"
-RPROMPT="$GIT_BRANCH"
-PS1="\n[${USER}\u${RESET}${AT}@${RESET}${HOST}\h${RESET}] ${DIRC}\w$RESET\n\$ ${RPROMPT}"
+RPROMPT="${GIT_BRANCH}"
+# PS1="\n[${USER}\u${RESET}${AT}@${RESET}${HOST}\h${RESET}] ${DIRC}\w$RESET\n\$ ${RPROMPT}"
+PS1="\n[${USER}\u${RESET}${AT}@${RESET}${HOST}\h${RESET}] ${DIRC}\w$RESET\n\$ $(branch-status-check)"
