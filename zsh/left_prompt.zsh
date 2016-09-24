@@ -27,7 +27,7 @@ fill_char () {
 }
 
 
-USER_COLOR='%{[38;5;057m%}'    # user name color
+USER_COLOR='%{[38;5;171m%}'    # user name color
 HOST_COLOR='%{[38;5;040m%}'    # hsot name color
 IP_COLOR='%{[38;5;208m%}'      # IP address color
 DIRC_COLOR='%{[38;5;031m%}'    # current directory color
@@ -77,7 +77,7 @@ set_color () {
   hist=`get-history`
 
   PROMPT="
-[${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${IP_COLOR}${ip_addr}${RESET}] ${DIRC_COLOR}%~ ${BORDER_COLOR}"
+:${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${IP_COLOR}${ip_addr}${RESET}: ${DIRC_COLOR}%~ ${BORDER_COLOR}"
   fill_char
   PROMPT="${PROMPT}
 ${hist}${DECO_F_COLOR}:(%#%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${DECO_L_COLOR}):${RESET} "

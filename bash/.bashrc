@@ -39,7 +39,7 @@ alias gtl='git tag -l'
 alias gta='git tag -a'
 alias gtn='git tag -n'
 alias gtd='git tag -d'
-alias gpush='git push'
+alias gpus='git push'
 alias gp='git pull'
 alias gb='git branch'
 alias gbd='git branch -d'
@@ -230,6 +230,9 @@ TEST="testtesttest"
 # GIT_BRANCH="$(branch-status-check)"
 export GIT_BRANCH="`branch-status-check`"
 # RPROMPT="\[\e[$[COLUMNS]D\]\[\e[1;31m\]\[\e[$[COLUMNS-$(length $(init-prompt-git-branch))]C\]${GIT_BRANCH}\[\e[$[COLUMNS]D\]\[\e[0m\]"
-RPROMPT="${GIT_BRANCH}"
-# PS1="\n[${USER}\u${RESET}${AT}@${RESET}${HOST}\h${RESET}] ${DIRC}\w$RESET\n\$ ${RPROMPT}"
-PS1="\n[${USER}\u${RESET}${AT}@${RESET}${HOST}\h${RESET}] ${DIRC}\w$RESET\n\$ $(branch-status-check)"
+RPROMPT="$GIT_BRANCH"
+PS1="\n[${USER}\u${RESET}${AT}@${RESET}${HOST}\h${RESET}] ${DIRC}\w$RESET\n\$ ${RPROMPT}"
+
+## simple prompt
+DOLLAR="[01;38;5;171m"
+PS1="${DOLLAR}\$ ${RESET}"
