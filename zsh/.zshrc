@@ -265,6 +265,8 @@ else
   [ -e $prompt ] && source $prompt
 fi
 
+# PROMPT="%{[38;5;012m%}%#%{[0m%} "
+
 #
 ## RIGHT PROMPT
 #
