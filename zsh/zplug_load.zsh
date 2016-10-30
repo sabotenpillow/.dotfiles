@@ -7,6 +7,7 @@ zplug "b4b4r07/enhancd", use:init.sh
 zplug "b4b4r07/zsh-vimode-visual", use:"*.sh"
 zplug "hchbaw/opp.zsh"
 # zplug "ardagnir/athame"
+zplug "hchbaw/auto-fu.zsh", at:pu, use:auto-fu.zsh
 
 if ! zplug check; then
   zplug install
@@ -21,5 +22,13 @@ fi
 if zplug check hchbaw/opp.zsh; then
   source $ZPLUG_HOME/repos/hchbaw/opp.zsh/opp/textobj-between.zsh
   source $ZPLUG_HOME/repos/hchbaw/opp.zsh/opp/surround.zsh
+fi
+if zplug check hchbaw/auto-fu.zsh; then
+  if has auto-fu-init; then
+    function zle-line-init() { auto-fu-init }
+    zle -N zle-line-init
+    zstyle ':auto-fu:var' postdisplay $''
+    zstyle ':completion:*' completer _expand _oldlist _complete _match _prefix _approximate _list _history
+  fi
 fi
 

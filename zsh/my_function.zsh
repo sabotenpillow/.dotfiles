@@ -29,3 +29,7 @@ has_keymap() {
   bindkey -l "$1" >/dev/null 2>&1
   return $?
 }
+
+has() {
+  type "$1" > /dev/null 2>&1
+}

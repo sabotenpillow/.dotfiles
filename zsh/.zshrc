@@ -15,9 +15,9 @@ SAVEHIST=100000
 #
 ##  自作メソッド
 #
-local my_method_path=$HOME/.dotfiles/zsh/my_zmethod.zsh
-if [[ -e $my_method_path ]] ; then
-  source $my_method_path
+local my_function_path=$HOME/.dotfiles/zsh/my_function.zsh
+if [[ -e $my_function_path ]] ; then
+  source $my_function_path
 fi
 
 ## bindkey
@@ -228,7 +228,8 @@ setopt notify
 setopt mark_dirs
 setopt magic_equal_subst    # = の後をパス名として補完
 setopt auto_param_slash
-setopt noautoremoveslash
+# setopt noautoremoveslash
+unsetopt autoremoveslash
 setopt list_types
 setopt hist_verify
 setopt complete_in_word
