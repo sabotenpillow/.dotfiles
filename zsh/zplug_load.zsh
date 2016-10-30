@@ -7,7 +7,7 @@ zplug "b4b4r07/enhancd", use:init.sh
 zplug "b4b4r07/zsh-vimode-visual", use:"*.sh"
 zplug "hchbaw/opp.zsh"
 # zplug "ardagnir/athame"
-zplug "hchbaw/auto-fu.zsh", at:pu, use:auto-fu.zsh
+# zplug "hchbaw/auto-fu.zsh", at:pu, use:auto-fu.zsh
 
 if ! zplug check; then
   zplug install

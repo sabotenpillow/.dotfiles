@@ -228,8 +228,8 @@ setopt notify
 setopt mark_dirs
 setopt magic_equal_subst    # = の後をパス名として補完
 setopt auto_param_slash
-# setopt noautoremoveslash
-unsetopt autoremoveslash
+setopt noautoremoveslash
+# unsetopt autoremoveslash
 setopt list_types
 setopt hist_verify
 setopt complete_in_word
