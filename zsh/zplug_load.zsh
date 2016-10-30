@@ -8,6 +8,7 @@ zplug "b4b4r07/zsh-vimode-visual", use:"*.sh"
 zplug "hchbaw/opp.zsh"
 # zplug "ardagnir/athame"
 # zplug "hchbaw/auto-fu.zsh", at:pu, use:auto-fu.zsh
+zplug "zsh-users/zsh-autosuggestions"
 
 if ! zplug check; then
   zplug install
@@ -32,3 +33,7 @@ if zplug check hchbaw/auto-fu.zsh; then
   fi
 fi
 
+if zplug check zsh-users/zsh-autosuggestions; then
+  bindkey '^[i' autosuggest-accept
+  bindkey '^[m' autosuggest-execute
+fi
