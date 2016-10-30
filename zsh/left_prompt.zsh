@@ -15,8 +15,8 @@ fill_char () {
   # fchr="■"
   # fchr="✚"
   # fchr="❚"
-  fchr="-"
-  # fchr="="
+  # fchr="-"
+  fchr="="
   # fchr="<"
   first_line
   while [ $REMAIN -gt 0 ]
@@ -31,7 +31,7 @@ USER_COLOR='%{[38;5;171m%}'    # user name color
 HOST_COLOR='%{[38;5;040m%}'    # hsot name color
 IP_COLOR='%{[38;5;208m%}'      # IP address color
 DIRC_COLOR='%{[38;5;039m%}'    # current directory color
-BORDER_COLOR='%{[38;5;240m%}'  # border color
+BORDER_COLOR='%{[38;5;012m%}'  # border color
 VECTOR_COLOR='%{[38;5;093m%}'  # arrow color
 INLINE_COLOR='%{[38;5;051m%}'  # in-line color
 STATUS_COLOR='%{[38;5;001m%}'  # end status color
