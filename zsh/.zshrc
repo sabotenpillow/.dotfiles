@@ -234,6 +234,18 @@ setopt list_types
 setopt hist_verify
 setopt complete_in_word
 
+zshaddhistory() {
+    local line=${1%%$'\n'}
+    local cmd=${line%% *}
+
+    # 以下の条件をすべて満たすものだけをヒストリに追加する
+    [[ ${#line} -ge 1
+        && ${cmd} != (m|man)
+        && ${cmd} != (users)
+        && ${cmd} != (last|lastlog)
+    ]]
+}
+
 #
 ##  エイリアス
 #
