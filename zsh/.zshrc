@@ -13,6 +13,14 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 #
+##  environment variables
+#
+local env_vars_path=$HOME/.dotfiles/zsh/env_vars.zsh
+if [[ -e $env_vars_path ]] ; then
+  source $env_vars_path
+fi
+
+#
 ##  自作メソッド
 #
 local my_function_path=$HOME/.dotfiles/zsh/my_function.zsh

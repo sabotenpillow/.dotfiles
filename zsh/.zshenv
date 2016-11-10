@@ -39,14 +39,3 @@ fi
 ## nvm path
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-## get IP address
-if [ `which cut` ] && [ $SSH_CONNECTION ] ; then
-  export IP_ADDRESS=`echo $SSH_CONNECTION | cut -f3 -d ' '`
-# elif [ `which nslookup` ] && [ `which hostname` ] ; then
-#   export IP_ADDRESS=`nslookup \`hostname\` | grep Address | tail -n +2 | cut -f2 -d ' '`
-fi
-
-export LESS='-iMR'
-# src-highlight-path="`which src-hilite-lesspipe.sh`"
-# export LESSOPEN="| ${src-highlight-path} %s"
