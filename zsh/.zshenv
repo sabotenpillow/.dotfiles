@@ -32,7 +32,7 @@ if [ -d $HOME/.goenv ] ; then
 fi
 
 ## go path
-if [ `which go` ] ; then
+if type go > /dev/null 2>&1; then
   export GOPATH="$HOME/gocode"
 fi
 
