@@ -34,6 +34,7 @@ fi
 ## go path
 if type go > /dev/null 2>&1; then
   export GOPATH="$HOME/gocode"
+  PATH="$GOPATH/bin:$PATH"
 fi
 
 ## nvm path
