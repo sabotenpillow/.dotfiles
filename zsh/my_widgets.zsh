@@ -4,6 +4,7 @@ function _show-buffer-stack {
   POSTDISPLAY="
 stack: $LBUFFER"
   zle push-line-or-edit
+  # zle reset-prompt
 }
 zle -N _show-buffer-stack
 setopt noflowcontrol
