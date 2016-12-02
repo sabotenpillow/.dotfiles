@@ -17,6 +17,7 @@ alias -g B='"$(git_current_branch_name)"'
 ##  alias
 #
 alias cdf='cd $_'
+alias cdl='cdr -l'
 alias al='alias'
 alias hist='history'
 alias histi='history -iD'
