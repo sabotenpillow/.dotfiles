@@ -21,10 +21,14 @@ bindkey '^S' _kill-backward-blank-word
 
 function _kill-first-word {
   zle beginning-of-line
-  # zle kill-word
-  zle set-mark-command
   zle vi-forward-blank-word
   zle backward-char
+  zle set-mark-command
+  zle vi-backward-blank-word
+  # zle kill-word
+  # zle vi-forward-blank-word
+  # zle vi-forward-blank-word-end
+  # zle forward-char
   zle kill-region
 }
 zle -N _kill-first-word
