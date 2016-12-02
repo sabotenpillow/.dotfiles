@@ -4,6 +4,7 @@ function _show-buffer-stack {
   POSTDISPLAY="
 stack: $LBUFFER"
   zle push-line-or-edit
+  # zle reset-prompt
 }
 zle -N _show-buffer-stack
 setopt noflowcontrol
@@ -20,7 +21,11 @@ bindkey '^S' _kill-backward-blank-word
 
 function _kill-first-word {
   zle beginning-of-line
-  zle kill-word
+  # zle kill-word
+  zle set-mark-command
+  zle vi-forward-blank-word
+  zle backward-char
+  zle kill-region
 }
 zle -N _kill-first-word
 bindkey '^V' _kill-first-word
