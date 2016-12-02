@@ -1,12 +1,12 @@
 #!/bin/sh
 
 cd $HOME
-ln -fs .dotfiles/zsh/.zshrc
-ln -fs .dotfiles/zsh/.zshenv
-ln -fs .dotfiles/zsh/.zprofile
-ln -fs .dotfiles/zsh/.zlogout
-ln -fs .dotfiles/tmux/.tmux.conf
-ln -fs .dotfiles/tig/.tigrc
-ln -fs .dotfiles/.gemrc
-ln -fs .dotfiles/.lesskey
-ln -fs .dotfiles/.mostrc
+ln -vfs .dotfiles/zsh/.zshrc
+ln -vfs .dotfiles/zsh/.zshenv
+ln -vfs .dotfiles/zsh/.zprofile
+ln -vfs .dotfiles/zsh/.zlogout
+ln -vfs .dotfiles/tmux/.tmux.conf
+ln -vfs .dotfiles/tig/.tigrc
+ln -vfs .dotfiles/.gemrc
+ln -vfs .dotfiles/.lesskey
+ln -vfs .dotfiles/.mostrc
