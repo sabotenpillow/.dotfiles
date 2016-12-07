@@ -38,6 +38,7 @@ alias vb='vim -b'
 alias gg='git grep'
 alias gs='git status'
 alias gr='git reflog'
+alias tgr='git reflog --pretty=raw | tig --pretty=raw'
 alias gd='git diff'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%C(yellow)%d%Creset'"
 alias gin='git init'
