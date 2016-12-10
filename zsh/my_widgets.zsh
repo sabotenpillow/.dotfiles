@@ -43,6 +43,30 @@ function _cd-parent-directory {
 zle -N _cd-parent-directory
 bindkey '^O' _cd-parent-directory
 
+# bindkey "^A" beginning-of-line
+# bindkey "^B" backward-char
+# bindkey "^E" end-of-line
+# bindkey "^F" forward-char
+# bindkey "^H" backward-delete-char
+# bindkey "^K" kill-line
+# bindkey "^S" history-incremental-search-forward
+# bindkey "^U" kill-whole-line
+# bindkey "^V" quoted-insert
+# bindkey "^W" backward-kill-word
+
+function _forward-char-or-cdr {
+  if [ -z $BUFFER ] ; then
+    cdr
+    zle accept-line
+  else
+    zle forward-char
+  fi
+}
+zle -N _forward-char-or-cdr
+bindkey '^F' _forward-char-or-cdr
+
+
+
 # function my_enter {
 #   if [[ -n "$BUFFER" ]]; then
 #     builtin zle .accept-line
