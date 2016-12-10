@@ -65,6 +65,19 @@ function _forward-char-or-cdr {
 zle -N _forward-char-or-cdr
 bindkey '^F' _forward-char-or-cdr
 
+function _backward-char-or-home {
+  if [ -z $BUFFER ] ; then
+    if [ $PWD != $HOME ] ; then
+      builtin cd $HOME
+      zle accept-line
+    fi
+  else
+    zle backward-char
+  fi
+}
+zle -N _backward-char-or-home
+bindkey '^B' _backward-char-or-home
+
 
 
 # function my_enter {
