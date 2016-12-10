@@ -44,15 +44,11 @@ zle -N _cd-parent-directory
 bindkey '^O' _cd-parent-directory
 
 # bindkey "^A" beginning-of-line
-# bindkey "^B" backward-char
 # bindkey "^E" end-of-line
-# bindkey "^F" forward-char
-# bindkey "^H" backward-delete-char
-# bindkey "^K" kill-line
-# bindkey "^S" history-incremental-search-forward
-# bindkey "^U" kill-whole-line
 # bindkey "^V" quoted-insert
-# bindkey "^W" backward-kill-word
+
+# bindkey "^K" kill-line
+# bindkey "^U" kill-whole-line
 
 function _forward-char-or-cdr {
   if [ -z $BUFFER ] ; then
@@ -78,6 +74,28 @@ function _backward-char-or-home {
 zle -N _backward-char-or-home
 bindkey '^B' _backward-char-or-home
 
+
+# function _kill-line- {
+#   if [ -z $BUFFER ] ; then
+#     # any command
+#     zle accept-line
+#   else
+#     zle kill-line
+#   fi
+# }
+# zle -N _kill-line-
+# bindkey '^K' _kill-line-
+
+# function _kill-whole-line- {
+#   if [ -z $BUFFER ] ; then
+#     # any command
+#     zle accept-line
+#   else
+#     zle kill-whole-line
+#   fi
+# }
+# zle -N _kill-whole-line-
+# bindkey '^U' _kill-whole-line-
 
 
 # function my_enter {
