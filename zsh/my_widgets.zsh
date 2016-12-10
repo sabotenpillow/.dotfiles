@@ -35,8 +35,10 @@ zle -N _kill-first-word
 bindkey '^V' _kill-first-word
 
 function _cd-parent-directory {
-  builtin cd ..
-  zle accept-line
+  if [ -z $BUFFER ] ; then
+    builtin cd ..
+    zle accept-line
+  fi
 }
 zle -N _cd-parent-directory
 bindkey '^O' _cd-parent-directory
