@@ -1,0 +1,89 @@
+bind \cy yank
+bind \ey yank-pop
+bind -k right forward-char
+bind -k left backward-char
+bind \e\[C forward-char
+bind \e\[D backward-char
+bind \cx fish_clipboard_copy
+bind \cv fish_clipboard_paste
+bind \e cancel
+bind \t complete
+bind -k btab complete-and-search
+bind \e\n commandline\ -i\ \\n
+bind \e\r commandline\ -i\ \\n
+bind -k down down-or-search
+bind -k up up-or-search
+bind \e\[A up-or-search
+bind \e\[B down-or-search
+bind \e\eOC nextd-or-forward-word
+bind \e\eOD prevd-or-backward-word
+bind \e\e\[C nextd-or-forward-word
+bind \e\e\[D prevd-or-backward-word
+bind \eO3C nextd-or-forward-word
+bind \eO3D prevd-or-backward-word
+bind \e\[3C nextd-or-forward-word
+bind \e\[3D prevd-or-backward-word
+bind \e\[1\;3C nextd-or-forward-word
+bind \e\[1\;3D prevd-or-backward-word
+bind \e\[1\;9C nextd-or-forward-word
+bind \e\[1\;9D prevd-or-backward-word
+bind \e\eOA history-token-search-backward
+bind \e\eOB history-token-search-forward
+bind \e\e\[A history-token-search-backward
+bind \e\e\[B history-token-search-forward
+bind \eO3A history-token-search-backward
+bind \eO3B history-token-search-forward
+bind \e\[3A history-token-search-backward
+bind \e\[3B history-token-search-forward
+bind \e\[1\;3A history-token-search-backward
+bind \e\[1\;3B history-token-search-forward
+bind \e\[1\;9A history-token-search-backward
+bind \e\[1\;9B history-token-search-forward
+bind \e. history-token-search-backward
+bind \el __fish_list_current_token
+bind \ew 'set tok (commandline -pt); if test $tok[1]; echo; whatis $tok[1]; commandline -f repaint; end'
+bind \cl 'clear; commandline -f repaint'
+bind \cc __fish_cancel_commandline
+bind \cu backward-kill-line
+bind \cw backward-kill-path-component
+bind \e\[F end-of-line
+bind \e\[H beginning-of-line
+bind \ed kill-word
+bind \cd delete-or-exit
+bind -k f1 __fish_man_page
+bind \eh __fish_man_page
+bind \ep __fish_paginate
+bind \e\# __fish_toggle_comment_commandline
+bind '' self-insert
+bind \n execute
+bind \r execute
+bind \ck kill-line
+bind -k dc delete-char
+bind -k backspace backward-delete-char
+bind  backward-delete-char
+bind \e\[1\~ beginning-of-line
+bind \e\[4\~ end-of-line
+bind -k home beginning-of-line
+bind -k end end-of-line
+bind -k sdc backward-delete-char
+bind \ca beginning-of-line
+bind \ce end-of-line
+bind \cp up-or-search
+bind \cn down-or-search
+bind \cf forward-char
+bind \cb backward-char
+bind \ct transpose-chars
+bind \et transpose-words
+bind \eu upcase-word
+bind \ec capitalize-word
+bind \e backward-kill-word
+bind \eb backward-word
+bind \ef forward-word
+bind \e\[1\;5C forward-word
+bind \e\[1\;5D backward-word
+bind -k ppage beginning-of-history
+bind -k npage end-of-history
+bind \e\< beginning-of-buffer
+bind \e\> end-of-buffer
+bind \e\[I 'begin;end'
+bind \e\[O 'begin;end'
