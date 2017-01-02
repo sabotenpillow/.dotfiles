@@ -21,6 +21,14 @@ if command ls --version >/dev/null ^/dev/null
                     break
                 end
             end
+            # set solarized_color $HOME/.solarized/dircolors.256dark
+            # if test -e $solarized_color
+            #   set colorfile $solarized_color
+            #   echo 'hahahaha'
+            # else
+            #   echo 'hahahaha'
+            # end
+            set colorfile $HOME/.solarized/dircolors.256dark
             # Here we rely on the legacy behavior of `dircolors -c` producing output suitable for
             # csh in order to extract just the data we're interested in.
             set -gx LS_COLORS (dircolors -c $colorfile | string split ' ')[3]
