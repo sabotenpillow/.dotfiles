@@ -2,46 +2,44 @@ set fish_dir $HOME/.dotfiles/fish
 
 # set -gx LS_COLORS (dircolors $HOME/.solarized/dircolors.256dark)
 
-# source $fish_dir/alias.fish
-
-alias v 'vim'
-
 source $fish_dir/ls.fish
 
+# source $fish_dir/alias.fish
 #
-# Make ls use colors if we are on a system that supports that feature and writing to stdout.
+##  alias
 #
-# if command ls --version >/dev/null ^/dev/null
-#     # This appears to be GNU ls.
-#     function ls --description "List contents of directory"
-#         set -l param --color=auto
-#         if isatty 1
-#             set param $param --indicator-style=classify
-#         end
-#         command ls $param $argv
-#     end
-# 
-#     if not set -q LS_COLORS
-#         if command -s dircolors >/dev/null
-#             set -l colorfile
-#             for file in ~/.dir_colors ~/.dircolors /etc/DIR_COLORS
-#                 if test -f $file
-#                     set colorfile $file
-#                     break
-#                 end
-#             end
-#             # Here we rely on the legacy behavior of `dircolors -c` producing output suitable for
-#             # csh in order to extract just the data we're interested in.
-#             set -gx LS_COLORS (dircolors -c $colorfile | string split ' ')[3]
-#             # The value should always be quoted but be conservative and check first.
-#             if string match -qr '^([\'"]).*\1$' -- $LS_COLORS
-#                 set LS_COLORS (string match -r '^.(.*).$' $LS_COLORS)[2]
-#             end
-#         end
-#     end
-# else if command ls -G / >/dev/null ^/dev/null
-#     # It looks like BSD, OS X and a few more which support colors through the -G switch instead.
-#     function ls --description "List contents of directory"
-#         command ls -G $argv
-#     end
-# end
+# alias ls 'ls --color auto'
+alias sl 'ls'
+alias l 'ls'
+alias la 'ls -A'
+alias ll 'ls -l'
+alias lla 'ls -lA'
+alias lr 'ls -R'
+alias grep 'grep --color auto'
+alias e 'emacs'
+alias v 'vim'
+alias vr 'vim -R'
+alias vb 'vim -b'
+alias gg 'git grep'
+alias gs 'git status'
+alias gm 'git merge'
+alias gls 'git ls-files'
+alias gd 'git diff'
+alias gl "git log --graph --pretty format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%C(yellow)%d%Creset'"
+alias gin 'git init'
+alias gre 'git remote'
+alias grad 'git remote add'
+alias ga 'git add'
+alias gc 'git commit -m'
+alias gca 'git commit --amend'
+alias grs 'git reset'
+alias grshard 'git reset --hard'
+alias grv 'git revert'
+alias gps 'git push'
+alias gp 'git pull'
+alias gb 'git branch'
+alias gbd 'git branch -d'
+alias gbm 'git branch -m'
+alias gch 'git checkout'
+alias gcb 'git checkout -b'
+alias gcp 'git cherry-pick'
