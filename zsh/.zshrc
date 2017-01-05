@@ -59,6 +59,7 @@ add-zsh-hook chpwd chpwd_recent_dirs
 # zstyle ':completion:*:*:cdr:*:*' menu select
 # zstyle ':completion:*' menu selection
 # zstyle ':completion:*' menu select
+zstyle ':completion:*' completer _oldlist _complete _expand
 zstyle ':completion:*' recent-dirs-insert both
 zstyle ':chpwd:*' recent-dirs-max 500
 zstyle ':chpwd:*' recent-dirs-default true
@@ -68,7 +69,7 @@ zstyle ':chpwd:*' recent-dirs-pushd true
 ## オプション
 
 zstyle ':completion:*:default' menu select=2
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} r:|[.]=**'
 zstyle ':completion:*' ignore-parents parent pwd ..
 
 setopt no_beep
