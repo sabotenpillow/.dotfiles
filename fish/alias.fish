@@ -1,28 +1,25 @@
-#
-##  global alias
-#
 # alias -g   TELLME '&& echo; (echo $fg[green]SUCCEEDED || echo $fg[red]FAILED)'
-# alias -g   G  '| grep'
-# alias -g   Gv '| grep -v'
-# alias -g   L  '| less'
-# alias -g   W  '| wc'
-# alias -g   H  '| head -q'
-# alias -g   T  '| tail'
-# alias -g   X  '| xargs'
+# alias -g   G    '| grep'
+# alias -g   Gv   '| grep -v'
+# alias -g   L    '| less'
+# alias -g   W    '| wc'
+# alias -g   H    '| head -q'
+# alias -g   T    '| tail'
+# alias -g   X    '| xargs'
 
-## alias for my zmethod
 # alias -g B '"$(git_current_branch_name)"'
 
 #
 ##  alias
 #
+
 alias   cdf       'cd $_'
 alias   cdl       'cdr -l'
 alias   al        'alias'
 alias   hist      'history'
 alias   histi     'history -iD'
 alias   ztime     'time (zsh -i -c exit)'
-alias   ls        'ls --color auto'
+alias   ls        'ls --color=auto'
 alias   sl        'ls'
 alias   l         'ls'
 alias   la        'ls -A'
@@ -100,10 +97,10 @@ alias   hakalog   "sudo tail -f /var/log/syslog | grep 'haka\\['"
 alias   ipt       'sudo iptables'
 alias   tcpd      'sudo tcpdump'
 alias   vbm       'VBoxManage'
+alias rehaka 'sudo hakactl stop; and sudo haka'
 # alias lt 'pwd;find . | sort | sed "1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/|  /g"'
 # alias viewcolor 'for c in {000..255}; do echo -n "[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done'
 # alias backcolor 'for c in {000..255}; do echo -n "[30;48;5;${c}m $c" ; [ $(($c%36)) -eq 35 ] && echo;done'
-# alias rehaka 'sudo hakactl stop && sudo haka'
 # alias u '$(git )'
 
 #
