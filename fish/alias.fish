@@ -96,6 +96,8 @@ alias   hakac     'sudo hakactl'
 alias   hakalog   "sudo tail -f /var/log/syslog | grep 'haka\\['"
 alias   ipt       'sudo iptables'
 alias   tcpd      'sudo tcpdump'
+alias   tsk       'sudo tshark'
+alias   same      'sudo tshark'
 alias   vbm       'VBoxManage'
 alias rehaka 'sudo hakactl stop; and sudo haka'
 # alias lt 'pwd;find . | sort | sed "1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/|  /g"'
