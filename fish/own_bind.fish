@@ -1,5 +1,5 @@
-# function _cd-parent --description 'cd parent directory'
-#   cd ..
-# end
-# set -g fish_key_bindings _cd-parent
-# bind \co _cd-parent
+function fish_user_key_bindings
+  bind \co __cd-parent-directory
+  bind \cv __delete-current-command
+  bind \em __accept-autosuggestion-and-accept-line
+end

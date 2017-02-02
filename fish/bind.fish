@@ -1,1 +1,0 @@
-bind \em accept-autosuggestion
