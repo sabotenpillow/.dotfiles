@@ -1,4 +1,5 @@
 set TERM xterm-256color
+set LANG en_US.UTF-8
 # set EDITOR vim
 
 ## my scripts path
