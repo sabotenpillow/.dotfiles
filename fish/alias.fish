@@ -105,6 +105,10 @@ alias rehaka 'sudo hakactl stop; and sudo haka'
 # alias backcolor 'for c in {000..255}; do echo -n "[30;48;5;${c}m $c" ; [ $(($c%36)) -eq 35 ] && echo;done'
 # alias u '$(git )'
 
+## on Windows
+alias path2  'explorer'
+alias cygwin 'explorer "C:\cygwin64\home\Owner"'
+
 #
 # 自作メソッドのエイリアス
 #
