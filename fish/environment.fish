@@ -21,10 +21,11 @@ set LANG en_US.UTF-8
 # fi
 
 ## rbenv path
-# if [ -d $HOME/.rbenv ] ; then
-#   set PATH "$HOME/.rbenv/bin:$PATH"
-#   eval "$(rbenv init -)"
-# fi
+if test -d $HOME/.rbenv
+  set PATH $HOME/.rbenv/bin $PATH
+  # eval (rbenv init -)
+  set PATH $HOME/.rbenv/shims $PATH
+end
 
 ## goenv path
 # if [ -d $HOME/.goenv ] ; then
