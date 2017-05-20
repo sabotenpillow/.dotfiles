@@ -13,6 +13,7 @@
 ##  alias
 #
 
+alias   hiraku    'explorer (echo "C:\cygwin64"(pwd) | sed -e "s/\//\\\\\/g")'
 alias   cdf       'cd $_'
 alias   cdl       'cdr -l'
 alias   al        'alias'
