@@ -13,7 +13,9 @@
 ##  alias
 #
 
-alias   hiraku    'explorer (echo "C:\cygwin64"(pwd) | sed -e "s/\//\\\\\/g")'
+if test -n (uname | grep CYGWIN)
+  alias   hiraku    'explorer (echo "C:\cygwin64"(pwd) | sed -e "s/\//\\\\\/g")'
+end
 alias   cdf       'cd $_'
 alias   cdl       'cdr -l'
 alias   al        'alias'
