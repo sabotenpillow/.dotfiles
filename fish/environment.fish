@@ -12,13 +12,15 @@ set LANG en_US.UTF-8
 # [ -d $HOME/local-packages-repository ] and set PATH $HOME/local-packages-repository/bin $PATH
 
 ## linuxbrew path
-set PATH $HOME/.linuxbrew/bin $PATH
-# set MANPATH $HOME/.linuxbrew/share/man $MANPATH
-# set INFOPATH $HOME/.linuxbrew/share/info $INFOPATH
-# set LD_LIBRARY_PATH $HOME/.linuxbrew/lib $LD_LIBRARY_PATH
-# if [ -f $(brew --prefix)/etc/brew-wrap ];then
-#   source $(brew --prefix)/etc/brew-wrap
-# fi
+if test -d $HOME/.linuxbrew
+  set PATH $HOME/.linuxbrew/bin $PATH
+  # set MANPATH $HOME/.linuxbrew/share/man $MANPATH
+  # set INFOPATH $HOME/.linuxbrew/share/info $INFOPATH
+  # set LD_LIBRARY_PATH $HOME/.linuxbrew/lib $LD_LIBRARY_PATH
+  # if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  #   source $(brew --prefix)/etc/brew-wrap
+  # fi
+end
 
 ## rbenv path
 if test -d $HOME/.rbenv
