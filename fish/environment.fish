@@ -29,6 +29,13 @@ if test -d $HOME/.rbenv
   set PATH $HOME/.rbenv/shims $PATH
 end
 
+if test -d $HOME/.pyenv
+  set PYENV_ROOT $HOME/.pyenv
+  set PATH $PYENV_ROOT/bin $PATH
+  eval "(pyenv init -)"
+  # eval "(pyenv virtualenv-init -)"
+end
+
 ## goenv path
 # if [ -d $HOME/.goenv ] ; then
 #   set PATH $HOME/.goenv/bin $PATH
