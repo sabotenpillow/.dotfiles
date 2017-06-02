@@ -70,3 +70,7 @@ fzf:
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 cdr:
 	mkdir -p ~/.cache/shell
+
+pyenv:
+	-git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+	git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
