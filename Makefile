@@ -53,7 +53,8 @@ git:
 	git config --global push.default current
 	git config --global pull.default current
 brew:
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+	# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+	ruby -e "`curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install`"
 	brew install caskroom/cask/brew-cask
 solarized:
 	git clone git@github.com:seebi/dircolors-solarized.git ~/.solarized
