@@ -32,8 +32,10 @@ end
 if test -d $HOME/.pyenv
   set PYENV_ROOT $HOME/.pyenv
   set PATH $PYENV_ROOT/bin $PATH
-  eval "(pyenv init -)"
+  # eval "(pyenv init -)"
   # eval "(pyenv virtualenv-init -)"
+  eval (pyenv init -) # > /dev/null 2>&1
+  # eval (pyenv virtualenv-init -)
 end
 
 ## goenv path
