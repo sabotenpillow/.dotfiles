@@ -115,6 +115,8 @@ alias cygwin 'explorer "C:\cygwin64\home\Owner"'
 #
 # 自作メソッドのエイリアス
 #
-# alias grt 'git-root'
+alias grt 'git-root'
+alias glt 'git-latest'
+alias grp 'git-replace'
 # echo "\uf10c \uf011 \uf0da \uf140 \uf1ce \uf168 \uf169 \uf110 \uf021"
 # echo "        "
