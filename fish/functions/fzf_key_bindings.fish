@@ -1,1 +1,0 @@
-/home/arith/.fzf/shell/key-bindings.fish
