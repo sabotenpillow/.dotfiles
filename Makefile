@@ -5,9 +5,9 @@ temp:
 
 ## configuration
 fish:
-	mkdir -p $HOME/.config/fish/
-	ln -vfs $HOME/.dotfiles/fish/config.fish  $HOME/.config/fish/
-	ln -vs  $HOME/.dotfiles/fish/functions    $HOME/.config/fish/
+	mkdir -p ~/.config/fish/
+	ln -vfs ${HOME}/.dotfiles/fish/config.fish  ~/.config/fish/
+	ln -vs  $(HOME)/.dotfiles/fish/functions    ~/.config/fish/
 zsh:
 	ln -vfs .dotfiles/zsh/.zshrc    ~/
 	ln -vfs .dotfiles/zsh/.zshenv   ~/
@@ -32,18 +32,18 @@ clean-zsh:
 	-unlink ~/.zprofile
 	-unlink ~/.zlogout
 clean-fish:
-	-unlink $HOME/.config/fish/config.fish
-	-unlink $HOME/.config/fish/function
+	-unlink ~/.config/fish/config.fish
+	-unlink ~/.config/fish/functions
 clean-tmux:
-	unlink .dotfiles/tmux/.tmux.conf
+	unlink ~/.tmux.conf
 clean-tig:
-	unlink .dotfiles/tig/.tigrc
+	unlink ~/.tigrc
 clean-gem:
-	unlink .dotfiles/.gemrc
+	unlink ~/.gemrc
 clean-less:
-	unlink .dotfiles/.lesskey
+	unlink ~/.lesskey
 clean-most:
-	unlink .dotfiles/.mostrc
+	unlink ~/.mostrc
 
 ## other
 git:
