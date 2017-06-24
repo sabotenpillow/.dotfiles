@@ -102,11 +102,14 @@ alias   tcpd      'sudo tcpdump'
 alias   tsk       'sudo tshark'
 alias   same      'sudo tshark'
 alias   vbm       'VBoxManage'
-alias rehaka 'sudo hakactl stop; and sudo haka'
+alias   rehaka    'sudo hakactl stop; and sudo haka'
 # alias lt 'pwd;find . | sort | sed "1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/|  /g"'
 # alias viewcolor 'for c in {000..255}; do echo -n "[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done'
 # alias backcolor 'for c in {000..255}; do echo -n "[30;48;5;${c}m $c" ; [ $(($c%36)) -eq 35 ] && echo;done'
 # alias u '$(git )'
+if type peco_recentd > /dev/null 2>&1
+  alias zp 'peco_recentd'
+end
 
 ## on Windows
 alias path2  'explorer'
