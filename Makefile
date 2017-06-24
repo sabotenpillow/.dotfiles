@@ -65,7 +65,8 @@ tpm:
 		echo 'already cloned tpm'; \
 	fi
 zplug:
-	curl -sL zplug.sh/installer | zsh
+	# curl -sL zplug.sh/installer | zsh
+	curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
 fzf:
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 cdr:
