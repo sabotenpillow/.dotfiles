@@ -45,10 +45,20 @@ end
 # fi
 
 ## go path
-# if type go > /dev/null 2>&1; then
-#   set GOPATH $HOME/gocode
-#   PATH=$GOPATH/bin $PATH
-# fi
+if type go > /dev/null 2>&1
+  set GOPATH $HOME/go
+  if test -d $GOPATH
+    set PATH $GOPATH/bin $PATH
+  else
+    echo "exec 'mkdir $GOPATH!!!'"
+  end
+end
+
+## gvm path
+if test -d $HOME/.gvm
+  # set PATH $HOME/.gvm/scripts $PATH
+  # source $HOME/.gvm/scripts/gvm
+end
 
 ## nvm path
 # set NVM_DIR "$HOME/.nvm"
