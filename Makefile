@@ -64,6 +64,8 @@ tpm:
 	else \
 		echo 'already cloned tpm'; \
 	fi
+oh-my-fish:
+	curl -L https://get.oh-my.fish | fish
 zplug:
 	# curl -sL zplug.sh/installer | zsh
 	curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
@@ -72,6 +74,20 @@ fzf:
 cdr:
 	mkdir -p ~/.cache/shell
 
+## version management
 pyenv:
 	-git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 	git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+rbenv:
+	@if ! [ -d $HOME/.rbenv ] ; then \
+		echo "[38;5;190mcloning rbenv [0m" \
+		git clone https://github.com/sstephenson/rbenv.git ~/.rbenv \
+	fi
+	@if ! [ -d $HOME/.rbenv/plugins/ruby-build ] ; then \
+		echo "[38;5;190mcloning ruby-build [0m" \
+		git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build \
+	fi
+nvm:
+	git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
+gvm:
+	bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
