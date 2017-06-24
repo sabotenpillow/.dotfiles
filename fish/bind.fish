@@ -1,5 +1,6 @@
 function fish_user_key_bindings
-  bind \cr history-search-backward
+  # bind \cr history-search-backward
+  bind \cr peco_select_history
   bind \cs backward-kill-bigword
   bind \ei complete-and-search
 
