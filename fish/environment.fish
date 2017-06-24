@@ -50,14 +50,17 @@ if type go > /dev/null 2>&1
   if test -d $GOPATH
     set PATH $GOPATH/bin $PATH
   else
-    echo "exec 'mkdir $GOPATH!!!'"
+    warning_echo 'cyan' "exec 'mkdir $GOPATH!!!'"
   end
 end
 
 ## gvm path
 if test -d $HOME/.gvm
-  # set PATH $HOME/.gvm/scripts $PATH
-  # source $HOME/.gvm/scripts/gvm
+  if type bass > /dev/null 2>&1
+    bass source $HOME/.gvm/scripts/gvm
+  else
+    warning_echo 'cyan' 'install oh-my-fish & edc/bass!!!'
+  end
 end
 
 ## nvm path
