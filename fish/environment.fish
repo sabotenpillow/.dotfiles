@@ -66,3 +66,10 @@ end
 ## nvm path
 # set NVM_DIR "$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] and . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+## anyenv path
+if test -d $HOME/.anyenv
+  set PATH $HOME/.anyenv/bin $PATH
+  eval (anyenv init -) > /dev/null 2>&1
+end
+

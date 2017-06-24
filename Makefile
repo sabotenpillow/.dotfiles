@@ -75,6 +75,9 @@ cdr:
 	mkdir -p ~/.cache/shell
 
 ## version management
+anyenv:
+	git clone https://github.com/riywo/anyenv ~/.anyenv
+	exec $(SHELL) -l
 pyenv:
 	-git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 	git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
