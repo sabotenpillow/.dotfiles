@@ -26,7 +26,7 @@ end
 if test -d $HOME/.rbenv
   set PATH $HOME/.rbenv/bin $PATH
   # eval (rbenv init -)
-  # set PATH $HOME/.rbenv/shims $PATH
+  set PATH $HOME/.rbenv/shims $PATH
 end
 
 if test -d $HOME/.pyenv
