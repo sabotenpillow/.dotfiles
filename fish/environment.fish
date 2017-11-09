@@ -25,7 +25,7 @@ end
 ## rbenv path
 if test -d $HOME/.rbenv
   set PATH $HOME/.rbenv/bin $PATH
-  eval (rbenv init -)
+  # eval (rbenv init -)
   # set PATH $HOME/.rbenv/shims $PATH
 end
 
