@@ -6,7 +6,9 @@ set LANG en_US.UTF-8
 # [ -d $HOME/.my_scripts ] and set PATH $HOME/.my_scripts/bin $PATH
 
 ## local path
-# [ -d $HOME/.local ] and set PATH $HOME/.local/bin $PATH
+if test -d $HOME/.local
+  set PATH $HOME/.local/bin $PATH
+end
 
 ## lpm path
 # [ -d $HOME/local-packages-repository ] and set PATH $HOME/local-packages-repository/bin $PATH
