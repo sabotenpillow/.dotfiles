@@ -6,7 +6,7 @@ set LANG en_US.UTF-8
 # [ -d $HOME/.my_scripts ] and set PATH $HOME/.my_scripts/bin $PATH
 
 ## local path
-if test -d $HOME/.local
+if test -d $HOME/.local/bin
   set PATH $HOME/.local/bin $PATH
 end
 
