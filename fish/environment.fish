@@ -2,27 +2,22 @@ set TERM xterm-256color
 set LANG en_US.UTF-8
 # set EDITOR vim
 
-## my scripts path
-# [ -d $HOME/.my_scripts ] and set PATH $HOME/.my_scripts/bin $PATH
-
-## local path
-if test -d $HOME/.local/bin
-  set PATH $HOME/.local/bin $PATH
-end
-
 ## lpm path
 # [ -d $HOME/local-packages-repository ] and set PATH $HOME/local-packages-repository/bin $PATH
 
 ## linuxbrew path
-if test -d $HOME/.linuxbrew
-  set PATH $HOME/.linuxbrew/bin $PATH
-  # set MANPATH $HOME/.linuxbrew/share/man $MANPATH
-  # set INFOPATH $HOME/.linuxbrew/share/info $INFOPATH
-  # set LD_LIBRARY_PATH $HOME/.linuxbrew/lib $LD_LIBRARY_PATH
-  # if [ -f $(brew --prefix)/etc/brew-wrap ];then
-  #   source $(brew --prefix)/etc/brew-wrap
-  # fi
+if test -d /home/linuxbrew/.linuxbrew
+  eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 end
+# if test -d $HOME/.linuxbrew
+#   set PATH $HOME/.linuxbrew/bin $PATH
+#   # set MANPATH $HOME/.linuxbrew/share/man $MANPATH
+#   # set INFOPATH $HOME/.linuxbrew/share/info $INFOPATH
+#   # set LD_LIBRARY_PATH $HOME/.linuxbrew/lib $LD_LIBRARY_PATH
+#   # if [ -f $(brew --prefix)/etc/brew-wrap ];then
+#   #   source $(brew --prefix)/etc/brew-wrap
+#   # fi
+# end
 
 ## rbenv path
 if test -d $HOME/.rbenv
@@ -73,5 +68,13 @@ end
 if test -d $HOME/.anyenv
   set PATH $HOME/.anyenv/bin $PATH
   eval (anyenv init -) > /dev/null 2>&1
+end
+
+## my scripts path
+# [ -d $HOME/.my_scripts ] and set PATH $HOME/.my_scripts/bin $PATH
+
+## local path
+if test -d $HOME/.local/bin
+  set PATH $HOME/.local/bin $PATH
 end
 

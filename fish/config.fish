@@ -2,7 +2,7 @@ set fish_dir $HOME/.dotfiles/fish
 
 # set -gx LS_COLORS (dircolors $HOME/.solarized/dircolors.256dark)
 
-source $fish_dir/environment.fish
+#source $fish_dir/environment.fish
 source $fish_dir/ls.fish
 source $fish_dir/bind.fish
 source $fish_dir/prompt.fish
