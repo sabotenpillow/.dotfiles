@@ -5,6 +5,7 @@ temp:
 
 ## configuration
 fish:
+	ln -vfs ${HOME}/.dotfiles/bash/.bash_profile ~
 	mkdir -p ~/.config/fish/
 	ln -vfs ${HOME}/.dotfiles/fish/config.fish  ~/.config/fish/
 	ln -vs  $(HOME)/.dotfiles/fish/functions    ~/.config/fish/
