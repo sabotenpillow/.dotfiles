@@ -83,14 +83,11 @@ pyenv:
 	-git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 	git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 rbenv:
-	@if ! [ -d $HOME/.rbenv ] ; then \
-		echo "[38;5;190mcloning rbenv [0m" \
-		git clone https://github.com/sstephenson/rbenv.git ~/.rbenv \
-	fi
-	@if ! [ -d $HOME/.rbenv/plugins/ruby-build ] ; then \
-		echo "[38;5;190mcloning ruby-build [0m" \
-		git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build \
-	fi
+	[ -d $(HOME)/.rbenv ] || (echo "[38;5;190mcloning rbenv [0m"; \
+		git clone https://github.com/sstephenson/rbenv.git ~/.rbenv)
+	[ -d $(HOME)/.rbenv/plugins/ruby-build ] || \
+		echo "[38;5;190mcloning ruby-build [0m"; \
+		git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 nvm:
 	git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
 gvm:
