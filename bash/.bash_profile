@@ -3,7 +3,9 @@ export TERM=xterm-256color
 # export EDITOR=vim
 
 ## linuxbrew path
-if [ -d /home/linuxbrew/.linuxbrew ] ; then
+if [ -d $HOME/.linuxbrew ] ; then
+  eval $($HOME/.linuxbrew/bin/brew shellenv)
+elif [ -d /home/linuxbrew/.linuxbrew ] ; then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
 
@@ -51,4 +53,5 @@ export NVM_DIR="$HOME/.nvm"
 
 ## my scripts path
 [ -d $HOME/.my_scripts ] && export PATH="$HOME/.my_scripts/bin:$PATH"
-exec fish
+
+which fish > /dev/null && exec fish
