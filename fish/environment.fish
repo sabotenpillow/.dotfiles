@@ -42,14 +42,14 @@ end
 # fi
 
 ## go path
-if type go > /dev/null 2>&1
-  set GOPATH $HOME/go
-  if test -d $GOPATH
-    set PATH $GOPATH/bin $PATH
-  else
-    warning_echo 'cyan' "exec 'mkdir $GOPATH!!!'"
-  end
-end
+#if type go > /dev/null 2>&1
+#  set GOPATH $HOME/go
+#  if test -d $GOPATH
+#    set PATH $GOPATH/bin $PATH
+#  else
+#    warning_echo 'cyan' "exec 'mkdir $GOPATH!!!'"
+#  end
+#end
 
 ## gvm path
 if test -d $HOME/.gvm
@@ -78,3 +78,12 @@ if test -d $HOME/.local/bin
   set PATH $HOME/.local/bin $PATH
 end
 
+# The next line updates PATH for the Google Cloud SDK.
+if test -f $HOME/google-cloud-sdk/path.fish.inc
+  source $HOME/google-cloud-sdk/path.fish.inc
+end
+
+# The next line enables shell command completion for gcloud.
+if test -f $HOME/google-cloud-sdk/completion.bash.inc
+  bass source $HOME/google-cloud-sdk/completion.bash.inc
+end
