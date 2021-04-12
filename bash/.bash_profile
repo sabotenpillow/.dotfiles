@@ -2,6 +2,12 @@ export LANG=en_US.UTF-8
 export TERM=xterm-256color
 # export EDITOR=vim
 
+## for Mac
+if [ `uname` = "Darwin" ] ; then
+  mac_env=$HOME/.config/mac_env.conf
+  [ -f $mac_env ] && source $mac_env
+fi
+
 ## linuxbrew path
 if [ -d $HOME/.linuxbrew ] ; then
   eval $($HOME/.linuxbrew/bin/brew shellenv)

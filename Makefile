@@ -25,6 +25,8 @@ less:
 	ln -vfs .dotfiles/.lesskey ~/
 most:
 	ln -vfs .dotfiles/.mostrc ~/
+mac:
+	ln -vfs ~/.dotfiles/mac_env.conf ~/.config/
 
 ## clean configuration
 clean-zsh:
