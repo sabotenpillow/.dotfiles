@@ -6,12 +6,12 @@ echo # blank line for delimiter
 echo "${fg[cyan]}===== login users =====${reset_color}";
 users; echo
 
-if [ `which tmux` ]; then
+if type tmux > /dev/null 2>&1; then
   echo "${fg[green]}===== tmux sessions =====${reset_color}";
   tmux ls; echo
 fi
 
-if [ `which vagrant` ]; then
+if type vagrant > /dev/null 2>&1; then
   # running_vms=`vagrant global-status | grep running`
   vms_process=`ps x | grep virtualbox | grep VBoxHeadless`  # ps x G virtualbox G VBoxHeadless | cut -d ' ' -f17
   if [ $? -eq 0 ]; then

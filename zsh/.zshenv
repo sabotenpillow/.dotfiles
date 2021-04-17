@@ -11,12 +11,15 @@ export TERM=xterm-256color
 [ -d $HOME/local-packages-repository ] && export PATH="$HOME/local-packages-repository/bin:$PATH"
 
 ## linuxbrew path
-export PATH="$HOME/.linuxbrew/bin:$PATH"
-export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-# export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
-if [ -f $(brew --prefix)/etc/brew-wrap ];then
-  source $(brew --prefix)/etc/brew-wrap
+LINUXBREW_PATH="$HOME/.linuxbrew"
+if [ -d $LINUXBREW_PATH ] ; then
+  export PATH="$LINUXBREW_PATH/bin:$PATH"
+  export MANPATH="$LINUXBREW_PATH/share/man:$MANPATH"
+  export INFOPATH="$LINUXBREW_PATH/share/info:$INFOPATH"
+  # export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
+  if [ -f $(brew --prefix)/etc/brew-wrap ];then
+    source $(brew --prefix)/etc/brew-wrap
+  fi
 fi
 
 ## rbenv path

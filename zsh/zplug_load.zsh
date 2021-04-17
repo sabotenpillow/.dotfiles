@@ -1,11 +1,11 @@
 export ZPLUG_HOME=$HOME/.zplug
 source $ZPLUG_HOME/init.zsh
 
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
+zplug "zsh-users/zsh-syntax-highlighting", defer:3
 zplug "b4b4r07/enhancd", use:init.sh
 # zplug "b4b4r07/zle-vimode"
-zplug "b4b4r07/zsh-vimode-visual", use:"*.sh"
-zplug "hchbaw/opp.zsh"
+#zplug "b4b4r07/zsh-vimode-visual", use:"*.sh"
+#zplug "hchbaw/opp.zsh"
 # zplug "ardagnir/athame"
 # zplug "hchbaw/auto-fu.zsh", at:pu, use:auto-fu.zsh
 zplug "zsh-users/zsh-autosuggestions"
