@@ -22,7 +22,11 @@ alias   al        'alias'
 alias   hist      'history'
 alias   histi     'history -iD'
 alias   ztime     'time zsh -i -c exit'
-alias   ls        'ls --color=auto'
+if [ (uname) = "Darwin" ]
+  [ -f "/usr/local/opt/coreutils/libexec/gnubin/ls" ] && alias ls '/usr/local/opt/coreutils/libexec/gnubin/ls --color=auto'
+else
+  alias ls 'ls --color=auto'
+end
 alias   sl        'ls'
 alias   l         'ls'
 alias   la        'ls -A'
