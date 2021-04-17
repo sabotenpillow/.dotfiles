@@ -11,13 +11,7 @@ autoload zsh/terminfo
 # プロンプトの余り部分を埋める
 fill_char () {
   # 埋める文字
-  # fchr="⇉"
-  # fchr="■"
-  # fchr="✚"
-  # fchr="❚"
-  # fchr="-"
   fchr="="
-  # fchr="<"
   first_line
   while [ $REMAIN -gt 0 ]
   do
@@ -74,13 +68,13 @@ set_color () {
   status_code_f=":(%#"
   status_code_l="):"
   ip_addr='' # ":$IP_ADDRESS"
-  hist=`get-history`
+  #hist=`get-history`
 
   PROMPT="
 :${USER_COLOR}%n${RESET}@${HOST_COLOR}%m${IP_COLOR}${ip_addr}${RESET}: ${DIRC_COLOR}%~ ${BORDER_COLOR}"
-  fill_char
+  #fill_char
   PROMPT="${PROMPT}
-${hist}${DECO_F_COLOR}:(%#%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${DECO_L_COLOR}):${RESET} "
+${DECO_F_COLOR}:(%#%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${DECO_L_COLOR}):${RESET} "
 # ${HISTORY_BCOLOR}${HISTORY_COLOR}%!${RESET}${HIST_DECO_COLOR}\ue0bc${DECO_F_COLOR}:(%#%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${DECO_L_COLOR}):${RESET} "
 #   PROMPT="${PROMPT}
 # ${VECTOR_COLOR}${vector_f}${INLINE_COLOR}${status_code_f}%(?||${STATUS_COLOR}:${STATUS_COLOR}$ret)${INLINE_COLOR}${status_code_l}${VECTOR_COLOR}${vector_l}${RESET}"

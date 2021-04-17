@@ -148,8 +148,8 @@ fi
 #
 ## RIGHT PROMPT
 #
-local rprompt=$HOME/.dotfiles/zsh/right_prompt.zsh
-[ -e $rprompt ] && source $rprompt
+#local rprompt=$HOME/.dotfiles/zsh/right_prompt.zsh
+#[ -e $rprompt ] && source $rprompt
 
 #
 ## coloring on man command
