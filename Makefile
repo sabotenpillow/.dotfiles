@@ -4,8 +4,10 @@ temp:
 	@echo If you want help, type '`make help`'
 
 ## configuration
-fish:
+bash: bash/.bash_profile bash/.bashrc
 	ln -vfs ${HOME}/.dotfiles/bash/.bash_profile ~
+	ln -vfs ${HOME}/.dotfiles/bash/.bashrc       ~
+fish: bash
 	mkdir -p ~/.config/fish/
 	ln -vfs ${HOME}/.dotfiles/fish/config.fish  ~/.config/fish/
 	ln -vs  $(HOME)/.dotfiles/fish/functions    ~/.config/fish/
