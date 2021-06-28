@@ -177,3 +177,6 @@ fi
 
 ## fzf path
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+## load PATH
+[ -e $HOME/.dotfiles/shell.conf.d/path.bash ] && source $HOME/.dotfiles/shell.conf.d/path.bash

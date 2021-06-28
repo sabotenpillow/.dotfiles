@@ -35,18 +35,21 @@ if [ -f $HOME/google-cloud-sdk/completion.bash.inc ]; then
   . $HOME/google-cloud-sdk/completion.bash.inc
 fi
 
-if [ -d /usr/local/opt/openjdk@11 ]; then
-  export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
-  export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
+## SDKMAN
+if [ -d $HOME/.sdkman ]; then
+  export SDKMAN_DIR=$HOME/.sdkman
+  source $HOME/.sdkman/bin/sdkman-init.sh
 fi
+
+## tomcat7
+load_path /usr/local/opt/tomcat@7/bin/
+
+## dart@2.12
+load_path /usr/local/opt/dart@2.1/bin
+load_path $HOME/.pub-cache/bin
 
 ## anyenv path
-if [ -d $HOME/.anyenv ] ; then
-  echo $PATH |grep anyenv > /dev/null 2>&1 || export PATH=$PATH:$HOME/.anyenv/bin
-  #export PATH=$PATH:$HOME/.anyenv/bin
-  #eval (anyenv init -) > /dev/null 2>&1
-fi
-
+load_path $HOME/.anyenv/bin
 if type anyenv > /dev/null 2>&1; then
   eval "$(anyenv init - shellenv)"
 fi
