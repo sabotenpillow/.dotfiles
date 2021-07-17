@@ -9,6 +9,7 @@ zplug "b4b4r07/enhancd", use:init.sh
 # zplug "ardagnir/athame"
 # zplug "hchbaw/auto-fu.zsh", at:pu, use:auto-fu.zsh
 zplug "zsh-users/zsh-autosuggestions"
+zplug "rupa/z", use:"*.sh"
 
 if ! zplug check; then
   zplug install
