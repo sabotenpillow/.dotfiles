@@ -1,3 +1,5 @@
+local zsh_dir=$HOME/.dotfiles/zsh
+
 ##  環境設定
 autoload -Uz compinit
 compinit
@@ -15,7 +17,7 @@ SAVEHIST=100000
 #
 ##  environment variables
 #
-local env_vars_path=$HOME/.dotfiles/zsh/env_vars.zsh
+local env_vars_path=$zsh_dir/env_vars.zsh
 if [[ -e $env_vars_path ]] ; then
   source $env_vars_path
 fi
@@ -23,7 +25,7 @@ fi
 #
 ##  自作メソッド
 #
-local my_function_path=$HOME/.dotfiles/zsh/my_function.zsh
+local my_function_path=$zsh_dir/my_function.zsh
 if [[ -e $my_function_path ]] ; then
   source $my_function_path
 fi
@@ -31,7 +33,7 @@ fi
 #
 ## keybind
 #
-local keybind_path=$HOME/.dotfiles/zsh/keybind.zsh
+local keybind_path=$zsh_dir/keybind.zsh
 if [[ -e $keybind_path ]] ; then
   source $keybind_path
 fi
@@ -39,7 +41,7 @@ fi
 #
 ##  自作ウィジェット
 #
-local my_widget_path=$HOME/.dotfiles/zsh/my_widgets.zsh
+local my_widget_path=$zsh_dir/my_widgets.zsh
 if [[ -e $my_widget_path ]] ; then
   source $my_widget_path
 fi
@@ -114,41 +116,37 @@ zshaddhistory() {
 #
 ##  エイリアス
 #
-local alias_path=$HOME/.dotfiles/zsh/alias.zsh
+local alias_path=$zsh_dir/alias.zsh
 if [[ -e $alias_path ]] ; then
   source $alias_path
 fi
 
 #
-##  zplug
+##  plugins
 #
-export ZPLUG_HOME=$HOME/.zplug
-local zplug_init=$ZPLUG_HOME/init.zsh
-local zplug_property=$HOME/.dotfiles/zsh
-if [[ -e $zplug_init ]] ; then
-  source $zplug_property/zplug_load.zsh
+if [[ -e $zsh_dir/plugins.zsh ]] ; then
+  source $zsh_dir/plugins.zsh
 else
-  echo; echo "$fg[red]not found zplug directory$reset_color"
+  echo; echo "$fg[red]not found plugins manager file$reset_color"
 fi
 
 #
 ##  LEFT PROMPT
 #
 # local simple_prompt=$zsh_dir/zsh_simple_prompt
-local prompt=$HOME/.dotfiles/zsh/left_prompt.zsh
-
-if [ "$TERM" = linux ] ; then
-  [ -e $simple_prompt ] && source $simple_prompt
-else
-  [ -e $prompt ] && source $prompt
-fi
+# local prompt=$zsh_dir/left_prompt.zsh
+#if [ "$TERM" = linux ] ; then
+#  [ -e $simple_prompt ] && source $simple_prompt
+#else
+#  [ -e $prompt ] && source $prompt
+#fi
 
 # PROMPT="%{[38;5;012m%}%#%{[0m%} "
 
 #
 ## RIGHT PROMPT
 #
-#local rprompt=$HOME/.dotfiles/zsh/right_prompt.zsh
+#local rprompt=$zsh_dir/right_prompt.zsh
 #[ -e $rprompt ] && source $rprompt
 
 #
@@ -180,3 +178,10 @@ fi
 
 ## load PATH
 [ -e $HOME/.dotfiles/shell.conf.d/path.bash ] && source $HOME/.dotfiles/shell.conf.d/path.bash
+
+echo loading starship
+## load starship
+if type starship > /dev/null 2>&1; then
+  eval "$(starship init zsh)"
+  export STARSHIP_CONFIG=~/.dotfiles/starship/starship.toml
+fi

@@ -74,6 +74,8 @@ oh-my-fish:
 zplug:
 	# curl -sL zplug.sh/installer | zsh
 	curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+zsh-plugin-manager:
+	sh -c "`curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh`"
 fzf:
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 cdr:
