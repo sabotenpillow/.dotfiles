@@ -1,0 +1,23 @@
+format = """
+[┌───────────────────>](bold fg:#01afff)
+[│](bold fg:#01afff) $directory$git_branch$git_commit$git_status$git_state$package
+[└$status─>$character](bold fg:#01afff) """
+
+add_newline = true
+
+[directory]
+style = "bold white"
+truncation_length = 3
+fish_style_pwd_dir_length = 1
+
+[status]
+format = '[\[$symbol $common_meaning$signal_name$maybe_int:$status\]]($style)'
+style = "bold fg:196"
+map_symbol = true
+disabled = false
+
+[git_branch]
+style = "fg:208"
+
+[git_status]
+style = "purple"
