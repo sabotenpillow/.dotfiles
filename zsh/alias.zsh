@@ -131,3 +131,7 @@ alias vbm='VBoxManage'
 alias grt='git-root'
 # echo "\uf10c \uf011 \uf0da \uf140 \uf1ce \uf168 \uf169 \uf110 \uf021"
 # echo "        "
+
+if [ `uname` = "Linux" ]; then
+  alias pbcopy='xsel --clipboard --input'
+fi
