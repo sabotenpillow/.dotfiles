@@ -1,6 +1,6 @@
 # bindkey -e
-bindkey -v
-source $HOME/.dotfiles/zsh/show-vimode
+# bindkey -v
+# source $HOME/.dotfiles/zsh/show-vimode
 
 bindkey "^@" set-mark-command
 bindkey "^A" beginning-of-line
@@ -108,46 +108,46 @@ bindkey "^[f" forward-word
 # bindkey "^[l" down-case-word
 
 # Easy to escape
-bindkey -M viins 'jj'  vi-cmd-mode
-has_keymap "vivis" && bindkey -M vivis 'jj' vi-visual-exit
+# bindkey -M viins 'jj'  vi-cmd-mode
+# has_keymap "vivis" && bindkey -M vivis 'jj' vi-visual-exit
 
 # Merge emacs mode to viins mode
-bindkey -M viins '\er' history-incremental-pattern-search-forward
-bindkey -M viins '^?'  backward-delete-char
-bindkey -M viins '^A'  beginning-of-line
-bindkey -M viins '^B'  backward-char
-bindkey -M viins '^D'  delete-char-or-list
-bindkey -M viins '^E'  end-of-line
-bindkey -M viins '^F'  forward-char
-bindkey -M viins '^G'  send-break
-bindkey -M viins '^H'  backward-delete-char
-bindkey -M viins '^K'  kill-line
-bindkey -M viins '^N'  down-line-or-history
-bindkey -M viins '^P'  up-line-or-history
-bindkey -M viins '^R'  history-incremental-pattern-search-backward
-bindkey -M viins '^U'  backward-kill-line
-bindkey -M viins '^W'  backward-kill-word
-bindkey -M viins '^Y'  yank
+# bindkey -M viins '\er' history-incremental-pattern-search-forward
+# bindkey -M viins '^?'  backward-delete-char
+# bindkey -M viins '^A'  beginning-of-line
+# bindkey -M viins '^B'  backward-char
+# bindkey -M viins '^D'  delete-char-or-list
+# bindkey -M viins '^E'  end-of-line
+# bindkey -M viins '^F'  forward-char
+# bindkey -M viins '^G'  send-break
+# bindkey -M viins '^H'  backward-delete-char
+# bindkey -M viins '^K'  kill-line
+# bindkey -M viins '^N'  down-line-or-history
+# bindkey -M viins '^P'  up-line-or-history
+# bindkey -M viins '^R'  history-incremental-pattern-search-backward
+# bindkey -M viins '^U'  backward-kill-line
+# bindkey -M viins '^W'  backward-kill-word
+# bindkey -M viins '^Y'  yank
 
 # Make more vim-like behaviors
-bindkey -M vicmd 'gg' beginning-of-line
-bindkey -M vicmd 'G'  end-of-line
+# bindkey -M vicmd 'gg' beginning-of-line
+# bindkey -M vicmd 'G'  end-of-line
 
 # https://github.com/zsh-users/zsh-history-substring-search
-has_widgets 'history-substring-search-up' &&
-  bindkey -M emacs '^P' history-substring-search-up
-has_widgets 'history-substring-search-down' &&
-  bindkey -M emacs '^N' history-substring-search-down
+# has_widgets 'history-substring-search-up' &&
+#   bindkey -M emacs '^P' history-substring-search-up
+# has_widgets 'history-substring-search-down' &&
+#   bindkey -M emacs '^N' history-substring-search-down
+# 
+# has_widgets 'history-substring-search-up' &&
+#   bindkey -M viins '^P' history-substring-search-up
+# has_widgets 'history-substring-search-down' &&
+#   bindkey -M viins '^N' history-substring-search-down
+# 
+# has_widgets 'history-substring-search-up' &&
+#   bindkey -M vicmd 'k' history-substring-search-up
+# has_widgets 'history-substring-search-down' &&
+#   bindkey -M vicmd 'j' history-substring-search-down
 
-has_widgets 'history-substring-search-up' &&
-  bindkey -M viins '^P' history-substring-search-up
-has_widgets 'history-substring-search-down' &&
-  bindkey -M viins '^N' history-substring-search-down
-
-has_widgets 'history-substring-search-up' &&
-  bindkey -M vicmd 'k' history-substring-search-up
-has_widgets 'history-substring-search-down' &&
-  bindkey -M vicmd 'j' history-substring-search-down
-
-bindkey "^[u" undo
-bindkey "^[r" redo
+# bindkey "^[u" undo
+# bindkey "^[r" redo
