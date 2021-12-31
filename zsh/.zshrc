@@ -6,6 +6,10 @@ function source_shell() {
   fi
 }
 
+function original_cmd() {
+  echo `alias $1 | cut -d '=' -f 2`
+}
+
 ##  環境設定
 autoload -Uz compinit
 compinit
@@ -101,6 +105,12 @@ zshaddhistory() {
 
 ##  エイリアス
 source_shell $zsh_dir/alias.zsh
+
+## completions
+source <(kubectl completion zsh)
+if [[ `original_cmd k` = "kubectl" ]] ; then
+  compdef __start_kubectl k
+fi
 
 ##  plugins
 source_shell $zsh_dir/plugins.zsh
