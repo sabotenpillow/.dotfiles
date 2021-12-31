@@ -8,3 +8,4 @@ if type gcloud > /dev/null 2>&1 ; then
     source /usr/share/google-cloud-sdk/completion.zsh.inc
   fi
 fi
+. "$HOME/.cargo/env"
