@@ -1,5 +1,11 @@
 local zsh_dir=$HOME/.dotfiles/zsh
 
+function source_shell() {
+  if [[ -e $1 ]] ; then
+    source $1
+  fi
+}
+
 ##  環境設定
 autoload -Uz compinit
 compinit
@@ -14,37 +20,17 @@ HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 
-#
 ##  environment variables
-#
-local env_vars_path=$zsh_dir/env_vars.zsh
-if [[ -e $env_vars_path ]] ; then
-  source $env_vars_path
-fi
+source_shell $zsh_dir/env_vars.zsh
 
-#
 ##  自作メソッド
-#
-local my_function_path=$zsh_dir/my_function.zsh
-if [[ -e $my_function_path ]] ; then
-  source $my_function_path
-fi
+source_shell $zsh_dir/my_function.zsh
 
-#
 ## keybind
-#
-local keybind_path=$zsh_dir/keybind.zsh
-if [[ -e $keybind_path ]] ; then
-  source $keybind_path
-fi
+source_shell $zsh_dir/keybind.zsh
 
-#
 ##  自作ウィジェット
-#
-local my_widget_path=$zsh_dir/my_widgets.zsh
-if [[ -e $my_widget_path ]] ; then
-  source $my_widget_path
-fi
+source_shell $zsh_dir/my_widgets.zsh
 
 ## edit with editor on command line
 autoload -Uz edit-command-line
@@ -113,22 +99,17 @@ zshaddhistory() {
   ]]
 }
 
-#
 ##  エイリアス
-#
-local alias_path=$zsh_dir/alias.zsh
-if [[ -e $alias_path ]] ; then
-  source $alias_path
-fi
+source_shell $zsh_dir/alias.zsh
 
-#
 ##  plugins
-#
-if [[ -e $zsh_dir/plugins.zsh ]] ; then
-  source $zsh_dir/plugins.zsh
-else
+source_shell $zsh_dir/plugins.zsh
+if [ $? != 0 ]; then
   echo; echo "$fg[red]not found plugins manager file$reset_color"
 fi
+
+## load PATH
+source_shell $HOME/.dotfiles/shell.conf.d/path.bash
 
 #
 ##  LEFT PROMPT
@@ -175,9 +156,6 @@ fi
 
 ## fzf path
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-## load PATH
-[ -e $HOME/.dotfiles/shell.conf.d/path.bash ] && source $HOME/.dotfiles/shell.conf.d/path.bash
 
 echo loading starship
 ## load starship
