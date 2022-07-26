@@ -1,0 +1,31 @@
+// Place your key bindings in this file to override the defaults
+[
+    // Neovim plugin shortcuts
+    {
+        "command": "vscode-neovim.compositeEscape1",
+        "key": "j",
+        "when": "neovim.mode == insert && editorTextFocus",
+        "args": "j"
+    },
+    // disable shortcuts when terminal is focused
+    {
+        "key": "ctrl+p",
+        "command": "",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "",
+        "when": "terminalFocus"
+    },
+]

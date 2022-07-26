@@ -29,6 +29,8 @@ most:
 	ln -vfs .dotfiles/.mostrc ~/
 mac:
 	ln -vfs ~/.dotfiles/mac_env.conf ~/.config/
+vscode:
+	ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 
 ## clean configuration
 clean-zsh:
