@@ -1,13 +1,43 @@
 // Place your key bindings in this file to override the defaults
 [
-    // Neovim plugin shortcuts
+    // ----- Neovim plugin shortcuts
+    // normal
+    {
+        "key": "gd",
+        "command": "editor.action.goToDeclaration",
+        "when": "neovim.mode == normal && editorTextFocus",
+    },
+    {
+        "key": "gb",
+        "command": "workbench.action.navigateBack",
+        "when": "neovim.mode == normal && editorTextFocus",
+    },
+    {
+        "key":"alt+h",
+        "command": "editor.action.showHover",
+        "when": "neovim.mode == normal && editorTextFocus",
+    },
+    // insert
     {
         "command": "vscode-neovim.compositeEscape1",
         "key": "j",
         "when": "neovim.mode == insert && editorTextFocus",
         "args": "j"
     },
-    // disable shortcuts when terminal is focused
+    {
+        "key": "ctrl+y ,",
+        "command": "vscode-neovim.send",
+        "when": "neovim.mode == insert && editorTextFocus",
+        "args": "<C-y>,"
+    },
+    // commandline
+    {
+        "key": "ctrl+m",
+        "command": "vscode-neovim.send",
+        "when": "neovim.mode == commandline && editorTextFocus",
+        "args": "<C-m>"
+    },
+    // ----- disable shortcuts when terminal is focused
     {
         "key": "ctrl+p",
         "command": "",
