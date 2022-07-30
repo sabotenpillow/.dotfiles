@@ -19,8 +19,8 @@
     },
     // insert
     {
-        "command": "vscode-neovim.compositeEscape1",
         "key": "j",
+        "command": "vscode-neovim.compositeEscape1",
         "when": "neovim.mode == insert && editorTextFocus",
         "args": "j"
     },
@@ -34,9 +34,10 @@
     {
         "key": "ctrl+m",
         "command": "vscode-neovim.send",
-        "when": "neovim.mode == commandline && editorTextFocus",
+        "when": "neovim.mode == 'cmdline_insert' || neovim.mode == 'cmdline_normal' || neovim.mode == 'cmdline_replace'",
         "args": "<C-m>"
     },
+    // 
     // ----- disable shortcuts when terminal is focused
     {
         "key": "ctrl+p",
