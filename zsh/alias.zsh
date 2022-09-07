@@ -45,6 +45,7 @@ alias e='emacs'
 #  alias v='vim'
 #fi
 alias v='vim'
+alias nv='nvim'
 alias vr='vim -R'
 alias vb='vim -b'
 alias svim='vim -u ~/.SpaceVim/vimrc -N'
