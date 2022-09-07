@@ -59,4 +59,8 @@
         "command": "",
         "when": "terminalFocus"
     },
+    { "key": "ctrl+shift+e",
+      "command": "workbench.view.explorer",
+      //"when": "neovim.mode == normal && editorTextFocus"
+    },
 ]

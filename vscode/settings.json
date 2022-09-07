@@ -1,7 +1,8 @@
 {
-    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorTheme": "Palenight Italic",
     "workbench.list.automaticKeyboardNavigation": false,
     "editor.scrollBeyondLastLine": false,
     "vscode-neovim.neovimExecutablePaths.linux": "/home/tone/.asdf/shims/nvim",
     "vscode-neovim.neovimInitVimPaths.linux": "/home/tone/.vim/nvim/config/init.vscode.vim",
+    "diffEditor.ignoreTrimWhitespace": false,
 }
