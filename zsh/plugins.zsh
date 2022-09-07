@@ -31,6 +31,7 @@ zinit light "zsh-users/zsh-autosuggestions"
 zinit light "zdharma/fast-syntax-highlighting"
 zinit light "momo-lab/zsh-abbrev-alias"
 zinit light "rupa/z"
+zinit light "asdf-vm/asdf"
 
 function loaded() {
   echo $1

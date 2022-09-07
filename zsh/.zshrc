@@ -112,14 +112,14 @@ if [[ `original_cmd k` = "kubectl" ]] ; then
   compdef __start_kubectl k
 fi
 
+## load PATH
+source_shell $HOME/.dotfiles/shell.conf.d/path.bash
+
 ##  plugins
 source_shell $zsh_dir/plugins.zsh
 if [ $? != 0 ]; then
   echo; echo "$fg[red]not found plugins manager file$reset_color"
 fi
-
-## load PATH
-source_shell $HOME/.dotfiles/shell.conf.d/path.bash
 
 #
 ##  LEFT PROMPT

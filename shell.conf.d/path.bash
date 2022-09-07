@@ -36,9 +36,9 @@ if [ -f $HOME/google-cloud-sdk/completion.bash.inc ]; then
 fi
 
 ## SDKMAN
-if [ -d $HOME/.sdkman ]; then
-  source $HOME/.sdkman/bin/sdkman-init.sh
-fi
+# if [ -d $HOME/.sdkman ]; then
+#   source $HOME/.sdkman/bin/sdkman-init.sh
+# fi
 
 ## tomcat7
 load_path /usr/local/opt/tomcat@7/bin/
@@ -48,10 +48,13 @@ load_path /Library/dart/dart-sdk-v1.24.3/bin/
 load_path $HOME/.pub-cache/bin
 
 ## anyenv path
-load_path $HOME/.anyenv/bin
-if type anyenv > /dev/null 2>&1; then
-  eval "$(anyenv init - shellenv)"
-fi
+# load_path $HOME/.anyenv/bin
+# if type anyenv > /dev/null 2>&1; then
+#   eval "$(anyenv init - shellenv)"
+# fi
+
+## yarn env
+load_path $HOME/.yarn/bin
 
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/
 #load_path $JAVA_HOME/bin/
