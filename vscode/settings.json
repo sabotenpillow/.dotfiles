@@ -1,8 +1,11 @@
 {
-    "workbench.colorTheme": "Palenight Italic",
+    "workbench.colorTheme": "Palenight Operator",
     "workbench.list.automaticKeyboardNavigation": false,
     "editor.scrollBeyondLastLine": false,
     "vscode-neovim.neovimExecutablePaths.linux": "/home/tone/.asdf/shims/nvim",
     "vscode-neovim.neovimInitVimPaths.linux": "/home/tone/.vim/nvim/config/init.vscode.vim",
     "diffEditor.ignoreTrimWhitespace": false,
+    "files.autoSave": "afterDelay",
+    "workbench.iconTheme": "eq-material-theme-icons-ocean",
+    "security.workspace.trust.enabled": false,
 }
