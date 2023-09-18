@@ -1,0 +1,49 @@
+<keymap version="1" name="original based on Emacs" parent="Emacs">
+  <action id="$Copy">
+    <keyboard-shortcut first-keystroke="ctrl insert" />
+    <keyboard-shortcut first-keystroke="escape" second-keystroke="w" />
+    <keyboard-shortcut first-keystroke="shift ctrl c" />
+  </action>
+  <action id="$Paste">
+    <keyboard-shortcut first-keystroke="shift insert" />
+    <keyboard-shortcut first-keystroke="ctrl y" />
+    <keyboard-shortcut first-keystroke="shift ctrl v" />
+  </action>
+  <action id="Console.TableResult.CopyAggregatorResult" />
+  <action id="CopyAbsolutePath" />
+  <action id="CopyPaths">
+    <keyboard-shortcut first-keystroke="alt c" />
+  </action>
+  <action id="DatabaseView.CopyDdlAction">
+    <keyboard-shortcut first-keystroke="shift ctrl alt g" />
+  </action>
+  <action id="Editor Copy">
+    <keyboard-shortcut first-keystroke="shift ctrl c" />
+  </action>
+  <action id="Editor Paste">
+    <keyboard-shortcut first-keystroke="shift ctrl v" />
+  </action>
+  <action id="EditorPageUp">
+    <keyboard-shortcut first-keystroke="page_up" />
+    <keyboard-shortcut first-keystroke="ctrl z" />
+  </action>
+  <action id="List-scrollUp">
+    <keyboard-shortcut first-keystroke="page_up" />
+    <keyboard-shortcut first-keystroke="ctrl z" />
+  </action>
+  <action id="PasteMultiple">
+    <keyboard-shortcut first-keystroke="alt y" />
+    <keyboard-shortcut first-keystroke="alt v" />
+  </action>
+  <action id="RemoteHostView.CopyPaths" />
+  <action id="Switcher">
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="b" />
+    <keyboard-shortcut first-keystroke="ctrl tab" />
+  </action>
+  <action id="Table-scrollUpChangeSelection">
+    <keyboard-shortcut first-keystroke="page_up" />
+    <keyboard-shortcut first-keystroke="ctrl z" />
+  </action>
+  <action id="WelcomeScreen.CopyProjectPath" />
+  <action id="org.intellij.plugins.markdown.ui.actions.styling.ToggleCodeSpanAction" />
+</keymap>
