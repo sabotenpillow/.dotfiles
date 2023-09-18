@@ -31,7 +31,8 @@ zinit light "zsh-users/zsh-autosuggestions"
 zinit light "zdharma/fast-syntax-highlighting"
 zinit light "momo-lab/zsh-abbrev-alias"
 zinit light "rupa/z"
-zinit light "asdf-vm/asdf"
+zinit  light "jonmosco/kube-ps1"
+# zinit light "asdf-vm/asdf"
 
 function loaded() {
   echo $1
@@ -49,6 +50,11 @@ bindkey '^[m' autosuggest-execute
 
 ##  momo-lab/zsh-abbrev-alias
 abbrev-alias -g G="|grep"
+abbrev-alias -g L="|less"
+abbrev-alias -g H="|head"
+abbrev-alias -g T="|tail"
+abbrev-alias -g X="|xargs"
+abbrev-alias -g W="|wc"
 abbrev-alias -g d="docker"
 abbrev-alias -g gs="git status"
 abbrev-alias -g gd="git diff"

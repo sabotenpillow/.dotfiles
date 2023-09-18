@@ -10,6 +10,7 @@ zplug "b4b4r07/enhancd", use:init.sh
 # zplug "hchbaw/auto-fu.zsh", at:pu, use:auto-fu.zsh
 zplug "zsh-users/zsh-autosuggestions"
 zplug "rupa/z", use:"*.sh"
+zplug "jonmosco/kube-ps1"
 
 if ! zplug check; then
   zplug install
