@@ -1,28 +1,87 @@
 // Place your key bindings in this file to override the defaults
 [
     // ----- Neovim plugin shortcuts
+    // anytimes when editor is forcused
+    {
+        "key": "alt+v",
+        "command": "vscode-neovim.send",
+        "when": "editorTextFocus",
+        "args": "<M-v>"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "vscode-neovim.send",
+        "when": "!terminalFocus",
+        "args": "<C-S-c>"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "workbench.view.explorer",
+        "when": "neovim.mode == normal && editorTextFocus"
+    },
     // normal
-    {
-        "key": "gd",
-        "command": "editor.action.goToDeclaration",
-        "when": "neovim.mode == normal && editorTextFocus",
-    },
-    {
-        "key": "gb",
-        "command": "workbench.action.navigateBack",
-        "when": "neovim.mode == normal && editorTextFocus",
-    },
-    {
-        "key":"alt+h",
-        "command": "editor.action.showHover",
-        "when": "neovim.mode == normal && editorTextFocus",
-    },
+    // {
+    //     "key": "gd",
+    //     "command": "editor.action.goToDeclaration",
+    //     "when": "neovim.mode == normal && editorTextFocus",
+    // },
+    // {
+    //     "key": "gi",
+    //     "command": "editor.action.revealDefinition",
+    //     "when": "neovim.mode == normal && editorTextFocus",
+    // },
+    // {
+    //     "key": "gb",
+    //     "command": "editor.action.navigateBack",
+    //     "when": "neovim.mode == normal && editorTextFocus",
+    // },
+    // {
+    //     "key":"alt+h",
+    //     "command": "editor.action.showHover",
+    //     "when": "neovim.mode == normal && editorTextFocus",
+    // },
     // insert
     {
         "key": "j",
         "command": "vscode-neovim.compositeEscape1",
         "when": "neovim.mode == insert && editorTextFocus",
         "args": "j"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "vscode-neovim.send",
+        "when": "neovim.mode == insert && editorTextFocus",
+        "args": "<C-f>"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "vscode-neovim.send",
+        "when": "neovim.mode == insert && editorTextFocus",
+        "args": "<C-b>"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "vscode-neovim.send",
+        "when": "neovim.mode == insert && editorTextFocus",
+        "args": "<C-a>"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "vscode-neovim.send",
+        "when": "neovim.mode == insert && editorTextFocus",
+        "args": "<C-e>"
+    },
+    {
+        "key": "alt+f",
+        "command": "vscode-neovim.send",
+        "when": "neovim.mode == insert && editorTextFocus",
+        "args": "<M-f>"
+    },
+    {
+        "key": "alt+b",
+        "command": "vscode-neovim.send",
+        "when": "neovim.mode == insert && editorTextFocus",
+        "args": "<M-b>"
     },
     {
         "key": "ctrl+y ,",
@@ -59,8 +118,52 @@
         "command": "",
         "when": "terminalFocus"
     },
-    { "key": "ctrl+shift+e",
-      "command": "workbench.view.explorer",
-      //"when": "neovim.mode == normal && editorTextFocus"
+    {
+        "key": "ctrl+shift+alt+y",
+        "command": "liveshare.follow",
+        "when": "liveshare:hasCollaborators && !liveshare:isFollowing"
+    },
+    {
+        "key": "ctrl+alt+f",
+        "command": "-liveshare.follow",
+        "when": "liveshare:hasCollaborators && !liveshare:isFollowing"
+    },
+    {
+        "key": "ctrl+shift+alt+y",
+        "command": "liveshare.unfollow",
+        "when": "liveshare:hasCollaborators && liveshare:isFollowing"
+    },
+    {
+        "key": "ctrl+alt+f",
+        "command": "-liveshare.unfollow",
+        "when": "liveshare:hasCollaborators && liveshare:isFollowing"
+    },
+    {
+        "key": "ctrl+shift+f10",
+        "command": "testing.runAtCursor",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+; c",
+        "command": "-testing.runAtCursor",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+f10",
+        "command": "testing.reRunLastRun"
+    },
+    {
+        "key": "ctrl+; l",
+        "command": "-testing.reRunLastRun"
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "workbench.action.terminal.focusFind",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-workbench.action.terminal.focusFind",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
     },
 ]
