@@ -2,13 +2,13 @@
 ##  global alias
 #
 alias -g TELLME='&& echo; (echo $fg[green]SUCCEEDED || echo $fg[red]FAILED)'
-alias -g G='| grep'
+# alias -g G='| grep'
 alias -g Gv='| grep -v'
-alias -g L='| less'
-alias -g W='| wc'
-alias -g H='| head -q'
-alias -g T='| tail'
-alias -g X='| xargs'
+# alias -g L='| less'
+# alias -g W='| wc'
+# alias -g H='| head -q'
+# alias -g T='| tail'
+# alias -g X='| xargs'
 
 ## alias for my zmethod
 alias -g B='"$(git_current_branch_name)"'
@@ -30,8 +30,8 @@ fi
 alias sl='ls'
 alias l='ls'
 alias la='ls -A'
-alias ll='ls -l'
-alias lla='ls -lA'
+alias ll='ls -lh'
+alias lla='ls -lhA'
 alias lr='ls -R'
 if [ `uname` = "Linux" ] ; then
   alias open='xdg-open'
@@ -101,7 +101,6 @@ alias be='bundle exec'
 #alias rs='rails s -b 0.0.0.0'
 #alias rs7='rails s -b 0.0.0.0 -p 7777'
 alias vag='vagrant'
-alias dc='docker-compose'
 alias k='kubectl'
 alias kc='kubectx'
 alias kn='kubens'
@@ -137,6 +136,9 @@ alias tcpd='sudo tcpdump'
 alias tsk='sudo tshark'
 alias same='sudo tshark'
 alias vbm='VBoxManage'
+if [ `uname` = "Linux" ]; then
+  alias pbcopy='xsel --clipboard --input'
+fi
 
 #
 # 自作メソッドのエイリアス
@@ -145,6 +147,3 @@ alias grt='git-root'
 # echo "\uf10c \uf011 \uf0da \uf140 \uf1ce \uf168 \uf169 \uf110 \uf021"
 # echo "        "
 
-if [ `uname` = "Linux" ]; then
-  alias pbcopy='xsel --clipboard --input'
-fi
