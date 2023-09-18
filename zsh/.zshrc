@@ -10,6 +10,15 @@ function original_cmd() {
   echo `alias $1 | cut -d '=' -f 2`
 }
 
+## Homebrew's completions
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
 ##  環境設定
 autoload -Uz compinit
 compinit
