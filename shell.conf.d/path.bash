@@ -58,5 +58,13 @@ load_path $HOME/.pub-cache/bin
 ## yarn env
 load_path $HOME/.yarn/bin
 
+## asdf env
+source $(brew --prefix asdf)/libexec/asdf.sh
+
+## aqua bin
+load_path ${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin
+
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/
 #load_path $JAVA_HOME/bin/
+
+typeset -U PATH
