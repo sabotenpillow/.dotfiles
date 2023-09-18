@@ -1,9 +1,85 @@
 format = """
-[┌───────────────────>](bold fg:#01afff)
-[│](bold fg:#01afff) $directory$git_branch$git_commit$git_status$git_state$package
-[└$status─>$character](bold fg:#01afff) """
+ $directory$custom$kubernetes$custom $git_branch$git_commit$git_status$git_state$hg_branch$fossil_branch$package
+[:$status:$character](bold fg:#01afff) """
+
+right_format = """
+$localip\
+$shlvl\
+$singularity\
+$vcsh\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$sudo\
+$cmd_duration\
+$jobs\
+$battery\
+$time\
+$os\
+$container\
+$memory_usage\
+$shell\
+$line_break"""
 
 add_newline = true
+
+[battery]
+disabled = false
+[localip]
+disabled = false
+[memory_usage]
+disabled = false
 
 [directory]
 style = "bold white"
@@ -21,3 +97,29 @@ style = "fg:208"
 
 [git_status]
 style = "purple"
+conflicted = '='
+ahead = '⇡'
+behind = '⇣'
+diverged = '⇕'
+up_to_date = ''
+untracked = '?'
+stashed = '$'
+modified = '!'
+staged = '+'
+renamed = '»'
+deleted = '✘'
+typechanged = ''
+ignore_submodules = false
+
+[kubernetes]
+format = '[|$symbol$context|]($style)'
+style='fg:#01afff'
+disabled = false
+
+[custom.k8s]
+format = '[$symbol]($style)'
+#command = 'kubectl config current-context'
+#shell = ['bash']
+when = '[[ ! (`kubectl config current-context` =~ "__.+" || `kubectl config current-context` =~ "minikube.*") ]]'
+symbol = '☣ ☣ '
+style = 'bold red'
