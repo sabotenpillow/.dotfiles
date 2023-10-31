@@ -42,9 +42,6 @@ fi
 #   source $HOME/.sdkman/bin/sdkman-init.sh
 # fi
 
-## tomcat7
-load_path /usr/local/opt/tomcat@7/bin/
-
 ## dart@2.12
 load_path /Library/dart/dart-sdk-v1.24.3/bin/
 load_path $HOME/.pub-cache/bin
