@@ -116,9 +116,11 @@ zshaddhistory() {
 source_shell $zsh_dir/alias.zsh
 
 ## completions
-source <(kubectl completion zsh)
-if [[ `original_cmd k` = "kubectl" ]] ; then
-  compdef __start_kubectl k
+if type kubectl > /dev/null 2>&1 ; then
+  source <(kubectl completion zsh)
+  if [[ `original_cmd k` = "kubectl" ]] ; then
+    compdef __start_kubectl k
+  fi
 fi
 
 ## load PATH
@@ -182,3 +184,4 @@ if type starship > /dev/null 2>&1; then
   eval "$(starship init zsh)"
   export STARSHIP_CONFIG=~/.dotfiles/starship/starship.toml
 fi
+

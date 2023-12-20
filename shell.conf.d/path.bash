@@ -9,11 +9,13 @@ load_path /usr/bin
 load_path /usr/local/bin
 
 ## linuxbrew path
-if is_included_in_path linuxbrew ; then
+if is_included_in_path brew ; then
   if [ -d $HOME/.linuxbrew ] ; then
     eval $($HOME/.linuxbrew/bin/brew shellenv)
   elif [ -d /home/linuxbrew/.linuxbrew ] ; then
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  elif [ -x /opt/homebrew/bin/brew ] ; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
 fi
 
