@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-.PHONY: zsh tig tmux fish
+.PHONY: zsh tig tmux fish karabiner
 temp:
 	@echo If you want help, type '`make help`'
 
@@ -60,8 +60,7 @@ git:
 	git config --global color.diff true
 	git config --global push.default current
 	git config --global pull.default current
-brew:
-	# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+linuxbrew:
 	ruby -e "`curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install`"
 	brew install caskroom/cask/brew-cask
 solarized:
@@ -74,15 +73,14 @@ tpm:
 	fi
 oh-my-fish:
 	curl -L https://get.oh-my.fish | fish
-zplug:
-	# curl -sL zplug.sh/installer | zsh
-	curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
-zsh-plugin-manager:
-	sh -c "`curl -fsSL https://git.io/zinit-install`"
 fzf:
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 cdr:
 	mkdir -p ~/.cache/shell
+
+## on Mac environment
+karabiner:
+	ln -vfs ~/.dotfiles/karabiner/assets/complex_modifications/* ~/.config/karabiner/assets/complex_modifications/
 
 ## version management
 anyenv:
