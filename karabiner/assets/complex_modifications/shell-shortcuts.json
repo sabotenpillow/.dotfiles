@@ -1,0 +1,196 @@
+{
+"title": "shell shortcut editing text",
+    "rules": [
+        {
+            "description": "command + b: move the cursor one word to the left",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "b",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                      {
+                        "bundle_identifiers": [
+                          "com.googlecode.iterm2",
+                          "dev.warp.Warp-Stable",
+                          "net.kovidgoyal.kitty",
+                          "co.zeit.hyper",
+                          "com.apple.Terminal",
+                          "io.alacritty"
+                        ],
+                        "type": "frontmost_application_unless"
+                      }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "command + f: move the cursor one word to the right",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "f",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                      {
+                        "bundle_identifiers": [
+                          "com.googlecode.iterm2",
+                          "dev.warp.Warp-Stable",
+                          "net.kovidgoyal.kitty",
+                          "co.zeit.hyper",
+                          "com.apple.Terminal",
+                          "io.alacritty"
+                        ],
+                        "type": "frontmost_application_unless"
+                      }
+                    ]
+                }
+            ]
+        },
+        {
+          "description": "control + w: delete the word to the left of the cursor",
+          "manipulators": [
+            {
+              "type": "basic",
+              "from": {
+                "key_code": "w",
+                "modifiers": {
+                  "mandatory": [
+                    "right_control"
+                  ],
+                  "optional": [
+                    "any"
+                  ]
+                }
+              },
+              "to": [
+                {
+                  "key_code": "delete_or_backspace",
+                  "modifiers": [
+                    "left_option"
+                  ]
+                }
+              ],
+              "conditions": [
+                {
+                  "bundle_identifiers": [
+                    "com.googlecode.iterm2",
+                    "dev.warp.Warp-Stable",
+                    "net.kovidgoyal.kitty",
+                    "co.zeit.hyper",
+                    "com.apple.Terminal",
+                    "io.alacritty"
+                  ],
+                  "type": "frontmost_application_unless"
+                }
+              ]
+            }
+          ]
+        },
+        {
+            "description": "control + u: delete all chars on the left of cursor",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "u",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "delete_or_backspace",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                      {
+                        "bundle_identifiers": [
+                          "com.googlecode.iterm2",
+                          "dev.warp.Warp-Stable",
+                          "net.kovidgoyal.kitty",
+                          "co.zeit.hyper",
+                          "com.apple.Terminal",
+                          "io.alacritty"
+                        ],
+                        "type": "frontmost_application_unless"
+                      }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "option + f: act as command + f",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "f",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "f",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                      {
+                        "bundle_identifiers": [
+                          "com.googlecode.iterm2",
+                          "dev.warp.Warp-Stable",
+                          "net.kovidgoyal.kitty",
+                          "co.zeit.hyper",
+                          "com.apple.Terminal",
+                          "io.alacritty"
+                        ],
+                        "type": "frontmost_application_unless"
+                      }
+                    ]
+                }
+            ]
+        }
+    ]
+}

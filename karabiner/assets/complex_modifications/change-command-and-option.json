@@ -1,0 +1,73 @@
+{
+"title": "change command and option on Terminal",
+    "rules": [
+        {
+            "description": "command : act as option on Terminal",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_command",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_option"
+                        }
+                    ],
+                    "conditions": [
+                      {
+                        "bundle_identifiers": [
+                          "com.googlecode.iterm2",
+                          "dev.warp.Warp-Stable",
+                          "net.kovidgoyal.kitty",
+                          "co.zeit.hyper",
+                          "com.apple.Terminal",
+                          "io.alacritty"
+                        ],
+                        "type": "frontmost_application_if"
+                      }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "option : act as command on Terminal",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_option",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_command"
+                        }
+                    ],
+                    "conditions": [
+                      {
+                        "bundle_identifiers": [
+                          "com.googlecode.iterm2",
+                          "dev.warp.Warp-Stable",
+                          "net.kovidgoyal.kitty",
+                          "co.zeit.hyper",
+                          "com.apple.Terminal",
+                          "io.alacritty"
+                        ],
+                        "type": "frontmost_application_if"
+                      }
+                    ]
+                }
+            ]
+        }
+    ]
+}
