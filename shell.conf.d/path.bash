@@ -16,6 +16,7 @@ if is_included_in_path brew ; then
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   elif [ -x /opt/homebrew/bin/brew ] ; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    load_path $(brew --prefix coreutils)/libexec/gnubin
   fi
 fi
 
