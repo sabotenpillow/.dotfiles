@@ -49,6 +49,11 @@ fi
 load_path /Library/dart/dart-sdk-v1.24.3/bin/
 load_path $HOME/.pub-cache/bin
 
+## android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+load_path $ANDROID_HOME/emulator
+load_path $ANDROID_HOME/platform-tools
+
 ## anyenv path
 # load_path $HOME/.anyenv/bin
 # if type anyenv > /dev/null 2>&1; then
