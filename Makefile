@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-.PHONY: zsh tig tmux fish karabiner
+.PHONY: zsh tig tmux fish karabiner warp
 temp:
 	@echo If you want help, type '`make help`'
 
@@ -80,7 +80,9 @@ cdr:
 
 ## on Mac environment
 karabiner:
-	ln -vfs ~/.dotfiles/karabiner/assets/complex_modifications/* ~/.config/karabiner/assets/complex_modifications/
+	ln -vfs ~/.dotfiles/karabiner/assets/complex_modifications/* ~/.config/karabiner/assets/complex_modifications
+warp:
+	mkdir -p ~/.warp && ln -vfs ~/.dotfiles/warp/keybindings.yaml ~/.warp
 
 ## version management
 anyenv:
