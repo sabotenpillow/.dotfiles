@@ -80,7 +80,7 @@ cdr:
 
 ## on Mac environment
 karabiner:
-	ln -vfs ~/.dotfiles/karabiner/assets/complex_modifications/* ~/.config/karabiner/assets/complex_modifications
+	ln -vfs ~/.dotfiles/karabiner/assets/complex_modifications/*.json ~/.config/karabiner/assets/complex_modifications
 warp:
 	mkdir -p ~/.warp && ln -vfs ~/.dotfiles/warp/keybindings.yaml ~/.warp
 
