@@ -1,7 +1,14 @@
 SHELL := /bin/bash
-.PHONY: zsh tig tmux fish karabiner warp
+uname_os := $(shell uname -s)
+.PHONY: os zsh tig tmux fish karabiner warp vscode
 temp:
 	@echo If you want help, type '`make help`'
+os:
+ifeq ($(uname_os),Darwin)
+	$(eval os=mac)
+else ifeq ($(uname_os),Linux)
+	$(eval os=linux)
+endif
 
 ## configuration
 bash: bash/.bash_profile bash/.bashrc
@@ -27,11 +34,21 @@ less:
 	ln -vfs .dotfiles/.lesskey ~/
 most:
 	ln -vfs .dotfiles/.mostrc ~/
-mac:
-	ln -vfs ~/.dotfiles/mac_env.conf ~/.config/
-vscode:
-	ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/keybindings.json
-	ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
+vscode: os
+	$(if $(shell test $(os) = "mac" && echo 1), \
+		$(eval path=~/Library/Application\ Support/Code/User) \
+		, \
+		$(eval path=~/.config/Code/User) \
+	)
+# ifeq ($(uname_os),Darwin)
+# 	$(eval path=~/Library/Application\ Support/Code/User)
+# else
+# 	$(eval path=~/.config/Code/User)
+# endif
+	mkdir -p $(path)
+	ln -vfs ~/.dotfiles/vscode/settings.json $(path)/settings.json
+	ln -vfs ~/.dotfiles/vscode/keybindings.json $(path)/keybindings.json
+
 
 ## clean configuration
 clean-zsh:
@@ -83,6 +100,8 @@ karabiner:
 	ln -vfs ~/.dotfiles/karabiner/assets/complex_modifications/*.json ~/.config/karabiner/assets/complex_modifications
 warp:
 	mkdir -p ~/.warp && ln -vfs ~/.dotfiles/warp/keybindings.yaml ~/.warp
+mac:
+	defaults write -g ApplePressAndHoldEnabled -bool false
 
 ## version management
 anyenv:

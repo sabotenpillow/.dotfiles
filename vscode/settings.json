@@ -1,11 +1,43 @@
 {
-    "workbench.colorTheme": "Ariake Dark",
-    "workbench.list.automaticKeyboardNavigation": false,
-    "editor.scrollBeyondLastLine": false,
-    "vscode-neovim.neovimExecutablePaths.linux": "/home/tone/.asdf/shims/nvim",
-    "vscode-neovim.neovimInitVimPaths.linux": "/home/tone/.vim/nvim/config/init.vscode.vim",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "files.autoSave": "afterDelay",
-    "workbench.iconTheme": "eq-material-theme-icons-ocean",
-    "security.workspace.trust.enabled": false,
+  "workbench.list.automaticKeyboardNavigation": false,
+  "editor.scrollBeyondLastLine": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.linting.lintOnSave": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    "--max-line-length=88",
+    "--extend-ignore=E203,W503"
+  ],
+  "isort.args": ["--profile", "black"],
+  "flake8.args": ["--max-line-length=88", "--extend-ignore=E203,W503"],
+  "python.pythonPath": "/Users/tone/.asdf/shims/python",
+  "files.watcherExclude": {
+    "**/homebrew/**": true
+  },
+  "vscode-neovim.neovimExecutablePaths.linux": "/home/tone/.asdf/shims/nvim",
+  "vscode-neovim.neovimInitVimPaths.linux": "/home/tone/.vim/nvim/config/init.vscode.vim",
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "~/.vim/nvim/config/init.vscode.vim",
+  "vscode-neovim.compositeKeys": {
+    "jj": {
+      "command": "vscode-neovim.escape"
+    }
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "security.workspace.trust.enabled": false,
+  "workbench.colorTheme": "Material theme oceanic custom",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  }
 }
