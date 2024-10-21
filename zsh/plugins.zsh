@@ -52,11 +52,14 @@ bindkey '^[m' autosuggest-execute
 
 ##  momo-lab/zsh-abbrev-alias
 abbrev-alias -g G="|grep"
+abbrev-alias -g Gv="|grep -v"
 abbrev-alias -g L="|less"
 abbrev-alias -g H="|head"
 abbrev-alias -g T="|tail"
 abbrev-alias -g X="|xargs"
 abbrev-alias -g W="|wc"
+abbrev-alias -g P="|pbcopy"
+abbrev-alias -g B="$(git_current_branch_name)"
 abbrev-alias -g d="docker"
 abbrev-alias -g gs="git status"
 abbrev-alias -g gd="git diff"
