@@ -77,6 +77,7 @@ git:
 	git config --global color.diff true
 	git config --global push.default current
 	git config --global pull.default current
+	git config --global alias.wt worktree
 linuxbrew:
 	ruby -e "`curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install`"
 	brew install caskroom/cask/brew-cask
