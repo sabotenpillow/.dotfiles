@@ -1,3 +1,5 @@
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
 local zsh_dir=$HOME/.dotfiles/zsh
 
 function source_shell() {
@@ -185,3 +187,10 @@ if type starship > /dev/null 2>&1; then
   export STARSHIP_CONFIG=~/.dotfiles/starship/starship.toml
 fi
 
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+
+source_shell ~/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization script
+
+# Added by Antigravity
+export PATH="/Users/h-tone/.antigravity/antigravity/bin:$PATH"

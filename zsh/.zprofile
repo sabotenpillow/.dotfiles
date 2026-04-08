@@ -1,3 +1,5 @@
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.pre.zsh"
 autoload -U colors; colors
 # black, red, green, yellow, blue, magenta, cyan, white
 
@@ -26,3 +28,6 @@ if type vagrant > /dev/null 2>&1; then
   # echo "${fg[magenta]}===== running VMs =====${reset_color}";
   # ! [ -z running_vms ] && echo test
 fi
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.post.zsh"
