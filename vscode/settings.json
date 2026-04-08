@@ -1,42 +1,99 @@
 {
-  "workbench.list.automaticKeyboardNavigation": false,
-  "editor.scrollBeyondLastLine": false,
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[typescript]": {
+  "[dockercompose]": {
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.insertSpaces": true,
+    "editor.quickSuggestions": {
+      "comments": false,
+      "other": true,
+      "strings": true
+    },
     "editor.tabSize": 2
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "[javascript]": {
     "editor.tabSize": 2
   },
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "python.defaultInterpreterPath": "/Users/tone/.asdf/shims/python",
-  "python.testing.pytestEnabled": true,
-  "flake8.args": ["--max-line-length=88", "--extend-ignore=E203,W503"],
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    ".claude/rules": true,
+    "~/.copilot/instructions": true,
+    "~/.claude/rules": true,
+    "/var/folders/x4/2vdgjp4s4s96mc68dxvxx6xw0000gp/T/postman-collections-post-response.instructions.md": true,
+    "/var/folders/x4/2vdgjp4s4s96mc68dxvxx6xw0000gp/T/postman-collections-pre-request.instructions.md": true,
+    "/var/folders/x4/2vdgjp4s4s96mc68dxvxx6xw0000gp/T/postman-folder-post-response.instructions.md": true,
+    "/var/folders/x4/2vdgjp4s4s96mc68dxvxx6xw0000gp/T/postman-folder-pre-request.instructions.md": true,
+    "/var/folders/x4/2vdgjp4s4s96mc68dxvxx6xw0000gp/T/postman-http-request-post-response.instructions.md": true,
+    "/var/folders/x4/2vdgjp4s4s96mc68dxvxx6xw0000gp/T/postman-http-request-pre-request.instructions.md": true
+  },
+  "cloudcode.autoDependencies": "off",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "docker.extension.enableComposeLanguageServer": false,
+  "editor.accessibilitySupport": "off",
+  "editor.defaultFormatter": "charliermarsh.ruff",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.scrollBeyondLastLine": false,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 500,
   "files.watcherExclude": {
     "**/homebrew/**": true
   },
-  "vscode-neovim.neovimExecutablePaths.linux": "/home/tone/.asdf/shims/nvim",
-  "vscode-neovim.neovimInitVimPaths.linux": "/home/tone/.vim/nvim/config/init.vscode.vim",
-  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
-  "vscode-neovim.neovimInitVimPaths.darwin": "~/.vim/nvim/config/init.vscode.vim",
+  "flake8.args": [
+    "--max-line-length=88",
+    "--extend-ignore=E203,W503"
+  ],
+  "geminicodeassist.project": "",
+  "git.autofetch": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "makefile.configureOnOpen": false,
+  "python.analysis.typeCheckingMode": "strict",
+  "python.locator": "js",
+  "python.testing.pytestEnabled": true,
+  "python.useDefaultConfig": false,
+  "security.workspace.trust.enabled": false,
+  "terminal.integrated.env.osx": {
+    "Q_NEW_SESSION": "1"
+  },
   "vscode-neovim.compositeKeys": {
     "jj": {
       "command": "vscode-neovim.escape"
     }
   },
-  "diffEditor.ignoreTrimWhitespace": false,
-  "workbench.iconTheme": "material-icon-theme",
-  "security.workspace.trust.enabled": false,
-  "workbench.colorTheme": "Winter is Coming (Dark Black)",
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.linux": "/home/tone/.asdf/shims/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "~/.vim/nvim/config/init.lua",
+  "vscode-neovim.neovimInitVimPaths.linux": "/home/tone/.vim/nvim/config/init.vscode.vim",
+  "workbench.list.automaticKeyboardNavigation": false,
+  "chat.tools.terminal.autoApprove": {
+    "/^make pytest 2>&1 \\| tee test_output\\.txt$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
   },
-  "python.analysis.typeCheckingMode": "standard",
-  "git.autofetch": true,
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "geminicodeassist.project": "",
-  "cloudcode.autoDependencies": "off"
+  "github.gitProtocol": "ssh",
+  "workbench.colorTheme": "Monokai"
 }
