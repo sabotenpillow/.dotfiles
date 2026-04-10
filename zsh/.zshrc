@@ -1,10 +1,14 @@
 # Kiro CLI pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
-local zsh_dir=$HOME/.dotfiles/zsh
+typeset -g zsh_dir="$HOME/.dotfiles/zsh"
+typeset -g zsh_cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+typeset -g zcompdump_path="$zsh_cache_dir/zcompdump-${ZSH_VERSION}"
+
+[[ -d "$zsh_cache_dir" ]] || mkdir -p "$zsh_cache_dir"
 
 function source_shell() {
-  if [[ -e $1 ]] ; then
-    source $1
+  if [[ -e "$1" ]] ; then
+    builtin source "$1"
   fi
 }
 
@@ -13,17 +17,18 @@ function original_cmd() {
 }
 
 ## Homebrew's completions
-if type brew &>/dev/null
+if (( $+commands[brew] ))
 then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-  autoload -Uz compinit
-  compinit
 fi
 
 ##  環境設定
 autoload -Uz compinit
-compinit
+if [[ ! -s "$zcompdump_path" ]]; then
+  compinit -d "$zcompdump_path"
+else
+  compinit -C -d "$zcompdump_path"
+fi
 autoload -U colors; colors
 autoload -Uz add-zsh-hook
 autoload -Uz select-word-style
@@ -117,16 +122,21 @@ zshaddhistory() {
 ##  エイリアス
 source_shell $zsh_dir/alias.zsh
 
+## load PATH
+source_shell $HOME/.dotfiles/shell.conf.d/path.bash
+
 ## completions
-if type kubectl > /dev/null 2>&1 ; then
-  source <(kubectl completion zsh)
-  if [[ `original_cmd k` = "kubectl" ]] ; then
+if (( $+commands[kubectl] )) ; then
+  typeset -g kubectl_completion_cache="$zsh_cache_dir/kubectl-completion.zsh"
+  if [[ ! -s "$kubectl_completion_cache" || "$(command -v kubectl)" -nt "$kubectl_completion_cache" ]] ; then
+    kubectl completion zsh >| "$kubectl_completion_cache"
+  fi
+
+  source_shell "$kubectl_completion_cache"
+  if [[ "$(original_cmd k)" = "kubectl" ]] ; then
     compdef __start_kubectl k
   fi
 fi
-
-## load PATH
-source_shell $HOME/.dotfiles/shell.conf.d/path.bash
 
 ##  plugins
 source_shell $zsh_dir/plugins.zsh
@@ -180,11 +190,10 @@ fi
 ## fzf path
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-echo loading starship
 ## load starship
-if type starship > /dev/null 2>&1; then
-  eval "$(starship init zsh)"
+if (( $+commands[starship] )); then
   export STARSHIP_CONFIG=~/.dotfiles/starship/starship.toml
+  eval "$(starship init zsh)"
 fi
 
 # Kiro CLI post block. Keep at the bottom of this file.

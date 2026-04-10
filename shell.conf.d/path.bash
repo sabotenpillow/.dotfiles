@@ -1,5 +1,3 @@
-echo Loading common PATH settings
-
 source ~/.dotfiles/shell.conf.d/functions/load_path.bash
 load_path /sbin
 load_path /usr/sbin
@@ -9,15 +7,22 @@ load_path /usr/bin
 load_path /usr/local/bin
 
 ## linuxbrew path
-if is_included_in_path brew ; then
-  if [ -d $HOME/.linuxbrew ] ; then
-    eval $($HOME/.linuxbrew/bin/brew shellenv)
-  elif [ -d /home/linuxbrew/.linuxbrew ] ; then
-    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-  elif [ -x /opt/homebrew/bin/brew ] ; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-    load_path $(brew --prefix coreutils)/libexec/gnubin
-  fi
+brew_bin=
+if [ -x "$HOME/.linuxbrew/bin/brew" ] ; then
+  brew_bin="$HOME/.linuxbrew/bin/brew"
+elif [ -x /home/linuxbrew/.linuxbrew/bin/brew ] ; then
+  brew_bin=/home/linuxbrew/.linuxbrew/bin/brew
+elif [ -x /opt/homebrew/bin/brew ] ; then
+  brew_bin=/opt/homebrew/bin/brew
+elif [ -x /usr/local/bin/brew ] ; then
+  brew_bin=/usr/local/bin/brew
+fi
+
+if [ -n "$brew_bin" ] ; then
+  eval "$("$brew_bin" shellenv)"
+
+  coreutils_gnubin="$("$brew_bin" --prefix coreutils 2> /dev/null)/libexec/gnubin"
+  [ -d "$coreutils_gnubin" ] && load_path "$coreutils_gnubin"
 fi
 
 ## go path
@@ -31,13 +36,17 @@ if type go > /dev/null 2>&1; then
 fi
 
 ## The next line updates PATH for the Google Cloud SDK.
-if [ -f $HOME/google-cloud-sdk/path.bash.inc ]; then
-  . $HOME/google-cloud-sdk/path.bash.inc
+if [ -n "${ZSH_VERSION:-}" ] && [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
+  . "$HOME/google-cloud-sdk/path.zsh.inc"
+elif [ -n "${BASH_VERSION:-}" ] && [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then
+  . "$HOME/google-cloud-sdk/path.bash.inc"
 fi
 
 ## The next line enables shell command completion for gcloud.
-if [ -f $HOME/google-cloud-sdk/completion.bash.inc ]; then
-  . $HOME/google-cloud-sdk/completion.bash.inc
+if [ -n "${ZSH_VERSION:-}" ] && [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
+  . "$HOME/google-cloud-sdk/completion.zsh.inc"
+elif [ -n "${BASH_VERSION:-}" ] && [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then
+  . "$HOME/google-cloud-sdk/completion.bash.inc"
 fi
 
 ## SDKMAN
@@ -64,7 +73,10 @@ load_path $ANDROID_HOME/platform-tools
 load_path $HOME/.yarn/bin
 
 ## asdf env
-source $(brew --prefix asdf)/libexec/asdf.sh
+if [ -n "$brew_bin" ] ; then
+  asdf_sh="$("$brew_bin" --prefix asdf 2> /dev/null)/libexec/asdf.sh"
+  [ -f "$asdf_sh" ] && source "$asdf_sh"
+fi
 
 ## aqua bin
 load_path ${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin
