@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 uname_os := $(shell uname -s)
-.PHONY: os zsh tig tmux fish karabiner warp vscode
+.PHONY: os zsh tig tmux fish lazygit karabiner warp vscode
 temp:
 	@echo If you want help, type '`make help`'
 os:
@@ -28,6 +28,14 @@ tmux:
 	ln -vfs .dotfiles/tmux/.tmux.conf ~/
 tig:
 	ln -vfs .dotfiles/tig/.tigrc ~/
+lazygit: os
+	$(if $(shell test $(os) = "mac" && echo 1), \
+		$(eval path=~/Library/Application\ Support/lazygit) \
+		, \
+		$(eval path=~/.config/lazygit) \
+	)
+	mkdir -p $(path)
+	ln -vfs ~/.dotfiles/lazygit/config.yml $(path)/config.yml
 gem:
 	ln -vfs .dotfiles/.gemrc ~/
 less:
@@ -63,6 +71,13 @@ clean-tmux:
 	unlink ~/.tmux.conf
 clean-tig:
 	unlink ~/.tigrc
+clean-lazygit: os
+	$(if $(shell test $(os) = "mac" && echo 1), \
+		$(eval path=~/Library/Application\ Support/lazygit/config.yml) \
+		, \
+		$(eval path=~/.config/lazygit/config.yml) \
+	)
+	-unlink $(path)
 clean-gem:
 	unlink ~/.gemrc
 clean-less:
