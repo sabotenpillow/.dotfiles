@@ -31,15 +31,12 @@ bind generic d none
 bind generic t none
 bind generic b none
 bind generic f none
-bind generic x none
 bind generic r none
 bind generic s none
 bind generic S none
 bind generic y none
-bind generic g none
 bind generic p none
 bind generic K none
-bind generic v  none
 bind generic vm view-main
 bind generic vd view-diff
 bind generic vl view-log
@@ -65,4 +62,3 @@ bind generic rf ?git reflog --pretty=raw \| tig
 bind generic revert ?git revert %(commit)
 
 ## main
-
