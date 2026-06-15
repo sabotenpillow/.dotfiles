@@ -92,6 +92,7 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(b
 #alias gsd='git stash drop'
 #alias gspop='git stash pop'
 #alias gsbr='git stash branch'
+alias lg='lazygit'
 #alias bdl='bundle'
 alias be='bundle exec'
 #alias rs='rails s -b 0.0.0.0'
