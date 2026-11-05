@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 uname_os := $(shell uname -s)
-.PHONY: os zsh tig tmux fish lazygit karabiner warp vscode
+.PHONY: os zsh tig tmux fish lazygit karabiner warp vscode claude
 temp:
 	@echo If you want help, type '`make help`'
 os:
@@ -36,6 +36,8 @@ lazygit: os
 	)
 	mkdir -p $(path)
 	ln -vfs ~/.dotfiles/lazygit/config.yml $(path)/config.yml
+claude:
+	ln -vs .dotfiles/claude ~/.claude
 gem:
 	ln -vfs .dotfiles/.gemrc ~/
 less:

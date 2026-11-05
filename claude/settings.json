@@ -1,0 +1,15 @@
+{
+	"theme":                             "dark",
+	"skipDangerousModePermissionPrompt": true,
+	"enabledPlugins": {
+		"gitkraken-hooks@gitkraken": true
+	},
+	"extraKnownMarketplaces": {
+		"gitkraken": {
+			"source": {
+				"path":   "/Users/h-tone/.claude/plugins/marketplaces/gitkraken",
+				"source": "directory"
+			}
+		}
+	}
+}

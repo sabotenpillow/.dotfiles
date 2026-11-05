@@ -1,0 +1,26 @@
+# Whitelist: ignore everything, then re-include only what to track
+*
+
+# Allow git to descend into directories (empty ones are never tracked)
+!*/
+
+# Git
+!.gitignore
+
+# Config
+!settings.json
+!CLAUDE.md
+!keybindings.json
+
+# Custom agents / commands / hooks / output styles
+!agents/**
+!commands/**
+!hooks/**
+!output-styles/**
+
+# Own skills (synced skills excluded)
+!skills/**
+skills/synced/**
+
+# Per-project memory
+# !projects/*/memory/**
