@@ -56,13 +56,13 @@ vscode: os
 # 	$(eval path=~/.config/Code/User)
 # endif
 	mkdir -p $(path)
-	ln -vfs ~/.dotfiles/terminals/vscode/settings.json $(path)/settings.json
-	ln -vfs ~/.dotfiles/terminals/vscode/keybindings.json $(path)/keybindings.json
+	ln -vfs ~/.dotfiles/GUI/terminals/vscode/settings.json $(path)/settings.json
+	ln -vfs ~/.dotfiles/GUI/terminals/vscode/keybindings.json $(path)/keybindings.json
 hyprland:
-	ln -vfs ~/.dotfiles/desktop/hyprland ~/.config/hypr
+	ln -vfs ~/.dotfiles/GUI/desktop/hyprland ~/.config/hypr
 alacritty:
-	ln -vfs ~/.dotfiles/terminals/alacritty ~/.config/
-linux-desktop: hyprland alacritty
+	ln -vfs ~/.dotfiles/GUI/terminals/alacritty ~/.config/
+linux-gui: hyprland alacritty
 
 
 ## clean configuration
@@ -122,7 +122,7 @@ cdr:
 karabiner:
 	ln -vfs ~/.dotfiles/key-remap/karabiner/assets/complex_modifications/*.json ~/.config/karabiner/assets/complex_modifications
 warp:
-	mkdir -p ~/.warp && ln -vfs ~/.dotfiles/terminals/warp/keybindings.yaml ~/.warp
+	mkdir -p ~/.warp && ln -vfs ~/.dotfiles/GUI/terminals/warp/keybindings.yaml ~/.warp
 mac:
 	defaults write -g ApplePressAndHoldEnabled -bool false
 
