@@ -58,6 +58,9 @@ vscode: os
 	mkdir -p $(path)
 	ln -vfs ~/.dotfiles/terminals/vscode/settings.json $(path)/settings.json
 	ln -vfs ~/.dotfiles/terminals/vscode/keybindings.json $(path)/keybindings.json
+hyprland:
+	ln -vfs ~/.dotfiles/desktop/hyprland ~/.config/hypr
+linux-desktop: hyprland
 
 
 ## clean configuration
