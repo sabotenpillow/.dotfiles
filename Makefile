@@ -11,18 +11,18 @@ else ifeq ($(uname_os),Linux)
 endif
 
 ## configuration
-bash: bash/.bash_profile bash/.bashrc
-	ln -vfs ${HOME}/.dotfiles/bash/.bash_profile ~
-	ln -vfs ${HOME}/.dotfiles/bash/.bashrc       ~
+bash: shell/bash/.bash_profile shell/bash/.bashrc
+	ln -vfs ${HOME}/.dotfiles/shell/bash/.bash_profile ~
+	ln -vfs ${HOME}/.dotfiles/shell/bash/.bashrc       ~
 fish: bash
 	mkdir -p ~/.config/fish/
-	ln -vfs ${HOME}/.dotfiles/fish/config.fish  ~/.config/fish/
-	ln -vs  $(HOME)/.dotfiles/fish/functions    ~/.config/fish/
+	ln -vfs ${HOME}/.dotfiles/shell/fish/config.fish  ~/.config/fish/
+	ln -vs  $(HOME)/.dotfiles/shell/fish/functions    ~/.config/fish/
 zsh:
-	ln -vfs .dotfiles/zsh/.zshrc    ~/
-	ln -vfs .dotfiles/zsh/.zshenv   ~/
-	ln -vfs .dotfiles/zsh/.zprofile ~/
-	ln -vfs .dotfiles/zsh/.zlogout  ~/
+	ln -vfs .dotfiles/shell/zsh/.zshrc    ~/
+	ln -vfs .dotfiles/shell/zsh/.zshenv   ~/
+	ln -vfs .dotfiles/shell/zsh/.zprofile ~/
+	ln -vfs .dotfiles/shell/zsh/.zlogout  ~/
 any: tmux tig gem less most
 tmux:
 	ln -vfs .dotfiles/tmux/.tmux.conf ~/

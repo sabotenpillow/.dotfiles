@@ -123,7 +123,7 @@ zshaddhistory() {
 source_shell $zsh_dir/alias.zsh
 
 ## load PATH
-source_shell $HOME/.dotfiles/shell.conf.d/path.bash
+source_shell $HOME/.dotfiles/shell/common.conf.d/path.bash
 
 ## completions
 if (( $+commands[kubectl] )) ; then

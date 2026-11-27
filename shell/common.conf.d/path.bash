@@ -1,4 +1,4 @@
-source ~/.dotfiles/shell.conf.d/functions/load_path.bash
+source ~/.dotfiles/shell/common.conf.d/functions/load_path.bash
 load_path /sbin
 load_path /usr/sbin
 load_path /usr/local/sbin
