@@ -192,7 +192,7 @@ fi
 
 ## load starship
 if (( $+commands[starship] )); then
-  export STARSHIP_CONFIG=~/.dotfiles/starship/starship.toml
+  export STARSHIP_CONFIG=~/.dotfiles/shell/starship/starship.toml
   eval "$(starship init zsh)"
 fi
 
