@@ -1,6 +1,6 @@
 # Kiro CLI pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
-typeset -g zsh_dir="$HOME/.dotfiles/zsh"
+typeset -g zsh_dir="$HOME/.dotfiles/shell/zsh"
 typeset -g zsh_cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 typeset -g zcompdump_path="$zsh_cache_dir/zcompdump-${ZSH_VERSION}"
 
