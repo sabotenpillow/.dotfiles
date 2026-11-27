@@ -203,3 +203,9 @@ source_shell ~/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization
 
 # Added by Antigravity
 export PATH="/Users/h-tone/.antigravity/antigravity/bin:$PATH"
+
+# configure mise
+if (( $+commands[mise] ))
+then
+  eval "$(mise activate zsh)"
+fi
