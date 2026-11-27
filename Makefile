@@ -60,7 +60,9 @@ vscode: os
 	ln -vfs ~/.dotfiles/terminals/vscode/keybindings.json $(path)/keybindings.json
 hyprland:
 	ln -vfs ~/.dotfiles/desktop/hyprland ~/.config/hypr
-linux-desktop: hyprland
+alacritty:
+	ln -vfs ~/.dotfiles/terminals/alacritty ~/.config/
+linux-desktop: hyprland alacritty
 
 
 ## clean configuration
