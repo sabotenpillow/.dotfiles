@@ -83,6 +83,10 @@ keyd:
 		sudo ln -vfs $(HOME)/.dotfiles/key-remap/keyd /etc/keyd; \
 	fi
 
+keyd-app:
+	mkdir -p ~/.config
+	ln -vfsn $(HOME)/.dotfiles/key-remap/keyd-app ~/.config/keyd
+
 ## clean configuration
 clean-zsh:
 	-unlink ~/.zshrc
