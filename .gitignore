@@ -3,3 +3,5 @@ zsh/plugins/
 tmux/plugins/
 
 fish/functions/fzf_key_bindings.fish
+key-remap/keyd-app/app.lock
+key-remap/keyd-app/app.log
