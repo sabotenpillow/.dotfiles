@@ -58,13 +58,13 @@ vscode: os
 	mkdir -p $(path)
 	ln -vfs ~/.dotfiles/GUI/terminals/vscode/settings.json $(path)/settings.json
 	ln -vfs ~/.dotfiles/GUI/terminals/vscode/keybindings.json $(path)/keybindings.json
-hyprland:
-	ln -vfs ~/.dotfiles/GUI/desktop/hyprland ~/.config/hypr
+hypr:
+	ln -vfs ~/.dotfiles/GUI/desktop/hypr ~/.config/
 waybar:
 	ln -vfs ~/.dotfiles/GUI/desktop/waybar ~/.config/
 alacritty:
 	ln -vfs ~/.dotfiles/GUI/terminals/alacritty ~/.config/
-linux-gui: hyprland alacritty waybar
+linux-gui: hypr alacritty waybar
 
 keyd:
 	@if ! command -v keyd >/dev/null 2>&1; then \
