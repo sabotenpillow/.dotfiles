@@ -64,6 +64,22 @@ alacritty:
 	ln -vfs ~/.dotfiles/GUI/terminals/alacritty ~/.config/
 linux-gui: hyprland alacritty
 
+keyd:
+	@if ! command -v keyd >/dev/null 2>&1; then \
+		echo "keyd is not installed; skipping"; \
+	else \
+		if [ -e /etc/keyd ] || [ -L /etc/keyd ]; then \
+			printf '\033[1;3;38;5;229m%s\033[0m ' "Overwrite /etc/keyd/? [yes/no] "; \
+			read -r answer; \
+			case "$$answer" in \
+				[yY][eE][sS]) ;; \
+				[nN][oO]) echo "skipped"; exit 0 ;; \
+				*) echo "invalid reply; expected 'yes' or 'no'"; exit 1 ;; \
+			esac; \
+			sudo rm -rf /etc/keyd; \
+		fi; \
+		sudo ln -vfs $(HOME)/.dotfiles/key-remap/keyd /etc/keyd; \
+	fi
 
 ## clean configuration
 clean-zsh:
