@@ -56,14 +56,14 @@ vscode: os
 # 	$(eval path=~/.config/Code/User)
 # endif
 	mkdir -p $(path)
-	ln -vfs ~/.dotfiles/GUI/terminals/vscode/settings.json $(path)/settings.json
-	ln -vfs ~/.dotfiles/GUI/terminals/vscode/keybindings.json $(path)/keybindings.json
+	ln -vfs ~/.dotfiles/gui/terminals/vscode/settings.json $(path)/settings.json
+	ln -vfs ~/.dotfiles/gui/terminals/vscode/keybindings.json $(path)/keybindings.json
 hypr:
-	ln -vfs ~/.dotfiles/GUI/desktop/hypr ~/.config/
+	ln -vfs ~/.dotfiles/gui/desktop/hypr ~/.config/
 waybar:
-	ln -vfs ~/.dotfiles/GUI/desktop/waybar ~/.config/
+	ln -vfs ~/.dotfiles/gui/desktop/waybar ~/.config/
 alacritty:
-	ln -vfs ~/.dotfiles/GUI/terminals/alacritty ~/.config/
+	ln -vfs ~/.dotfiles/gui/terminals/alacritty ~/.config/
 linux-gui: hypr alacritty waybar
 
 keyd:
