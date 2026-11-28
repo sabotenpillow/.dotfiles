@@ -60,9 +60,11 @@ vscode: os
 	ln -vfs ~/.dotfiles/GUI/terminals/vscode/keybindings.json $(path)/keybindings.json
 hyprland:
 	ln -vfs ~/.dotfiles/GUI/desktop/hyprland ~/.config/hypr
+waybar:
+	ln -vfs ~/.dotfiles/GUI/desktop/waybar ~/.config/
 alacritty:
 	ln -vfs ~/.dotfiles/GUI/terminals/alacritty ~/.config/
-linux-gui: hyprland alacritty
+linux-gui: hyprland alacritty waybar
 
 keyd:
 	@if ! command -v keyd >/dev/null 2>&1; then \
